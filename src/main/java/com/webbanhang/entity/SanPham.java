@@ -35,6 +35,8 @@ public class SanPham {
 	private Integer soLanXem;
 	@Column(name="GIAMGIA")
 	private Double giamGia;
+	@Column(name="HINHANH")
+	private String hinhAnh;
 	
 	@ManyToOne
 	@JoinColumn(name="MaNCC")
@@ -49,9 +51,6 @@ public class SanPham {
 	
 	@OneToMany(mappedBy = "sanPhamDG")
 	List<DanhGia> danhGia;
-	
-	@OneToMany(mappedBy = "sanPhamHA")
-	List<HinhAnhSP> hinhAnhSP;
 	
 	@OneToMany(mappedBy = "sanPhamHDCT")
 	List<HoaDonChiTiet> hoaDonChiTiet;
@@ -160,14 +159,6 @@ public class SanPham {
 		this.danhGia = danhGia;
 	}
 
-	public List<HinhAnhSP> getHinhAnhSP() {
-		return hinhAnhSP;
-	}
-
-	public void setHinhAnhSP(List<HinhAnhSP> hinhAnhSP) {
-		this.hinhAnhSP = hinhAnhSP;
-	}
-
 	public List<HoaDonChiTiet> getHoaDonChiTiet() {
 		return hoaDonChiTiet;
 	}
@@ -175,6 +166,12 @@ public class SanPham {
 	public void setHoaDonChiTiet(List<HoaDonChiTiet> hoaDonChiTiet) {
 		this.hoaDonChiTiet = hoaDonChiTiet;
 	}
-	
-	
+
+	public String getHinhAnh() {
+		return hinhAnh;
+	}
+
+	public void setHinhAnh(String hinhAnh) {
+		this.hinhAnh = hinhAnh;
+	}
 }
