@@ -14,12 +14,12 @@ import com.webbanhang.entity.SanPham;
 public class ProductController {
 	@Autowired
 	SanPhamDAO dao;
-	
+
 	@RequestMapping("customer/sanpham/index")
 	public String index(Model model) {
 		model.addAttribute("form", new SanPham());
 		List<SanPham> list = dao.findAll();
-		model.addAttribute("productUser",list);
+		model.addAttribute("productUser", list);
 		return "customer/sanpham/index";
 	}
 }

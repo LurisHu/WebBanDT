@@ -11,4 +11,7 @@
 	<definition name="*/*" template="/WEB-INF/views/layout_cus.jsp">
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
+	<definition name="*/*/*" template="/WEB-INF/views/layout_cus.jsp">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
 </tiles-definitions> 
