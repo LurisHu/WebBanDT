@@ -15,10 +15,11 @@ public class ProductController {
 	@Autowired
 	SanPhamDAO dao;
 	
-	@RequestMapping("/")
-	public String list(Model model) {
+	@RequestMapping("customer/sanpham/index")
+	public String index(Model model) {
+		model.addAttribute("form", new SanPham());
 		List<SanPham> list = dao.findAll();
-		model.addAttribute("list", list);
-		return "customer/product/index";
+		model.addAttribute("productUser",list);
+		return "customer/sanpham/index";
 	}
 }
