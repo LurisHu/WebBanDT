@@ -59,7 +59,7 @@ public class QuanLySanPhamController {
 	
 	@RequestMapping("admin/sanpham/create")
 	public String create(Model model, SanPham entity,@RequestParam("up_photo") MultipartFile file) {
-		entity.setHinhAnh(uploadService.uploadImage(file));
+		entity.setImage(uploadService.uploadImage(file));
 		dao.create(entity);
 		model.addAttribute("form", entity);
 		model.addAttribute("products", dao.findAll());

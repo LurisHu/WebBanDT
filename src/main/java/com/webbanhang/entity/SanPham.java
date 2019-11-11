@@ -36,7 +36,7 @@ public class SanPham {
 	@Column(name="GIAMGIA")
 	private Double giamGia;
 	@Column(name="HINHANH")
-	private String hinhAnh;
+	private String image;
 	
 	@ManyToOne
 	@JoinColumn(name="MaNCC")
@@ -167,11 +167,11 @@ public class SanPham {
 		this.hoaDonChiTiet = hoaDonChiTiet;
 	}
 
-	public String getHinhAnh() {
-		return hinhAnh;
+	public String getImage() {
+		return image;
 	}
 
-	public void setHinhAnh(String hinhAnh) {
-		this.hinhAnh = hinhAnh;
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

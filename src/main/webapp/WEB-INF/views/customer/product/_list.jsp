@@ -1,25 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<table class="table mt-5">
-	<thead class="thead-dark">
-		<tr>
-			<th scope="col">#</th>
-			<th scope="col">Mã danh mục</th>
-			<th scope="col">Tên</th>
-			<th scope="col">Mô tả</th>
-			<th scope="col">Edit</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="sp" items="${list}" varStatus="loop">
-			<tr>
-				<th>${loop.index+1}</th>
-				<td>${sp.maSP}</td>
-				<td>${dm.tenSP}</td>
-				<td>${dm.moTa}</td>
-				<td><a href="/admin/danhmuc/edit/${dm.maSP}">Edit</a></td>
-			</tr>
-		</c:forEach>
-	</tbody>
-</table>
+<h1>Product List</h1>
+<hr />
+<jsp:include page="../cart/info.jsp" />
+<hr />
+<c:forEach var="p" items="${productUser}">
+	<div class="col-sm-3">
+		<div class="panel panel-default">
+
+			<div class="panel-body">
+				<a href="/product/detail/${p.maSP}"> <label>${p.tenSP}</label> <br />
+					<img src="/static/images/${p.image}" height="200px" width="200px" />
+				</a>
+			</div>
+			<form method="post">
+				<div class="text-right">
+					<button class="btn btn-default" formaction="/cart/add/${p.maSP}">Add</button>
+					<button class="btn btn-success">Star</button>
+					<button class="btn btn-primary">Email</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</c:forEach>
