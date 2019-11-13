@@ -47,6 +47,6 @@
 	<form:hidden path="isAdmin" value="false"/>
 	
 	<div class="form-group">
-		<button class="btn btn-primary" formaction="/admin/nguoidung/create">Đăng ký</button>
+		<button class="btn btn-primary">Đăng ký</button>
 	</div>
 </form:form>
