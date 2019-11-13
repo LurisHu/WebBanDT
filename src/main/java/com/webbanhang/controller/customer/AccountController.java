@@ -23,8 +23,10 @@ public class AccountController {
 	@PostMapping(value= {"account/login","login"})
 	public String loginVerify(
 			@RequestParam("email")String email,
-			@RequestParam("password")String password){
-		
+			@RequestParam("pwd")String password){
+//		if() {
+//			
+//		}
 		return "account/login/index";
 	}
 	@GetMapping(value= {"account/register","register"})

@@ -43,6 +43,8 @@ public class NguoiDung {
 	private String email;
 	@Column(name="isAdmin")
 	private Boolean isAdmin;
+	@Column(name="isActive")
+	private Boolean isActive;
 	
 	@OneToMany(mappedBy = "nguoiDungBL")
 	List<BinhLuan> binhLuan;
@@ -171,5 +173,13 @@ public class NguoiDung {
 
 	public void setHoaDon(List<HoaDon> hoaDon) {
 		this.hoaDon = hoaDon;
+	}
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
 	}
 }
