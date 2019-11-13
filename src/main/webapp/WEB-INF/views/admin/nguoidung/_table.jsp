@@ -15,6 +15,7 @@
 				<th>Giới tính</th>
 				<th>Mạng xã hội</th>
 				<th>Loại khách hàng</th>
+				<th>Quyền hạn</th>
 				<th>Phone</th>
 				<th></th>
 			</tr>
@@ -30,7 +31,8 @@
 							pattern="dd-MM-yyyy" /></td>
 					<td>${user.gioiTinh==true?"Nam":"Nữ"}</td>
 					<td>${user.mangXH}</td>
-					<td>${user.loaiKH==0?"Admin":user.loaiKH==1?"KH không thân thiết":user.loaiKH==2?"KH thân thiết":"Không rõ"}</td>
+					<td>${user.loaiKH==0?"Admin":user.loaiKH==1?"Khách hàng mới":user.loaiKH==2?"Khách hàng thân thiết":"Không rõ"}</td>
+					<td>${user.isAdmin==true?"Người quản trị":"Khách hàng"}</td>
 					<td>${user.phone}</td>
 					<td><a href="/admin/nguoidung/edit/${user.maNguoiDung}">Edit</a></td>
 				</tr>
