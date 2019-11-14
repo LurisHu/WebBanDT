@@ -23,6 +23,7 @@ import com.sun.istack.NotNull;
 @Entity
 @Table(name="nguoidung")
 //test nha 
+// test lan 2
 public class NguoiDung {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
