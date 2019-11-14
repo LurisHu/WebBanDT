@@ -22,6 +22,7 @@ import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="nguoidung")
+//test nha 
 public class NguoiDung {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
