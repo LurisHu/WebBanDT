@@ -17,8 +17,8 @@
 	<div class="form-group">
 		<label>Photo</label> <input type="file" name="up_photo"
 			onchange="openFile(this)" />
-		<form:hidden path="hinhAnh" />
-		<img id="anh" style="max-width:200" src="/static/images/${form.hinhAnh==null?'default.png':form.hinhAnh}">
+		<form:hidden path="image" />
+		<img id="anh" style="max-width:200" src="/static/images/${form.image==null?'default.png':form.image}">
 	</div>
 
 	<div class="form-group">
