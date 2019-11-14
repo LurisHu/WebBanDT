@@ -3,20 +3,23 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <form:form modelAttribute="nd">
 	<form:hidden path="maNguoiDung"/>
-	
+	${message}
 	<div class="form-group">
 		<label>Họ tên</label>
 		<form:input path="hoTen" class="form-control" />
+		<form:errors path="hoTen"/>
 	</div>
 	
 	<div class="form-group">
 		<label>Email</label>
 		<form:input path="email" class="form-control" />
+		<form:errors path="email"/>
 	</div>
 	
 	<div class="form-group">
 		<label>Mật khẩu</label>
 		<form:input path="matKhau" class="form-control" />
+		<form:errors path="matKhau"/>
 	</div>
 	
 	<div class="form-group">
@@ -45,7 +48,7 @@
 	</div>
 	
 	<form:hidden path="isAdmin" value="false"/>
-	
+	<form:hidden path="isActive" value="false"/>
 	<div class="form-group">
 		<button class="btn btn-primary">Đăng ký</button>
 	</div>

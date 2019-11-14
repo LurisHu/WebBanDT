@@ -12,8 +12,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="nguoidung")
@@ -24,8 +29,10 @@ public class NguoiDung {
 	private Integer maNguoiDung;
 	
 	@Column(name="MATKHAU")
+	@Length(min = 6)
 	private String matKhau;
 	@Column(name="HOTEN")
+	@NotEmpty
 	private String hoTen;
 	@Column(name="NGAYSINH")
 	@Temporal(TemporalType.DATE)
@@ -40,6 +47,8 @@ public class NguoiDung {
 	@Column(name="PHONE")
 	private String phone;
 	@Column(name="EMAIL")
+	@NotNull
+	@Email
 	private String email;
 	@Column(name="isAdmin")
 	private Boolean isAdmin;
