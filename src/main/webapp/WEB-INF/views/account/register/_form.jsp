@@ -25,6 +25,7 @@
 	<div class="form-group">
 		<label>Ngày sinh</label>
 		<form:input path="ngaySinh" class="form-control" type="date" />
+		<form:errors path="ngaySinh"/>
 	</div>
 	
 	<div class="form-group">
@@ -45,6 +46,7 @@
 	<div class="form-group">
 		<label>Phone</label>
 		<form:input path="phone" class="form-control" />
+		<form:errors path="phone"/>
 	</div>
 	
 	<form:hidden path="isAdmin" value="false"/>

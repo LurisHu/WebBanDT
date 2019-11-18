@@ -13,12 +13,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="nguoidung")
@@ -30,26 +31,29 @@ public class NguoiDung {
 	private Integer maNguoiDung;
 	
 	@Column(name="MATKHAU")
-	@Length(min = 6)
+	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$", message = "Mật khẩu bạn nhập phải thỏa mãn độ dài ít nhất 8 ký tự, chứa ít nhất một chữ số, chứa ít nhất một ký tự viết thường và một ký tự viết hoa và có ít nhất một ký tự đặc biệt(@#%$^ etc.).Không chứa khoảng trắng, tab.")
 	private String matKhau;
 	@Column(name="HOTEN")
-	@NotEmpty
+	@NotEmpty(message = "Họ tên không được để trống")
 	private String hoTen;
 	@Column(name="NGAYSINH")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message = "Vui lòng chọn ngày sinh")
 	private Date ngaySinh;
 	@Column(name="GIOITINH")
+	@NotNull(message = "Vui lòng chọn giới tính")
 	private Boolean gioiTinh;
 	@Column(name="MANGXH")
 	private String mangXH;
 	@Column(name="LOAIKH")
 	private Integer loaiKH;
 	@Column(name="PHONE")
+	@Pattern(regexp = "(03|04|05|07|08|09)[0-9]{8}", message = "Số điện thoại phải là 10 số và các đầu số thuộc các nhà mạng Việt Nam(03|04|05|07|08|09)")
 	private String phone;
 	@Column(name="EMAIL")
-	@NotNull
-	@Email
+	@Email(message = "Email không đúng định dạng")
+	@NotBlank(message = "Email không được để trống")
 	private String email;
 	@Column(name="isAdmin")
 	private Boolean isAdmin;
