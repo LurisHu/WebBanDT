@@ -37,5 +37,19 @@
 			<jsp:include page="layout/customer/_footer.jsp" />
 		</footer>
 	</div>
+	<script type="text/javascript" src="/static/js/modules/script.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.get('http://localhost:8080/api/city')
+			.then(function(response){
+				console.log(response);
+				for(i=0;i<response.LtsItem.length;i++){
+					if(response.LtsItem[i].Title!="Chưa rõ"){
+						$('#first').append("<option value='"+response.LtsItem[i].ID+"-"+response.LtsItem[i].Title+"'>"+response.LtsItem[i].Title+"</option>");
+					}
+				}
+			});
+		});
+	</script>
 </body>
 </html>

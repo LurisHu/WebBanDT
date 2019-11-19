@@ -57,4 +57,11 @@ public class DanhMuc {
 	public void setSanPham(List<SanPham> sanPham) {
 		this.sanPham = sanPham;
 	}
+
+	@Override
+	public String toString() {
+		return "" + tenDM + "";
+	}
+	
+	
 }

@@ -26,8 +26,8 @@
 	<div class="cart-container">
 		<div class="cart-header">
 			<h3>Giỏ hàng của bạn</h3>
-			<a href="/customer/sanpham/index" style="float: right; margin-top: -30px;">Mua
-				thêm sản phẩm khác</a>
+			<a href="/customer/sanpham/index"
+				style="float: right; margin-top: -30px;">Mua thêm sản phẩm khác</a>
 		</div>
 		<div class="panel panel-cart">
 			<div class="panel-body">
@@ -59,11 +59,12 @@
 										value="+" class="plus">
 								</div>
 								<form method="post">
-								<div class="delete-cart">
-									<button type="submit" class="btn btn-default btn-cart" formaction="/cart/remove/${p.maSP}">
-										<span class="glyphicon glyphicon-remove-sign"></span>
-									</button>
-								</div>
+									<div class="delete-cart">
+										<button type="submit" class="btn btn-default btn-cart"
+											formaction="/cart/remove/${p.maSP}">
+											<span class="glyphicon glyphicon-remove-sign"></span>
+										</button>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -103,24 +104,24 @@
 								<label class=" col-sm-2 label-information">Tỉnh/Thành
 									phố</label>
 								<div class="col-md-10">
-									<select class="form-control">
-										<option>Long An</option>
+									<select id="first" class="form-control">
+										<option value="0" selected="selected">Chọn Tỉnh/Thành phố</option>
 									</select>
 								</div>
 							</div>
 							<div class="form-group">
 								<label class=" col-sm-2 label-information">Quận/Huyện</label>
 								<div class="col-md-10">
-									<select class="form-control">
-										<option>Châu Thành</option>
+									<select id="second" class="form-control" disabled="disabled">
+										<option value="0" selected="selected">Chọn Quận/Huyện</option>
 									</select>
 								</div>
 							</div>
 							<div class="form-group">
 								<label class=" col-sm-2 label-information">Phường/Xã</label>
 								<div class="col-md-10">
-									<select class="form-control">
-										<option>Vĩnh công</option>
+									<select id="third" class="form-control" disabled="disabled">
+										<option value="0" selected="selected">Chọn Phường/Xã</option>
 									</select>
 								</div>
 							</div>
@@ -138,7 +139,7 @@
 										formaction="/cart/thanhtoan">Thanh toán</button>
 								</div>
 							</div>
-					</form:form>
+						</form:form>
 					</div>
 				</c:if>
 				<c:if test="${empty sessionScope['scopedTarget.cartService'].items}">

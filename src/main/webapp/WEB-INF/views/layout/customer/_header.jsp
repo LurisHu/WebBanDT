@@ -46,7 +46,7 @@
                 </form>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="#" id="nav2"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+                <li><a href="/customer/sanpham/index" id="nav2"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
                 <li><a href="#" id="nav2"><span class="glyphicon glyphicon-globe"></span> Giới thiệu</a></li>
                 <li><a href="#" id="nav2"><span class="glyphicon glyphicon-bullhorn"></span> Tin tức</a></li>
                 <li><a href="#" id="nav2"><span class="glyphicon glyphicon-question-sign"></span> Hỏi đáp</a></li>
