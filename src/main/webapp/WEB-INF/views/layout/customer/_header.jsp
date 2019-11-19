@@ -136,8 +136,8 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i
                                                                 class="glyphicon glyphicon-user"></i></span>
-                                                        <input id="email" type="text" class="form-control" name="id"
-                                                            placeholder="Email" value="${user.maNguoiDung}" required="required">
+                                                        <input id="email" type="email" class="form-control" name="email"
+                                                            placeholder="Email" value="${user.email}" required="required">
                                                     </div><br>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i
