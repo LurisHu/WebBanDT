@@ -39,6 +39,7 @@
 	<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="/static/js/modules/script.js"></script>
+	<script type="text/javascript" src="/static/js/modules/upload.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$.get('http://localhost:8080/api/city')
