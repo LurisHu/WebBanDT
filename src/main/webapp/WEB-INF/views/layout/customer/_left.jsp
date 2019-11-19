@@ -13,4 +13,3 @@
 		</div>
 	</div>
 </div>
-<script src="/static/js/slideshow.js"></script>

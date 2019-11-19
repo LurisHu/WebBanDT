@@ -7,13 +7,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/static/images/iphone11.png" rel="shortcut icon" type="image/x-icon">
-<!-- jQuery -->
-<script src="/static/js/jquery.min.js"></script>
+<title>Shop di động</title>
 <!-- Bootstrap -->
 <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+<!-- My css -->
 <link href="/static/css/index.css" rel="stylesheet" />
+<link href="/static/css/cart.css" rel="stylesheet" />
 <link href="/static/css/detail.css" rel="stylesheet" />
-<script src="/static/js/bootstrap.min.js"></script>
+<link href="/static/css/bill.css" rel="stylesheet" />
 </head>
 <body  class="container-fluid">
 	<div>
@@ -37,7 +38,12 @@
 			<jsp:include page="layout/customer/_footer.jsp" />
 		</footer>
 	</div>
-	<script type="text/javascript" src="/static/js/modules/script.js"></script>
+	
+	<!-- jQuery -->
+	<script src="/static/js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="/static/js/bootstrap.min.js"></script>
+	<!-- My own js -->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$.get('http://localhost:8080/api/city')
@@ -51,5 +57,8 @@
 			});
 		});
 	</script>
+	<script type="text/javascript" src="/static/js/modules/script.js"></script>
+	<script type="text/javascript" src="/static/js/bc.js"></script>
+	<script type="text/javascript" src="/static/js/slideshow.js"></script>
 </body>
 </html>
