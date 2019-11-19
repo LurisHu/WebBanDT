@@ -92,7 +92,6 @@
 		</div>
 	</div>
 </div>
-
 <!-- End Modal 2 -->
 <!-- Modal -->
 <div class="container">
@@ -128,8 +127,8 @@
 												<div class="input-group">
 													<span class="input-group-addon"><i
 														class="glyphicon glyphicon-user"></i></span> <input id="email"
-														type="text" class="form-control" name="id"
-														placeholder="Email" value="${user.maNguoiDung}"
+														type="email" class="form-control" name="email"
+														placeholder="Email" value="${user.email}"
 														required="required">
 												</div>
 												<br>
@@ -219,5 +218,3 @@
 		</div>
 	</div>
 </div>
-
-

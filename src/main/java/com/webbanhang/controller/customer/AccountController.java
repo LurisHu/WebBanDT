@@ -25,10 +25,10 @@ public class AccountController {
 	
 	@PostMapping("/account/login")
 	public String login(Model model,
-			@RequestParam("id") Integer id ,
+			@RequestParam("email") String email ,
 			@RequestParam("password") String pw) {
-		model.addAttribute("user", dao.findById(id));
-		NguoiDung user= dao.findById(id);
+		model.addAttribute("user", dao.findByEmail(email));
+		NguoiDung user= dao.findByEmail(email);
 		if(user==null) {
 			model.addAttribute("message","Invaild username");
 		}else if(!pw.equals(user.getMatKhau())) {
@@ -41,7 +41,7 @@ public class AccountController {
 				return "redirect:/customer/sanpham/index";
 			}
 		}
-		return "redirect:/product/index";
+		return "redirect:/customer/sanpham/index";
 	}
 
 	@GetMapping(value = { "account/register", "register" })
