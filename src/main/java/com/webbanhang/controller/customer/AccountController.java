@@ -18,17 +18,30 @@ public class AccountController {
 	@Autowired
 	NguoiDungDAO dao;
 
-	@GetMapping(value = { "account/login", "login" })
+	@GetMapping("/account/login")
 	public String login() {
-		return "account/login/index";
+		return "redirect:/customer/sanpham/index";
 	}
-
-	@PostMapping(value = { "account/login", "login" })
-	public String loginVerify(@RequestParam("email") String email, @RequestParam("pwd") String password) {
-//		if() {
-//			
-//		}
-		return "account/login/index";
+	
+	@PostMapping("/account/login")
+	public String login(Model model,
+			@RequestParam("id") Integer id ,
+			@RequestParam("password") String pw) {
+		model.addAttribute("user", dao.findById(id));
+		NguoiDung user= dao.findById(id);
+		if(user==null) {
+			model.addAttribute("message","Invaild username");
+		}else if(!pw.equals(user.getMatKhau())) {
+			model.addAttribute("message","Invaild password");
+		}else {
+			model.addAttribute("message","Login successfully");
+			if(user.getIsAdmin()==true) {
+				return "redirect:/admin/nguoidung/index";
+			}else {
+				return "redirect:/customer/sanpham/index";
+			}
+		}
+		return "redirect:/product/index";
 	}
 
 	@GetMapping(value = { "account/register", "register" })

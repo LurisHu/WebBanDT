@@ -1,0 +1,110 @@
+/* chỉnh kích thước panel */
+.bill-container{
+    padding-top: 20px;
+    padding-left: 370px;
+    padding-right: 370px;
+}
+/* Tùy chỉnh thẻ P */
+.p-top p{
+    color: green;
+    font-size: 1.15vw;
+    background-color: white;
+    margin: -29px 0px;
+    padding: 6px 0px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid rgb(24, 158, 255);
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+}
+.p-top {
+    padding: 0px 170px;
+}
+.panel-body{
+    margin-top: 20px;
+}
+/* Tạo bóng panel */
+.bill-panel{
+  padding: 10px;
+  box-shadow:1px 1px 10px 1px #888888;
+}
+/* Tùy chỉnh heading trong body-mini */
+.panel-heading{
+    font-size: 1.2vw;
+    font-weight: bold;
+    padding-bottom: 1px;
+    border-style: none;
+}
+/* Tùy chỉnh trong body-mini */
+.body-mini span{
+    font-weight: bold;
+    color: red;
+}
+.body-mini{
+    margin: -10px 0px;
+}
+/* Tùy chỉnh footer-mini */
+.footer-mini span{
+    font-weight: bold;
+    color:rgb(13, 121, 184);
+}
+.footer-mini{
+    border-style: none;
+    padding-bottom: 1px;
+    background-color: white ;
+}
+/* Điều chỉnh panel-img */
+.bill-img{
+    padding: 7px;
+    border: 1px solid #e2e2e2;
+}
+/* Điều chỉnh bill-item */
+.bill-item{
+    display: block;
+    position: relative;
+    margin-top: -128px;
+    margin-left: 144px;
+    margin-bottom: 100px;
+}
+.bill-price{
+    font-weight: bold;
+    color: red;
+    font-size: 1.3vw;
+    display: block;
+    position: relative;
+    margin-top: -119px;
+    margin-left: 420px;
+    margin-bottom: 80px;
+}
+.bill-number{
+    font-size: 1.1vw;
+    display: block;
+    position: relative;
+    margin-top: -70px;
+    margin-left: 420px;
+    margin-bottom: 80px;
+}
+.bill-number span{
+    color: black;
+    font-weight: bold;
+}
+.panel-footer{
+    background-color: white;
+    border-style: none;
+}
+.panel-footer span{
+    font-weight: bold;
+    border-style: none;
+}
+.bill-back{
+    padding: 0px 165px;
+}
+.btn-info{
+    font-size: 1.5vw;
+    border-color:rgb(24, 158, 255);
+    background-color: white;
+    color: rgb(24, 158, 255);
+}

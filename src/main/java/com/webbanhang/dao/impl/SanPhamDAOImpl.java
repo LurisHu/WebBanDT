@@ -18,6 +18,8 @@ public class SanPhamDAOImpl implements SanPhamDAO{
 	@Autowired
 	SessionFactory factory;
 
+	int pageSize = 3;
+	
 	@Override
 	public SanPham findById(Integer id) {
 		Session session = factory.getCurrentSession();
@@ -51,5 +53,35 @@ public class SanPhamDAOImpl implements SanPhamDAO{
 		Session session = factory.getCurrentSession();
 		session.remove(entity);
 		return entity;
+	}
+	
+	@Override
+	public List<SanPham> BestSellerPhone(int PageNo) {
+		String hql = "FROM SanPham WHERE MaDM= '1'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
+		query.setFirstResult(PageNo*pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<SanPham> BestSellerLaptop(int PageNo) {
+		String hql = "FROM SanPham WHERE MaDM= '2'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
+		query.setFirstResult(PageNo*pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<SanPham> BestSellerPhuKien(int PageNo) {
+		String hql = "FROM SanPham WHERE MaDM= '3'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
+		query.setFirstResult(PageNo*pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
 	}
 }

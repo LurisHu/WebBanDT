@@ -1,0 +1,142 @@
+/* chỉnh kích thước panel */
+.cart-container{
+    padding-left: 270px;
+    padding-right: 270px;
+}
+.panel-cart{
+    box-shadow:1px 1px 10px 1px #888888;
+}
+/* Điều chỉnh panel-img */
+.panel-img{
+    padding: 7px;
+    border: 1px solid #e2e2e2;
+}
+/* Điều chỉnh panel-item */
+.name-item{
+    display: block;
+    position: relative;
+    margin-top: -128px;
+    margin-left: 144px;
+    margin-bottom: 100px;
+}
+.price-item{
+    display: block;
+    position: relative;
+    margin-top: -119px;
+    margin-left: 425px;
+    margin-bottom: 100px;
+}
+.btn-cart{
+    color: grey;
+    border: 0;
+}
+.delete-cart{
+    display: block;
+    position: relative;
+    margin-top: -152px;
+    margin-left: 731px;
+    margin-bottom: 130px;
+    color: grey;
+}
+.number-item{
+    display: block;
+    position: relative;
+    margin-top: -128px;
+    margin-left: 600px;
+    margin-bottom: 100px;
+}
+.sum{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    float:right;
+}
+.panel-mini{
+    border-bottom: 1px solid #e2e2e2;
+}
+
+/* Nút chọn số lượng */
+.quantity {
+    display: inline-block; }
+   
+   .quantity .input-text.qty {
+    width: 35px;
+    height: 36px;
+    padding: 0 5px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #efefef;
+   }
+   
+   .quantity.buttons_added {
+    text-align: left;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top; }
+   
+   .quantity.buttons_added input {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    box-shadow: none;
+   }
+   
+   .quantity.buttons_added .minus,
+   .quantity.buttons_added .plus {
+    padding: 7px 10px 8px;
+    height: 36px;
+    background-color: DDDDDD;
+    border: 1px solid #efefef;
+    cursor:pointer;}
+   
+   .quantity.buttons_added .minus {
+    border-right: 0; }
+   
+   .quantity.buttons_added .plus {
+    border-left: 0; }
+   
+   .quantity.buttons_added .minus:hover,
+   .quantity.buttons_added .plus:hover {
+    background: #eeeeee; }
+   
+   .quantity input::-webkit-outer-spin-button,
+   .quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0; }
+    
+    .quantity.buttons_added .minus:focus,
+    .quantity.buttons_added .plus:focus {
+    outline: none; }
+/* * / Form thông tin người dùng */ 
+.information{
+    background-color: #f0f0f0;
+}
+.btn-submit{
+    width: 150px;
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 2px;
+    font-size: 13px;
+    color:white;
+    background: #00b6f0;
+    border-color: transparent;
+}
+.form-information{
+    color:#00b6f0 ;
+    border: dashed;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.label-information{
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    min-height: 10px;
+    padding: 0px;
+}
+.DCGH{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: -33px;
+    margin-bottom: 11px;
+}

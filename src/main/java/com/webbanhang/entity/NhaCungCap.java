@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="nhacungcap")
@@ -18,6 +19,7 @@ public class NhaCungCap {
 	@Column(name="MaNCC",nullable = false)
 	private Integer maNCC;
 	@Column(name="TENNCC")
+	@NotEmpty(message="Không để trống tên nhà cung cấp")
 	private String tenNCC;
 	@Column(name="MOTA")
 	private String moTa;
@@ -56,4 +58,11 @@ public class NhaCungCap {
 	public void setSanPham(List<SanPham> sanPham) {
 		this.sanPham = sanPham;
 	}
+
+	@Override
+	public String toString() {
+		return "" + tenNCC + "";
+	}
+	
+	
 }
