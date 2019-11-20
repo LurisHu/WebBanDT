@@ -40,7 +40,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown"><a href="#" id="nav2"
 				class="dropdown-toggle" data-toggle="dropdown"><span
-					class="glyphicon glyphicon-user"></span> Sign up <span
+					class="glyphicon glyphicon-user"></span>Tài khoản<span
 					class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<!-- Trigger the modal with a button -->
@@ -154,7 +154,7 @@
 											<form class="form-horizontal">
 												<div class="form-group ">
 													<label class="col-sm-2 control-label">Họ tên</label>
-													<div class="col-sm-10 has-success ">
+													<div class="col-sm-10 has-success">
 														<input type="text" class="form-control"
 															placeholder="Họ tên">
 													</div>

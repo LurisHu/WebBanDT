@@ -15,6 +15,7 @@
 <link href="/static/css/cart.css" rel="stylesheet" />
 <link href="/static/css/detail.css" rel="stylesheet" />
 <link href="/static/css/bill.css" rel="stylesheet" />
+<link href="/static/css/validate.css" rel="stylesheet">
 </head>
 <body  class="container-fluid">
 	<div>
