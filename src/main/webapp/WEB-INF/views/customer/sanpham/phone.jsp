@@ -102,39 +102,44 @@
 			</div>
 			<div class="right-prt">
 				<c:forEach var="p" items="${Phone}">
-					<div class="right-prt-li">
-						<img src="/static/images/${p.image}">
-						<div class="right-prt-if">
-							<div class="prt-if-name">
-								<h4>${p.tenSP}</h4>
-								<div class="prt-if-price">
-									<p>
-										<fmt:formatNumber value="${p.giaSP}" /><sup>đ</sup>
-									</p>
-								</div>
-								<div class="rating">
-									<span class="glyphicon glyphicon-star star"></span> <span
-										class="glyphicon glyphicon-star star"></span> <span
-										class="glyphicon glyphicon-star star"></span> <span
-										class="glyphicon glyphicon-star star"></span> <span
-										class="glyphicon glyphicon-star star"></span>
-								</div>
-								<br/>
-								<div class="prt-if-content">
-									<ul>
-										<li><label>Màn hình:1242 x 2688 Pixels 6.5 inchs</label></li>
-										<li><label>Camera:&ensp; Triple 12MP Ultra Wide,
-												Wide and Telephoto cameras 12.0 MP</label></li>
-										<li><label>Pin:&emsp;&emsp;&ensp; Lâu hơn iPhone
-												Xs Max 5h</label></li>
-										<li><label>RAM:&emsp;&emsp; 4 GB</label></li>
-										<li><label>CPU:&emsp;&emsp; Apple A13 Bionic</label></li>
-										<li><label>HĐH:&emsp;&emsp; IS0 13</label></li>
-									</ul>
+					<a href="/customer/sanpham/detail/${p.maSP}">
+						<div class="right-prt-li">
+							<img src="/static/images/${p.image}">
+							<div class="right-prt-if">
+								<div class="prt-if-name">
+									<h4>${p.tenSP}</h4>
+									<div class="rating">
+										<span class="glyphicon glyphicon-star star"></span> <span
+											class="glyphicon glyphicon-star star"></span> <span
+											class="glyphicon glyphicon-star star"></span> <span
+											class="glyphicon glyphicon-star star"></span> <span
+											class="glyphicon glyphicon-star star"></span>
+									</div>
+									
+									<div class="prt-if-price">
+										<p>
+											<fmt:formatNumber value="${p.giaSP}" />
+											<sup>đ</sup>
+										</p>
+									</div>
+									
+									
+									<div class="prt-if-content">
+										<ul>
+											<li><label>Màn hình:1242 x 2688 Pixels 6.5 inchs</label></li>
+											<li><label>Camera:&ensp; Triple 12MP Ultra Wide,
+													Wide and Telephoto cameras 12.0 MP</label></li>
+											<li><label>Pin:&emsp;&emsp;&ensp; Lâu hơn iPhone
+													Xs Max 5h</label></li>
+											<li><label>RAM:&emsp;&emsp; 4 GB</label></li>
+											<li><label>CPU:&emsp;&emsp; Apple A13 Bionic</label></li>
+											<li><label>HĐH:&emsp;&emsp; IS0 13</label></li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</c:forEach>
 			</div>
 		</div>

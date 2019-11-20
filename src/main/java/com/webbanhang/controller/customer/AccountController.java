@@ -18,11 +18,11 @@ public class AccountController {
 	@Autowired
 	NguoiDungDAO dao;
 
-	@GetMapping("/account/login")
-	public String login() {
-		return "redirect:/customer/sanpham/index";
-	}
-	
+//	@GetMapping("/account/login")
+//	public String login() {
+//		return "redirect:/customer/sanpham/index";
+//	}
+//	
 	@PostMapping("/account/login")
 	public String login(Model model,
 			@RequestParam("email") String email ,
@@ -30,18 +30,24 @@ public class AccountController {
 		model.addAttribute("user", dao.findByEmail(email));
 		NguoiDung user= dao.findByEmail(email);
 		if(user==null) {
-			model.addAttribute("message","Invaild username");
+			model.addAttribute("message","Email không tồn tại");
 		}else if(!pw.equals(user.getMatKhau())) {
-			model.addAttribute("message","Invaild password");
+			model.addAttribute("message","Mật khẩu không chính xác");
 		}else {
-			model.addAttribute("message","Login successfully");
+			model.addAttribute("message","Đăng nhập thành công");
 			if(user.getIsAdmin()==true) {
 				return "redirect:/admin/nguoidung/index";
 			}else {
 				return "redirect:/customer/sanpham/index";
 			}
 		}
-		return "redirect:/customer/sanpham/index";
+		return "account/login/index";
+	}
+	
+	@GetMapping(value = { "account/login", "login" })
+	public String login(Model model) {
+		model.addAttribute("nd", new NguoiDung());
+		return "account/login/index";
 	}
 
 	@GetMapping(value = { "account/register", "register" })

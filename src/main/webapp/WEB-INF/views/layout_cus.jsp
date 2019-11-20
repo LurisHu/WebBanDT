@@ -13,8 +13,8 @@
 <!-- My css -->
 <link href="/static/css/index.css" rel="stylesheet" />
 <link href="/static/css/cart.css" rel="stylesheet" />
-<link href="/static/css/detail.css" rel="stylesheet" />
 <link href="/static/css/categories.css" rel="stylesheet" />
+<link href="/static/css/detail.css" rel="stylesheet" />
 <link href="/static/css/bill.css" rel="stylesheet" />
 </head>
 <body  class="container-fluid">
