@@ -1,0 +1,280 @@
+.path{
+  padding-bottom:10px;
+}
+ul {
+    list-style: none;
+    }
+.Categories{
+    padding: 0px 64px;
+}
+.filter-bar{
+    display: block;
+    margin-bottom: 5px;
+    background: #f5f5f5;
+}
+.filter-title{
+    display: inline-block;
+    padding: 5px 15px;
+    color: #4a4a4a !important;
+    font-family: Roboto,sans-serif;
+    font-size: 18px;
+    margin: 15px 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.filter-element{
+    display: inline-block;
+    padding: 5px 15px;
+    color: #898b8d !important;
+    font-family: Roboto,sans-serif;
+    font-size: 15px;
+    margin: 15px 5px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+/* Giao diện bên trái */
+.left{
+    float: left;
+    width: 230px;
+    background: #fff;
+    margin-bottom: 15px;
+}
+.left-title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a4a4a;
+    padding: 7px 17px;
+    margin-top: 11px ;
+    border-bottom: 1px solid #e3e3e3;
+}
+.left-ri{
+    padding: 2px 15px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.left-rititle{
+    font-size: 14px;
+    font-weight: bold;
+    color: #4a4a4a;
+    position: relative;
+    cursor: pointer;
+}
+.left-scroll{
+    max-height: 298px;
+    overflow: auto;
+}
+
+.container-inside{
+    overflow: hidden;
+    width: auto;
+    height: auto;
+}
+.list-fillter{
+    margin-top: 10px;
+}
+.left-collapse >ul>li>a{
+    display: inline-block;
+    padding: 5px 5px 5px 30px;
+    position: relative;
+    color: #4a4a4a;
+}
+.li-fillter{
+    margin-left: -15px;
+}
+.label-li {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .label-li input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(235, 229, 229);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .label-li:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .label-li input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .label-li input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .label-li .checkmark:after {
+    left: 7px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  /* Giao diện bên phải */
+  .right{
+    float: right;
+    width: 960px;
+    background: #fff;
+    margin-bottom: 15px;
+  }
+  .right-h1>h1{
+    font-size: 32px;
+  }
+  .header-right{
+    padding-left:15px;
+    position: relative;
+    border-bottom: solid 1px #e7e7e7;
+  }
+
+  .dropbtn {
+    height: 36px;
+    font-size: 14px;
+    position: relative;
+    padding-right: 30px;
+    background: #fff;
+    color: #9b9b9b;
+    border: solid 1px #d6d6d6;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+  }
+  .dropbtn:hover{
+    border-color: #2196F3 ;
+  }
+  .dropdown1 {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown1{
+    margin-top: -49px;
+    margin-left: 686px;
+    padding-right: 18px;
+}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 230px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 30px ;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown1:hover .dropdown-content {
+    display: block;
+  }
+.right-prt-li{
+  width: 25%;
+  margin-bottom: 6px;
+  height: 480px;
+  padding: 0;
+  display: block;
+  float: left;
+  position: relative;
+  border-bottom: none;
+  transition: all .3s ease 0s;
+}
+.right-prt-li:hover{
+  box-shadow:1px 1px 10px 1px #888888;
+}
+.right-prt-li>img{
+  height: 230px;
+  padding: 20px;
+  max-width: 100%;
+  text-align: center;
+  display: block;
+}
+.sort-text{
+  color: #4a4a4a;
+}
+.prt-if-name{
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.prt-if-name>h4{
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.36;
+  color: #383838;
+  max-height: 40px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.prt-if-price{
+  font-size: 16px;
+  font-weight: bold;
+  color: #383838;
+  display: inline;
+}
+.rating{
+  margin-top: -7px;
+}
+.star{
+  color: #ccc;
+}
+.prt-if-content{
+  font-size: 13px;
+  margin-left: -41px;
+}
+.prt-if-content ul li label{
+  width: 90%;
+  height: 17px;
+  line-height: 17px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 12px;
+  font-weight: bold;
+  color: #7e7e7e;
+}

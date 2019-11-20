@@ -24,6 +24,7 @@ public class ProductController {
 		model.addAttribute("AllProduct", dao.findAll());
 		return "customer/sanpham/index";
 	}
+	
 	@RequestMapping("/customer/sanpham/detail/{id}")
 	public String detail(Model model,
 			@PathVariable("id")Integer id ) {
@@ -32,5 +33,13 @@ public class ProductController {
 		int PageNo = 0;
 		model.addAttribute("BestSellerPhone", dao.BestSellerPhone(PageNo));
 		return "customer/sanpham/detail";
+	}
+	
+	@RequestMapping("/customer/sanpham/phone")
+	public String phone(Model model) {
+		model.addAttribute("form", new SanPham());
+		int PageNo = 0;
+		model.addAttribute("Phone", dao.AllPhone(PageNo));
+		return "customer/sanpham/phone";
 	}
 }

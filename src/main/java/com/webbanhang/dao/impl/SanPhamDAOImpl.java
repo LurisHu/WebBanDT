@@ -17,8 +17,6 @@ import com.webbanhang.entity.SanPham;
 public class SanPhamDAOImpl implements SanPhamDAO{
 	@Autowired
 	SessionFactory factory;
-
-	int pageSize = 3;
 	
 	@Override
 	public SanPham findById(Integer id) {
@@ -57,6 +55,7 @@ public class SanPhamDAOImpl implements SanPhamDAO{
 	
 	@Override
 	public List<SanPham> BestSellerPhone(int PageNo) {
+		int pageSize = 3;
 		String hql = "FROM SanPham WHERE MaDM= '1'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
@@ -67,6 +66,7 @@ public class SanPhamDAOImpl implements SanPhamDAO{
 
 	@Override
 	public List<SanPham> BestSellerLaptop(int PageNo) {
+		int pageSize = 3;
 		String hql = "FROM SanPham WHERE MaDM= '2'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
@@ -77,7 +77,19 @@ public class SanPhamDAOImpl implements SanPhamDAO{
 
 	@Override
 	public List<SanPham> BestSellerPhuKien(int PageNo) {
+		int pageSize = 3;
 		String hql = "FROM SanPham WHERE MaDM= '3'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
+		query.setFirstResult(PageNo*pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<SanPham> AllPhone(int PageNo) {
+		int pageSize = 8;
+		String hql = "FROM SanPham WHERE MaDM= '1'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
 		query.setFirstResult(PageNo*pageSize);

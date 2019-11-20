@@ -8,7 +8,7 @@
 				class="dropdown-toggle" data-toggle="dropdown"><span
 					class="glyphicon glyphicon-th-list"></span> Danh mục sản phẩm</a>
 				<ul class="dropdown-menu">
-					<li><a id="A1" href="#">Điện thoại</a></li>
+					<li><a id="A1" href="/customer/sanpham/phone">Điện thoại</a></li>
 					<li><a id="A1" href="#">Máy tính bảng</a></li>
 					<li><a id="A1" href="#">Laptop</a></li>
 					<li><a id="A1" href="#">Phụ kiện</a></li>
