@@ -49,7 +49,7 @@
 					<li><a id="A1" href="#">Thông tin cá nhân</a></li>
 					<li><a id="A1" href="#">Đổi mật khẩu</a></li>
 					<li><a id="A1" href="#">Lịch sử mua hàng</a></li>
-					<li><a id="A1" href="#">Đăng xuất</a></li>
+					<li><a id="A1" href="/account/logout">Đăng xuất</a></li>
 				</ul></li>
 			<!--  test -->
 			<li><a href="/cart/view" id="nav2"><span

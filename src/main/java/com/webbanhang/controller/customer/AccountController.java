@@ -10,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webbanhang.dao.NguoiDungDAO;
@@ -28,6 +29,12 @@ public class AccountController {
 //		return "redirect:/customer/sanpham/index";
 //	}
 //	
+	
+	@GetMapping(value = { "account/login", "login" })
+	public String login(Model model) {
+		model.addAttribute("nd", new NguoiDung());
+		return "account/login/index";
+	}
 	@PostMapping("/account/login")
 	public String login(Model model,
 			@RequestParam("email") String email ,
@@ -50,11 +57,7 @@ public class AccountController {
 		return "account/login/index";
 	}
 	
-	@GetMapping(value = { "account/login", "login" })
-	public String login(Model model) {
-		model.addAttribute("nd", new NguoiDung());
-		return "account/login/index";
-	}
+	
 
 	@GetMapping(value = { "account/register", "register" })
 	public String index(Model model) {
@@ -80,5 +83,11 @@ public class AccountController {
 			}
 		}
 		return "account/register/index";
+	}
+	
+	@RequestMapping("/account/logout")
+	public String logout() {
+		session.removeAttribute("user");
+		return "redirect:/customer/sanpham/index";
 	}
 }
