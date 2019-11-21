@@ -22,6 +22,7 @@
 			</div>
 			<div class="col-sm-5 has-success">
 				<form:errors path="email" />
+				<p>${checkEmail}</p>
 			</div>
 		</div>
 

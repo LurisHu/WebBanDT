@@ -65,6 +65,9 @@ public class AccountController {
 		// create account
 		if (errors.hasErrors()) {
 			model.addAttribute("message", "Xin vui lòng sửa các lỗi sau đây");
+			if(dao.findByEmail(nd.getEmail())!=null&&!(nd.getEmail().isEmpty())) {
+				model.addAttribute("checkEmail", "Email đã được sử dụng. Vui lòng chọn email khác!");
+			}
 		} else {
 			try {
 				dao.create(nd);
