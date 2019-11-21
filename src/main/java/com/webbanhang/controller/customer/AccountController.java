@@ -19,7 +19,7 @@ import com.webbanhang.entity.NguoiDung;
 public class AccountController {
 	@Autowired
 	NguoiDungDAO dao;
-	
+
 	@Autowired
 	HttpSession session;
 
@@ -29,27 +29,25 @@ public class AccountController {
 //	}
 //	
 	@PostMapping("/account/login")
-	public String login(Model model,
-			@RequestParam("email") String email ,
-			@RequestParam("password") String pw) {
+	public String login(Model model, @RequestParam("email") String email, @RequestParam("password") String pw) {
 		model.addAttribute("nd", dao.findByEmail(email));
-		NguoiDung user= dao.findByEmail(email);
+		NguoiDung user = dao.findByEmail(email);
 		session.setAttribute("user", user);
-		if(user==null) {
-			model.addAttribute("message","Email không tồn tại");
-		}else if(!pw.equals(user.getMatKhau())) {
-			model.addAttribute("message","Mật khẩu không chính xác");
-		}else {
-			model.addAttribute("message","Đăng nhập thành công");
-			if(user.getIsAdmin()==true) {
+		if (user == null) {
+			model.addAttribute("message", "Email không tồn tại");
+		} else if (!pw.equals(user.getMatKhau())) {
+			model.addAttribute("message", "Mật khẩu không chính xác");
+		} else {
+			model.addAttribute("message", "Đăng nhập thành công");
+			if (user.getIsAdmin() == true) {
 				return "redirect:/admin/nguoidung/index";
-			}else {
+			} else {
 				return "redirect:/customer/sanpham/index";
 			}
 		}
 		return "account/login/index";
 	}
-	
+
 	@GetMapping(value = { "account/login", "login" })
 	public String login(Model model) {
 		model.addAttribute("nd", new NguoiDung());
@@ -69,9 +67,10 @@ public class AccountController {
 		nd.setIsAdmin(false);
 		nd.setIsActive(false);
 		// create account
-		if (errors.hasErrors()) {
+
+		if (errors.hasErrors() || (dao.findByEmail(nd.getEmail()) != null && !(nd.getEmail().isEmpty()))) {
 			model.addAttribute("message", "Xin vui lòng sửa các lỗi sau đây");
-			if(dao.findByEmail(nd.getEmail())!=null&&!(nd.getEmail().isEmpty())) {
+			if (dao.findByEmail(nd.getEmail()) != null && !(nd.getEmail().isEmpty())) {
 				model.addAttribute("checkEmail", "Email đã được sử dụng. Vui lòng chọn email khác!");
 			}
 		} else {
