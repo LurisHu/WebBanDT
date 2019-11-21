@@ -5,12 +5,12 @@
 	<div class="form-group">
 		<label for="email">Email address:</label> <input id="email"
 			type="email" class="form-control" name="email" placeholder="Email"
-			value="${user.email}" required="required">
+			value="${nd.email}" required="required">
 	</div>
 	<div class="form-group">
 		<label for="pwd">Password:</label> <input id="password"
 			type="password" class="form-control" name="password"
-			placeholder="Password" value="${user.matKhau}" required="required">
+			placeholder="Password" value="${nd.matKhau}" required="required">
 	</div>
 	<div class="form-group form-check">
 		<label class="form-check-label"> <input

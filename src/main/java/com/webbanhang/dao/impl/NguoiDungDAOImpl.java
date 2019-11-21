@@ -15,15 +15,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.webbanhang.dao.NguoiDungDAO;
 import com.webbanhang.entity.NguoiDung;
+
 @Transactional
 @Repository
-public class NguoiDungDAOImpl implements NguoiDungDAO{
+public class NguoiDungDAOImpl implements NguoiDungDAO {
 	@Autowired
 	SessionFactory factory;
 
 	@Autowired
-    private EntityManager entityManager;
-	
+	private EntityManager entityManager;
+
 	@Override
 	public NguoiDung findById(Integer id) {
 		Session session = factory.getCurrentSession();
@@ -34,7 +35,7 @@ public class NguoiDungDAOImpl implements NguoiDungDAO{
 	public List<NguoiDung> findAll() {
 		String hql = "FROM NguoiDung";
 		Session session = factory.getCurrentSession();
-		TypedQuery<NguoiDung> query = session.createQuery(hql,NguoiDung.class);
+		TypedQuery<NguoiDung> query = session.createQuery(hql, NguoiDung.class);
 		return query.getResultList();
 	}
 
@@ -53,7 +54,7 @@ public class NguoiDungDAOImpl implements NguoiDungDAO{
 
 	@Override
 	public NguoiDung delete(Integer id) {
-		NguoiDung entity=this.findById(id);
+		NguoiDung entity = this.findById(id);
 		Session session = factory.getCurrentSession();
 		session.remove(entity);
 		return entity;
@@ -61,16 +62,16 @@ public class NguoiDungDAOImpl implements NguoiDungDAO{
 
 	@Override
 	public NguoiDung findByEmail(String email) {
-		 try {
-	            String hql = "Select e from " + NguoiDung.class.getName()+ " e " //
-	                    + " Where e.email = :email ";
-	 
-	            Query query = entityManager.createQuery(hql, NguoiDung.class);
-	            query.setParameter("email", email);
-	 
-	            return (NguoiDung) query.getSingleResult();
-	        } catch (NoResultException e) {
-	            return null;
-	        }
+		try {
+			String hql = "Select e from " + NguoiDung.class.getName() + " e " //
+					+ " Where e.email = :email ";
+
+			Query query = entityManager.createQuery(hql, NguoiDung.class);
+			query.setParameter("email", email);
+
+			return (NguoiDung) query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 }

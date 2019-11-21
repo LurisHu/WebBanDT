@@ -4,7 +4,7 @@
 <div class="Categories">
 	<div class="path">
 		<a href="/customer/sanpham/index">Trang chủ</a>&nbsp;/&nbsp;<a
-			href="/customer/sanpham/phone">Điện thoại</a>
+			href="/customer/sanpham/phone/0">Điện thoại</a>
 	</div>
 	<div class="banner">
 		<img src="/static/images/Y11-C3.png"
@@ -115,15 +115,15 @@
 											class="glyphicon glyphicon-star star"></span> <span
 											class="glyphicon glyphicon-star star"></span>
 									</div>
-									
+
 									<div class="prt-if-price">
 										<p>
 											<fmt:formatNumber value="${p.giaSP}" />
 											<sup>đ</sup>
 										</p>
 									</div>
-									
-									
+
+
 									<div class="prt-if-content">
 										<ul>
 											<li><label>Màn hình:1242 x 2688 Pixels 6.5 inchs</label></li>
@@ -141,6 +141,14 @@
 						</div>
 					</a>
 				</c:forEach>
+			</div>
+			<div>
+				<ul class="pager">
+					<li><a href="/customer/sanpham/phone/0">First</a></li>
+					<li><a href="/customer/sanpham/phone/${pageNo-1}">Previous</a></li>
+					<li><a href="/customer/sanpham/phone/${pageNo+1}">Next</a></li>
+					<li><a href="/customer/sanpham/phone/${lastPageNo}">Last</a></li>
+				</ul>
 			</div>
 		</div>
 		<!-- End Right -->
