@@ -1,5 +1,7 @@
 package com.webbanhang.controller.customer;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,9 @@ import com.webbanhang.entity.NguoiDung;
 public class AccountController {
 	@Autowired
 	NguoiDungDAO dao;
+	
+	@Autowired
+	HttpSession session;
 
 //	@GetMapping("/account/login")
 //	public String login() {
@@ -27,8 +32,9 @@ public class AccountController {
 	public String login(Model model,
 			@RequestParam("email") String email ,
 			@RequestParam("password") String pw) {
-		model.addAttribute("user", dao.findByEmail(email));
+		model.addAttribute("nd", dao.findByEmail(email));
 		NguoiDung user= dao.findByEmail(email);
+		session.setAttribute("user", user);
 		if(user==null) {
 			model.addAttribute("message","Email không tồn tại");
 		}else if(!pw.equals(user.getMatKhau())) {

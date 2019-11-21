@@ -8,7 +8,7 @@
 				class="dropdown-toggle" data-toggle="dropdown"><span
 					class="glyphicon glyphicon-th-list"></span> Danh mục sản phẩm</a>
 				<ul class="dropdown-menu">
-					<li><a id="A1" href="/customer/sanpham/phone">Điện thoại</a></li>
+					<li><a id="A1" href="/customer/sanpham/phone/0">Điện thoại</a></li>
 					<li><a id="A1" href="#">Máy tính bảng</a></li>
 					<li><a id="A1" href="#">Laptop</a></li>
 					<li><a id="A1" href="#">Phụ kiện</a></li>
@@ -40,7 +40,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown"><a href="#" id="nav2"
 				class="dropdown-toggle" data-toggle="dropdown"><span
-					class="glyphicon glyphicon-user"></span>Tài khoản<span
+					class="glyphicon glyphicon-user"></span> Sign up <span
 					class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<!-- Trigger the modal with a button -->
@@ -128,7 +128,7 @@
 													<span class="input-group-addon"><i
 														class="glyphicon glyphicon-user"></i></span> <input id="email"
 														type="email" class="form-control" name="email"
-														placeholder="Email" value="${user.email}"
+														placeholder="Email" value="${nd.email}"
 														required="required">
 												</div>
 												<br>
@@ -136,7 +136,7 @@
 													<span class="input-group-addon"><i
 														class="glyphicon glyphicon-lock"></i></span> <input id="password"
 														type="password" class="form-control" name="password"
-														placeholder="Password" value="${user.matKhau}"
+														placeholder="Password" value="${nd.matKhau}"
 														required="required">
 												</div>
 												<br>
@@ -154,7 +154,7 @@
 											<form class="form-horizontal">
 												<div class="form-group ">
 													<label class="col-sm-2 control-label">Họ tên</label>
-													<div class="col-sm-10 has-success">
+													<div class="col-sm-10 has-success ">
 														<input type="text" class="form-control"
 															placeholder="Họ tên">
 													</div>

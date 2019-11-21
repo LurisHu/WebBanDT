@@ -54,46 +54,57 @@ public class SanPhamDAOImpl implements SanPhamDAO{
 	}
 	
 	@Override
-	public List<SanPham> BestSellerPhone(int PageNo) {
+	public List<SanPham> BestSellerPhone(int pageNo) {
 		int pageSize = 3;
 		String hql = "FROM SanPham WHERE MaDM= '1'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
-		query.setFirstResult(PageNo*pageSize);
+		query.setFirstResult(pageNo*pageSize);
 		query.setMaxResults(pageSize);
 		return query.getResultList();
 	}
 
 	@Override
-	public List<SanPham> BestSellerLaptop(int PageNo) {
+	public List<SanPham> BestSellerLaptop(int pageNo) {
 		int pageSize = 3;
 		String hql = "FROM SanPham WHERE MaDM= '2'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
-		query.setFirstResult(PageNo*pageSize);
+		query.setFirstResult(pageNo*pageSize);
 		query.setMaxResults(pageSize);
 		return query.getResultList();
 	}
 
 	@Override
-	public List<SanPham> BestSellerPhuKien(int PageNo) {
+	public List<SanPham> BestSellerPhuKien(int pageNo) {
 		int pageSize = 3;
 		String hql = "FROM SanPham WHERE MaDM= '3'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
-		query.setFirstResult(PageNo*pageSize);
+		query.setFirstResult(pageNo*pageSize);
 		query.setMaxResults(pageSize);
 		return query.getResultList();
 	}
 
 	@Override
-	public List<SanPham> AllPhone(int PageNo) {
+	public List<SanPham> findPagePhone(int pageNo) {
 		int pageSize = 8;
 		String hql = "FROM SanPham WHERE MaDM= '1'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
-		query.setFirstResult(PageNo*pageSize);
+		query.setFirstResult(pageNo*pageSize);
 		query.setMaxResults(pageSize);
 		return query.getResultList();
+	}
+
+	@Override
+	public int getPageCount() {
+		int pageSize = 8;
+		String hql = "SELECT count(p) FROM SanPham p WHERE MaDM= '1'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<Long> query = session.createQuery(hql,Long.class);
+		long count = query.getSingleResult();
+		int pageCount = (int) Math.ceil(1.0*count/pageSize);
+		return pageCount;
 	}
 }

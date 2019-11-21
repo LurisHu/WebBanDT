@@ -1,5 +1,7 @@
 package com.webbanhang.controller.customer;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,9 @@ import com.webbanhang.entity.SanPham;
 public class ProductController {
 	@Autowired
 	SanPhamDAO dao;
+	
+	@Autowired
+	HttpSession session;
 	
 	@RequestMapping("customer/sanpham/index")
 	public String index(Model model) {
@@ -35,11 +40,16 @@ public class ProductController {
 		return "customer/sanpham/detail";
 	}
 	
-	@RequestMapping("/customer/sanpham/phone")
-	public String phone(Model model) {
-		model.addAttribute("form", new SanPham());
-		int PageNo = 0;
-		model.addAttribute("Phone", dao.AllPhone(PageNo));
+	@RequestMapping("/customer/sanpham/phone/{pageNo}")
+	public String phone(Model model, @PathVariable("pageNo") int pageNo) {
+		if(pageNo >= dao.getPageCount()) {
+			pageNo = 0;
+		}else if(pageNo < 0) {
+			pageNo = dao.getPageCount()-1;
+		}
+		model.addAttribute("pageNo", pageNo);
+		model.addAttribute("lastPageNo", dao.getPageCount()-1);
+		model.addAttribute("Phone", dao.findPagePhone(pageNo));
 		return "customer/sanpham/phone";
 	}
 }
