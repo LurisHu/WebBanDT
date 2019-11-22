@@ -40,16 +40,29 @@ public class ProductController {
 		return "customer/sanpham/detail";
 	}
 	
-	@RequestMapping("/customer/sanpham/phone/{pageNo}")
+	@RequestMapping("/customer/danhmuc/phone/{pageNo}")
 	public String phone(Model model, @PathVariable("pageNo") int pageNo) {
-		if(pageNo >= dao.getPageCount()) {
+		if(pageNo >= dao.getPageCountPhone()) {
 			pageNo = 0;
 		}else if(pageNo < 0) {
-			pageNo = dao.getPageCount()-1;
+			pageNo = dao.getPageCountPhone()-1;
 		}
 		model.addAttribute("pageNo", pageNo);
-		model.addAttribute("lastPageNo", dao.getPageCount()-1);
+		model.addAttribute("lastPageNo", dao.getPageCountPhone()-1);
 		model.addAttribute("Phone", dao.findPagePhone(pageNo));
-		return "customer/sanpham/phone";
+		return "customer/danhmuc/phone";
+	}
+	
+	@RequestMapping("/customer/danhmuc/laptop/{pageNo}")
+	public String laptop(Model model, @PathVariable("pageNo") int pageNo) {
+		if(pageNo >= dao.getPageCountLaptop()) {
+			pageNo = 0;
+		}else if(pageNo < 0) {
+			pageNo = dao.getPageCountLaptop()-1;
+		}
+		model.addAttribute("pageNo", pageNo);
+		model.addAttribute("lastPageNo", dao.getPageCountLaptop()-1);
+		model.addAttribute("Laptop", dao.findPageLaptop(pageNo));
+		return "customer/danhmuc/laptop";
 	}
 }

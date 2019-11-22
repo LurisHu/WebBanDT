@@ -8,9 +8,9 @@
 				class="dropdown-toggle" data-toggle="dropdown"><span
 					class="glyphicon glyphicon-th-list"></span> Danh mục sản phẩm</a>
 				<ul class="dropdown-menu">
-					<li><a id="A1" href="/customer/sanpham/phone/0">Điện thoại</a></li>
+					<li><a id="A1" href="/customer/danhmuc/phone/0">Điện thoại</a></li>
 					<li><a id="A1" href="#">Máy tính bảng</a></li>
-					<li><a id="A1" href="#">Laptop</a></li>
+					<li><a id="A1" href="/customer/danhmuc/laptop/0">Laptop</a></li>
 					<li><a id="A1" href="#">Phụ kiện</a></li>
 				</ul></li>
 		</ul>
@@ -49,7 +49,7 @@
 					<li><a id="A1" href="#">Thông tin cá nhân</a></li>
 					<li><a id="A1" href="#">Đổi mật khẩu</a></li>
 					<li><a id="A1" href="#">Lịch sử mua hàng</a></li>
-					<li><a id="A1" href="#">Đăng xuất</a></li>
+					<li><a id="A1" href="/account/logout">Đăng xuất</a></li>
 				</ul></li>
 			<!--  test -->
 			<li><a href="/cart/view" id="nav2"><span
