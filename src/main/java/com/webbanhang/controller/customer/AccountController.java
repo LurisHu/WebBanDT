@@ -1,7 +1,10 @@
 package com.webbanhang.controller.customer;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webbanhang.dao.NguoiDungDAO;
 import com.webbanhang.entity.NguoiDung;
+import com.webbanhang.service.EmailService;
 
 @Controller
 public class AccountController {
@@ -22,7 +26,9 @@ public class AccountController {
 
 	@Autowired
 	HttpSession session;
-
+	
+	@Autowired
+	EmailService mailer;
 //	@GetMapping("/account/login")
 //	public String login() {
 //		return "redirect:/customer/sanpham/index";
@@ -76,6 +82,9 @@ public class AccountController {
 		} else {
 			try {
 				dao.create(nd);
+				String token=DigestUtils.md5Hex(nd.getMaNguoiDung()+nd.getEmail()+(new Date()));
+				String message="Để hoàn tất việc đăng ký bạn vui lòng kích hoạt bằng mã token sau:\n"+token;
+				mailer.sendEmail(nd.getEmail(), "Xin chào bạn "+nd.getHoTen()+", chúc mừng bạn đã đăng ký thành công",message);
 				model.addAttribute("message", "Đăng ký thành công");
 			} catch (Exception e) {
 				model.addAttribute("message", "Đăng ký thất bại");
