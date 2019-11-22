@@ -2,6 +2,8 @@ package com.webbanhang.controller.customer;
 
 import java.util.Date;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.codec.digest.DigestUtils;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -69,7 +72,8 @@ public class AccountController {
 	}
 
 	@PostMapping(value = { "account/register", "register" })
-	public String create(@Validated @ModelAttribute("nd") NguoiDung nd, BindingResult errors, Model model) {
+	public String create(@Validated @ModelAttribute("nd") NguoiDung nd, BindingResult errors,
+			HttpServletResponse response, Model model) {
 		// Set default values to create customer
 		nd.setLoaiKH(0);
 		nd.setIsAdmin(false);
@@ -84,8 +88,14 @@ public class AccountController {
 		} else {
 			try {
 				dao.create(nd);
-				String token=DigestUtils.md5Hex(nd.getMaNguoiDung()+nd.getEmail()+(new Date()));
-				String message="Để hoàn tất việc đăng ký bạn vui lòng kích hoạt bằng mã token sau:\n"+token;
+				String activeKey=DigestUtils.sha1Hex(nd.getMaNguoiDung()+nd.getEmail()+(new Date()));
+				String message="Để hoàn tất việc đăng ký bạn vui lòng click vào link sau để kích hoạt:\n"+
+				"http://localhost:8080/active?id="+nd.getMaNguoiDung()+"&activeKey="+activeKey;
+				  // create a cookie
+			    Cookie cookie = new Cookie("activeKey", activeKey);
+			    //add cookie to response
+			    response.addCookie(cookie);
+				
 				mailer.sendEmail(nd.getEmail(), "Xin chào bạn "+nd.getHoTen()+", chúc mừng bạn đã đăng ký thành công",message);
 				model.addAttribute("message", "Đăng ký thành công");
 			} catch (Exception e) {
@@ -99,5 +109,16 @@ public class AccountController {
 	public String logout() {
 		session.removeAttribute("user");
 		return "redirect:/customer/sanpham/index";
+	}
+	@GetMapping("active")
+	public String activeAccount(@CookieValue(value = "activeKey", defaultValue = "none")String activeKeyCookies,@RequestParam("id")Integer userId,@RequestParam("activeKey")String activeKeyFromEmail) {
+		if(activeKeyCookies.equals(activeKeyFromEmail)) {
+			NguoiDung user= dao.findById(userId);
+			user.setIsActive(true);
+			dao.update(user);
+		}else {
+			//Some code if need
+		}
+		return "login";
 	}
 }
