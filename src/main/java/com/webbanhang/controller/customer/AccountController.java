@@ -89,8 +89,8 @@ public class AccountController {
 			try {
 				dao.create(nd);
 				String activeKey=DigestUtils.sha1Hex(nd.getMaNguoiDung()+nd.getEmail()+(new Date()));
-				String message="Để hoàn tất việc đăng ký bạn vui lòng click vào link sau để kích hoạt:\n"+
-				"http://localhost:8080/active?id="+nd.getMaNguoiDung()+"&activeKey="+activeKey;
+				String message="Xin chào "+nd.getHoTen()+"! \nBạn đã đăng ký tài khoản thành công\nĐể hoàn tất đăng ký, bạn vui lòng nhấp vào link này:\n"+
+				"http://localhost:8080/active?id="+nd.getMaNguoiDung()+"&activeKey="+activeKey+"\n(Hoặc copy đường link và paste vào trình duyệt web)\n\nBan quản trị web, trân trọng!";
 				  // create a cookie
 			    Cookie cookie = new Cookie("activeKey", activeKey);
 			    //add cookie to response
