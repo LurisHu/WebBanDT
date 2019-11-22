@@ -96,11 +96,33 @@ public class SanPhamDAOImpl implements SanPhamDAO{
 		query.setMaxResults(pageSize);
 		return query.getResultList();
 	}
-
+	
 	@Override
-	public int getPageCount() {
+	public List<SanPham> findPageLaptop(int pageNo) {
+		int pageSize = 6;
+		String hql = "FROM SanPham WHERE MaDM= '2'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
+		query.setFirstResult(pageNo*pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
+	}
+	
+	@Override
+	public int getPageCountPhone() {
 		int pageSize = 8;
 		String hql = "SELECT count(p) FROM SanPham p WHERE MaDM= '1'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<Long> query = session.createQuery(hql,Long.class);
+		long count = query.getSingleResult();
+		int pageCount = (int) Math.ceil(1.0*count/pageSize);
+		return pageCount;
+	}
+
+	@Override
+	public int getPageCountLaptop() {
+		int pageSize = 6;
+		String hql = "SELECT count(p) FROM SanPham p WHERE MaDM= '2'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<Long> query = session.createQuery(hql,Long.class);
 		long count = query.getSingleResult();

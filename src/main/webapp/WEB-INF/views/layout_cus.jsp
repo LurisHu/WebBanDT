@@ -13,7 +13,8 @@
 <!-- My css -->
 <link href="/static/css/index.css" rel="stylesheet" />
 <link href="/static/css/cart.css" rel="stylesheet" />
-<link href="/static/css/categories.css" rel="stylesheet" />
+<link href="/static/css/categories-phone.css" rel="stylesheet" />
+<link href="/static/css/categories-latop.css" rel="stylesheet" />
 <link href="/static/css/detail.css" rel="stylesheet" />
 <link href="/static/css/bill.css" rel="stylesheet" />
 <link href="/static/css/validate.css" rel="stylesheet">

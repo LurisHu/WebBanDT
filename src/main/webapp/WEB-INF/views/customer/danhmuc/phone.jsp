@@ -1,14 +1,14 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- End Header -->
 <div class="Categories">
 	<div class="path">
-		<a href="/customer/sanpham/index">Trang chủ</a>&nbsp;/&nbsp;<a
-			href="/customer/sanpham/phone/0">Điện thoại</a>
+		<a href="/customer/sanpham/index">Trang chủ</a>&nbsp;/&nbsp;<a href="/customer/danhmuc/phone/0">Điện
+			thoại</a>
 	</div>
 	<div class="banner">
-		<img src="/static/images/Y11-C3.png"
-			style="width: 100%; height: 160px;">
+		<img src="/static/images/Y11-C3.png" style="width: 100%; height: 160px;">
 	</div>
 	<div class="filter-bar">
 		<p class="filter-title">Bộ lọc vừa áp dụng</p>
@@ -16,7 +16,7 @@
 	</div>
 	<div class="clear-fix">
 		<!-- Giao diện bên trái -->
-		<div class="left">
+		<div class="left-categories">
 			<h2 class="left-title">Bộ lọc</h2>
 			<div class="left-main">
 				<div class="left-ri">
@@ -86,7 +86,7 @@
 		</div>
 		<!-- End Left -->
 		<!-- Giao diện bên phải -->
-		<div class="right">
+		<div class="right-categories">
 			<div class="header-right">
 				<div class="right-h1">
 					<h1>ĐIỆN THOẠI</h1>
@@ -102,52 +102,47 @@
 			</div>
 			<div class="right-prt">
 				<c:forEach var="p" items="${Phone}">
-					<a href="/customer/sanpham/detail/${p.maSP}">
-						<div class="right-prt-li">
-							<img src="/static/images/${p.image}">
-							<div class="right-prt-if">
-								<div class="prt-if-name">
-									<h4>${p.tenSP}</h4>
-									<div class="rating">
-										<span class="glyphicon glyphicon-star star"></span> <span
-											class="glyphicon glyphicon-star star"></span> <span
-											class="glyphicon glyphicon-star star"></span> <span
-											class="glyphicon glyphicon-star star"></span> <span
-											class="glyphicon glyphicon-star star"></span>
-									</div>
-
-									<div class="prt-if-price">
-										<p>
-											<fmt:formatNumber value="${p.giaSP}" />
-											<sup>đ</sup>
-										</p>
-									</div>
-
-
-									<div class="prt-if-content">
-										<ul>
-											<li><label>Màn hình:1242 x 2688 Pixels 6.5 inchs</label></li>
-											<li><label>Camera:&ensp; Triple 12MP Ultra Wide,
-													Wide and Telephoto cameras 12.0 MP</label></li>
-											<li><label>Pin:&emsp;&emsp;&ensp; Lâu hơn iPhone
-													Xs Max 5h</label></li>
-											<li><label>RAM:&emsp;&emsp; 4 GB</label></li>
-											<li><label>CPU:&emsp;&emsp; Apple A13 Bionic</label></li>
-											<li><label>HĐH:&emsp;&emsp; IS0 13</label></li>
-										</ul>
-									</div>
+					<div class="right-prt-li">
+						<a href="/customer/sanpham/detail/${p.maSP}"><img src="/static/images/${p.image}"
+							class="img-phone"></a>
+						<div class="right-prt-if">
+							<div class="prt-if-name">
+								<h4>${p.tenSP}</h4>
+								<div class="prt-if-price">
+									<p>
+										<fmt:formatNumber value="${p.giaSP}"/><sup>đ</sup>
+									</p>
+								</div>
+								<div class="rating-categorie">
+									<span class="glyphicon glyphicon-star categorie"></span> <span
+										class="glyphicon glyphicon-star categorie"></span> <span
+										class="glyphicon glyphicon-star categorie"></span> <span
+										class="glyphicon glyphicon-star categorie"></span> <span
+										class="glyphicon glyphicon-star categorie"></span>
+								</div>
+								<div class="prt-if-content">
+									<ul>
+										<li><label>Màn hình:1242 x 2688 Pixels 6.5 inchs</label></li>
+										<li><label>Camera:&ensp; Triple 12MP Ultra Wide,
+												Wide and Telephoto cameras 12.0 MP</label></li>
+										<li><label>Pin:&emsp;&emsp;&ensp; Lâu hơn iPhone
+												Xs Max 5h</label></li>
+										<li><label>RAM:&emsp;&emsp; 4 GB</label></li>
+										<li><label>CPU:&emsp;&emsp; Apple A13 Bionic</label></li>
+										<li><label>HĐH:&emsp;&emsp; IS0 13</label></li>
+									</ul>
 								</div>
 							</div>
 						</div>
-					</a>
+					</div>
 				</c:forEach>
 			</div>
 			<div>
 				<ul class="pager">
-					<li><a href="/customer/sanpham/phone/0">First</a></li>
-					<li><a href="/customer/sanpham/phone/${pageNo-1}">Previous</a></li>
-					<li><a href="/customer/sanpham/phone/${pageNo+1}">Next</a></li>
-					<li><a href="/customer/sanpham/phone/${lastPageNo}">Last</a></li>
+					<li><a href="/customer/danhmuc/phone/0">First</a></li>
+					<li><a href="/customer/danhmuc/phone/${pageNo-1}">Previous</a></li>
+					<li><a href="/customer/danhmuc/phone/${pageNo+1}">Next</a></li>
+					<li><a href="/customer/danhmuc/phone/${lastPageNo}">Last</a></li>
 				</ul>
 			</div>
 		</div>
