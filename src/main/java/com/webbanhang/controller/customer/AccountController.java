@@ -93,6 +93,7 @@ public class AccountController {
 				"http://localhost:8080/active?id="+nd.getMaNguoiDung()+"&activeKey="+activeKey+"\n(Hoặc copy đường link và paste vào trình duyệt web)\n\nBan quản trị web, trân trọng!";
 				  // create a cookie
 			    Cookie cookie = new Cookie("activeKey", activeKey);
+			    cookie.setPath("/");
 			    //add cookie to response
 			    response.addCookie(cookie);
 				
