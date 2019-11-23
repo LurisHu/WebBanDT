@@ -77,7 +77,8 @@ public class QuanLySanPhamController {
 	}
 	
 	@RequestMapping("admin/sanpham/update")
-	public String update(Model model, SanPham entity) {
+	public String update(Model model, SanPham entity,@RequestParam("up_photo") MultipartFile file) {
+		entity.setImage(uploadService.uploadImage(file));
 		dao.update(entity);
 		model.addAttribute("form", entity);
 		model.addAttribute("products", dao.findAll());
