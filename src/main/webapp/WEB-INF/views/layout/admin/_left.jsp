@@ -7,7 +7,7 @@
 	<!-- Sidebar - Brand -->
 	<a
 		class="sidebar-brand d-flex align-items-center justify-content-center"
-		href="index.html">
+		href="/admin/dashboard/index">
 		<div class="sidebar-brand-icon rotate-n-15">
 			<i class="fas fa-laugh-wink"></i>
 		</div>
@@ -18,7 +18,7 @@
 	<hr class="sidebar-divider my-0" />
 
 	<!-- Nav Item - Dashboard -->
-	<li class="nav-item active"><a class="nav-link" href="index.html">
+	<li class="nav-item active"><a class="nav-link" href="/admin/dashboard/index">
 			<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
 	</a></li>
 
@@ -38,12 +38,12 @@
 			data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">Quản lý người dùng:</h6>
-				<a class="collapse-item" href="manage-Ad.html">Quản lý Admin</a> <a
-					class="collapse-item" href="manage-Ct.html">Quản lý Customer</a>
+				<a class="collapse-item" href="/admin/nguoidung/admin/index">Quản lý Admin</a> <a
+					class="collapse-item" href="/admin/nguoidung/customer/index">Quản lý Customer</a>
 			</div>
 		</div></li>
 
-	<li class="nav-item"><a class="nav-link" href="product.html">
+	<li class="nav-item"><a class="nav-link" href="/admin/sanpham/index">
 			<i class="	fas fa-pencil-alt"></i> <span>Quản lý sản phẩm</span>
 	</a></li>
 

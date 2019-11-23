@@ -38,6 +38,22 @@ public class NguoiDungDAOImpl implements NguoiDungDAO {
 		TypedQuery<NguoiDung> query = session.createQuery(hql, NguoiDung.class);
 		return query.getResultList();
 	}
+	
+	@Override
+	public List<NguoiDung> findAllAdmin() {
+		String hql = "FROM NguoiDung WHERE isAdmin = '1'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<NguoiDung> query = session.createQuery(hql, NguoiDung.class);
+		return query.getResultList();
+	}
+	
+	@Override
+	public List<NguoiDung> findAllCustomer() {
+		String hql = "FROM NguoiDung WHERE isAdmin = '0'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<NguoiDung> query = session.createQuery(hql, NguoiDung.class);
+		return query.getResultList();
+	}
 
 	@Override
 	public NguoiDung create(NguoiDung entity) {
