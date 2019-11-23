@@ -3,6 +3,7 @@ package com.webbanhang.controller.customer;
 import java.util.Date;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -30,7 +31,7 @@ public class AccountController {
 
 	@Autowired
 	HttpSession session;
-	
+
 	@Autowired
 	EmailService mailer;
 //	@GetMapping("/account/login")
@@ -38,13 +39,13 @@ public class AccountController {
 //		return "redirect:/customer/sanpham/index";
 //	}
 //	
-	
+
 	@GetMapping(value = { "account/login", "login" })
 	public String login(Model model) {
 		model.addAttribute("nd", new NguoiDung());
 		return "account/login/index";
 	}
-	
+
 	@PostMapping("/account/login")
 	public String login(Model model, @RequestParam("email") String email, @RequestParam("password") String pw) {
 		model.addAttribute("nd", dao.findByEmail(email));
@@ -88,16 +89,20 @@ public class AccountController {
 		} else {
 			try {
 				dao.create(nd);
-				String activeKey=DigestUtils.sha1Hex(nd.getMaNguoiDung()+nd.getEmail()+(new Date()));
-				String message="Xin chào "+nd.getHoTen()+"! \nBạn đã đăng ký tài khoản thành công\nĐể hoàn tất đăng ký, bạn vui lòng nhấp vào link này:\n"+
-				"http://localhost:8080/active?id="+nd.getMaNguoiDung()+"&activeKey="+activeKey+"\n(Hoặc copy đường link và paste vào trình duyệt web)\n\nBan quản trị web, trân trọng!";
-				  // create a cookie
-			    Cookie cookie = new Cookie("activeKey", activeKey);
-			    cookie.setPath("/");
-			    //add cookie to response
-			    response.addCookie(cookie);
-				
-				mailer.sendEmail(nd.getEmail(), "Xin chào bạn "+nd.getHoTen()+", chúc mừng bạn đã đăng ký thành công",message);
+				String activeKey = DigestUtils.sha1Hex(nd.getMaNguoiDung() + nd.getEmail() + (new Date()));
+				String message = "Xin chào " + nd.getHoTen()
+						+ "! \nBạn đã đăng ký tài khoản thành công\nĐể hoàn tất đăng ký, bạn vui lòng nhấp vào link này:\n"
+						+ "http://localhost:8080/active?id=" + nd.getMaNguoiDung() + "&activeKey=" + activeKey
+						+ "\n(Hoặc copy đường link và paste vào trình duyệt web)\nLink sẽ hết hạn sau 24 tiếng\nBan quản trị web, trân trọng!";
+				// create a cookie
+				Cookie cookie = new Cookie("activeKey", activeKey);
+				cookie.setPath("/");
+				cookie.setMaxAge(86400);// Limit time of cookie 86400 second = 24 hours
+				// add cookie to response
+				response.addCookie(cookie);
+
+				mailer.sendEmail(nd.getEmail(),
+						"Xin chào bạn " + nd.getHoTen() + ", chúc mừng bạn đã đăng ký thành công", message);
 				model.addAttribute("message", "Đăng ký thành công");
 			} catch (Exception e) {
 				model.addAttribute("message", "Đăng ký thất bại");
@@ -105,20 +110,40 @@ public class AccountController {
 		}
 		return "account/register/index";
 	}
-	
+
 	@RequestMapping("/account/logout")
-	public String logout() {
+	public String logout(HttpServletRequest req, HttpServletResponse resp) {
+		// remove session
 		session.removeAttribute("user");
+		// remove cookies
+		Cookie[] cookies = req.getCookies();
+		if (cookies != null)
+			for (Cookie cookie : cookies) {
+				cookie.setValue("");
+				cookie.setPath("/");
+				cookie.setMaxAge(0);
+				resp.addCookie(cookie);
+			}
 		return "redirect:/customer/sanpham/index";
 	}
+
 	@GetMapping("active")
-	public String activeAccount(HttpServletResponse response,@CookieValue(value = "activeKey", defaultValue = "none")String activeKeyCookies,@RequestParam("id")Integer userId,@RequestParam("activeKey")String activeKeyFromEmail) {
-		if(activeKeyCookies.equals(activeKeyFromEmail)) {
-			NguoiDung user= dao.findById(userId);
+	public String activeAccount(HttpServletResponse response,
+			@CookieValue(value = "activeKey", defaultValue = "none") String activeKeyCookies,
+			@RequestParam("id") Integer userId, @RequestParam("activeKey") String activeKeyFromEmail) {
+		if (activeKeyCookies.equals(activeKeyFromEmail)) {
+			NguoiDung user = dao.findById(userId);
 			user.setIsActive(true);
 			dao.update(user);
-		}else {
-			//Some code if need
+
+			// create a cookie
+			Cookie cookie = new Cookie("activeKey", "");
+			cookie.setPath("/");
+			cookie.setMaxAge(0);// Delete cookie
+			// add cookie to response
+			response.addCookie(cookie);
+		} else {
+			// Some code if need
 		}
 		return "account/login/index";
 	}
