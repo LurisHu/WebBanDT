@@ -38,20 +38,28 @@ public class QuanLySanPhamController {
 	@Autowired
 	UploadService uploadService;
 	
-	@RequestMapping("admin/sanpham/index")
-	public String index(Model model) {
+	@RequestMapping("admin/sanpham/index/{pageNo}")
+	public String index(Model model, @PathVariable("pageNo") int pageNo) {
+		if(pageNo >= dao.getPageCountProducts()) {
+			pageNo = 0;
+		}else if(pageNo < 0) {
+			pageNo = dao.getPageCountProducts()-1;
+		}
 		model.addAttribute("form", new SanPham());
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
+		model.addAttribute("pageNo", pageNo);
+		model.addAttribute("lastPageNo", dao.getPageCountPhone()-1);
 		return "admin/sanpham/index";
 	}
 	
 	@RequestMapping("admin/sanpham/edit/{id}")
 	public String edit(Model model, @PathVariable("id")Integer id) {
+		int pageNo = 0;
 		SanPham entity = dao.findById(id);
 		model.addAttribute("form", entity);
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
@@ -65,7 +73,7 @@ public class QuanLySanPhamController {
 		model.addAttribute("products", dao.findAll());
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
-		return "redirect:/admin/sanpham/index";
+		return "redirect:/admin/sanpham/index/0";
 	}
 	
 	@RequestMapping("admin/sanpham/update")
@@ -75,7 +83,7 @@ public class QuanLySanPhamController {
 		model.addAttribute("products", dao.findAll());
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
-		return "admin/sanpham/index";
+		return "redirect:/admin/sanpham/index/0";
 	}
 	
 	@RequestMapping("admin/sanpham/delete")
@@ -85,6 +93,6 @@ public class QuanLySanPhamController {
 		model.addAttribute("products", dao.findAll());
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
-		return "admin/sanpham/index";
+		return "redirect:/admin/sanpham/index/0";
 	}
 }

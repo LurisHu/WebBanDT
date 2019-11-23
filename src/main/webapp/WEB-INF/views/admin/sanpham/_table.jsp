@@ -1,21 +1,22 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<h3>LIST OF PRODUCTS</h3>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<h3>DANH SÁCH SẢN PHẨM</h3>
 
 <table class="table table-hover">
 	<thead>
 		<tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Price</th>
-			<th>Quantity</th>
+			<th>Mã</th>
+			<th>Sản phẩm</th>
+			<th>Giá</th>
+			<th>Giảm giá</th>
+			<th>Nhà cung cấp</th>
+			<th>Danh mục</th>
+			<th>Số lương</th>
 			<th>Số lượng bán</th>
-			<th>Nha Cung Cap</th>
-			<th>Danh Muc</th>
+			<th>Số lần xem</th>
 			<th>SPDacBiet</th>
-			<th>SoLanXem</th>
-			<th>GiamGia</th>
+			<th>Mô tả</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -23,17 +24,33 @@
 			<tr>
 				<td>${product.maSP}</td>
 				<td>${product.tenSP}</td>
-				<td>${product.moTa}</td>
-				<td>${product.giaSP}</td>
-				<td>${product.soLuong}</td>
-				<td>${product.soLuongBan}</td>
+				<td><fmt:formatNumber value="${product.giaSP}" /></td>
+				<td><fmt:formatNumber value="${product.giamGia}" /></td>
 				<td>${product.nhaCungCap}</td>
 				<td>${product.danhMuc}</td>
-				<td>${product.spDacBiet==true?"Đặc biệt":"Không đặc biệt"}</td>
+				<td>${product.soLuong}</td>
+				<td>${product.soLuongBan}</td>
 				<td>${product.soLanXem}</td>
-				<td>${product.giamGia}</td>
-				<td><a href="/admin/sanpham/edit/${product.maSP}">Edit</a></td>
+				<td>${product.spDacBiet==true?"Đặc biệt":"Không đặc biệt"}</td>
+				<td>${product.moTa}</td>
+				<td><a href="/admin/sanpham/edit/${product.maSP}"
+					class="btn btn-info">Edit</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>
 </table>
+<div class="Categories">
+	<div class="clear-fix">
+		<div class="right-categories">
+			<div>
+				<ul class="pager">
+					<li><a href="/admin/sanpham/index/0">First</a></li>
+					<li><a href="/admin/sanpham/index/${pageNo-1}">Previous</a></li>
+					<li><a href="/admin/sanpham/index/${pageNo+1}">Next</a></li>
+					<li><a href="/admin/sanpham/index/${lastPageNo}">Last</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -129,4 +129,26 @@ public class SanPhamDAOImpl implements SanPhamDAO{
 		int pageCount = (int) Math.ceil(1.0*count/pageSize);
 		return pageCount;
 	}
+
+	@Override
+	public List<SanPham> findPageProduct(int pageNo) {
+		int pageSize = 10;
+		String hql = "FROM SanPham ORDER BY MaDM";
+		Session session = factory.getCurrentSession();
+		TypedQuery<SanPham> query = session.createQuery(hql,SanPham.class);
+		query.setFirstResult(pageNo*pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
+	}
+	
+	@Override
+	public int getPageCountProducts() {
+		int pageSize = 10;
+		String hql = "SELECT count(p) FROM SanPham p";
+		Session session = factory.getCurrentSession();
+		TypedQuery<Long> query = session.createQuery(hql,Long.class);
+		long count = query.getSingleResult();
+		int pageCount = (int) Math.ceil(1.0*count/pageSize);
+		return pageCount;
+	}
 }

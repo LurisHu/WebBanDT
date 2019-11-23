@@ -21,7 +21,11 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template-->
+<!-- <link href="/static/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="/static/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="/static/css/product.css" rel="stylesheet">
+<link href="/static/css/manage-ad.css" rel="stylesheet">
+<link href="/static/css/manage-customer.css" rel="stylesheet">
 
 </head>
 <body id="page-top">
