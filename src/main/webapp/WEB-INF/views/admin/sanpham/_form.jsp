@@ -17,7 +17,7 @@
 	</div>
 	<div class="form-group">
 		<label for="description">Mô tả</label>
-		<form:input path="moTa" class="form-control" id="description" rows="3" />
+		<form:textarea path="moTa" class="form-control" id="description" rows="3" />
 	</div>
 	<div class="form-row">
 		<div class="form-group col-md-6">
