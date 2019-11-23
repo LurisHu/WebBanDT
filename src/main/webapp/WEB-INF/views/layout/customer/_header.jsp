@@ -9,7 +9,6 @@
 					class="glyphicon glyphicon-th-list"></span> Danh mục sản phẩm</a>
 				<ul class="dropdown-menu">
 					<li><a id="A1" href="/customer/danhmuc/phone/0">Điện thoại</a></li>
-					<li><a id="A1" href="#">Máy tính bảng</a></li>
 					<li><a id="A1" href="/customer/danhmuc/laptop/0">Laptop</a></li>
 					<li><a id="A1" href="#">Phụ kiện</a></li>
 				</ul></li>

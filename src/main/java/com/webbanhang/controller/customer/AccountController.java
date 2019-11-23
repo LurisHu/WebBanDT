@@ -57,7 +57,7 @@ public class AccountController {
 		} else {
 			model.addAttribute("message", "Đăng nhập thành công");
 			if (user.getIsAdmin() == true) {
-				return "redirect:/admin/nguoidung/index";
+				return "redirect:/admin/dashboard/index";
 			} else {
 				return "redirect:/customer/sanpham/index";
 			}
@@ -111,7 +111,7 @@ public class AccountController {
 		return "redirect:/customer/sanpham/index";
 	}
 	@GetMapping("active")
-	public String activeAccount(@CookieValue(value = "activeKey", defaultValue = "none")String activeKeyCookies,@RequestParam("id")Integer userId,@RequestParam("activeKey")String activeKeyFromEmail) {
+	public String activeAccount(HttpServletResponse response,@CookieValue(value = "activeKey", defaultValue = "none")String activeKeyCookies,@RequestParam("id")Integer userId,@RequestParam("activeKey")String activeKeyFromEmail) {
 		if(activeKeyCookies.equals(activeKeyFromEmail)) {
 			NguoiDung user= dao.findById(userId);
 			user.setIsActive(true);
@@ -119,6 +119,6 @@ public class AccountController {
 		}else {
 			//Some code if need
 		}
-		return "login";
+		return "account/login/index";
 	}
 }

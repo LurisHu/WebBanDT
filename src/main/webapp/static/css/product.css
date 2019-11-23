@@ -1,0 +1,39 @@
+.form-product{
+    padding: 0px 20px;
+  }
+.form-group>label{
+    color: rgb(104, 101, 101);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.h1-product{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    text-align: center;
+    padding-bottom:25px;
+}
+.table-striped {
+    margin-top: 15px;
+}
+th {
+    color: black;
+}
+td {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+.search-product{
+    padding-top: 10px;
+    margin-top: 20px;
+    font-size: 17px;
+    background-color:  #dadada;
+}
+#product {
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px
+  }
