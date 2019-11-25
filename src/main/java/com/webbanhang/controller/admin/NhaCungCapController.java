@@ -36,7 +36,7 @@ public class NhaCungCapController {
 	public String edit1(Model model) {
 		model.addAttribute("nccs", dao.findAll());
 		model.addAttribute("ncc", new NhaCungCap());
-		return "admin/nhacungcap/edit";
+		return "admin/nhacungcap/index";
 	}
 
 	@PostMapping("admin/nhacungcap/create")
@@ -52,14 +52,14 @@ public class NhaCungCapController {
 			}
 		}
 		model.addAttribute("nccs", dao.findAll());
-		return "admin/nhacungcap/edit";
+		return "admin/nhacungcap/index";
 	}
 
 	@GetMapping("admin/nhacungcap/update")
 	public String edit2(Model model) {
 		model.addAttribute("nccs", dao.findAll());
 		model.addAttribute("ncc", new NhaCungCap());
-		return "admin/nhacungcap/edit";
+		return "admin/nhacungcap/index";
 	}
 
 	@PostMapping("admin/nhacungcap/update")
@@ -75,20 +75,20 @@ public class NhaCungCapController {
 			}
 		}
 		model.addAttribute("nccs", dao.findAll());
-		return "admin/nhacungcap/edit";
+		return "admin/nhacungcap/index";
 	}
 	
 	@GetMapping("admin/nhacungcap/delete")
 	public String edit3(Model model) {
 		model.addAttribute("nccs", dao.findAll());
 		model.addAttribute("ncc", new NhaCungCap());
-		return "admin/nhacungcap/edit";
+		return "admin/nhacungcap/index";
 	}
 
 	@RequestMapping("/admin/nhacungcap/delete")
-	public String delete(Model model, @Validated @ModelAttribute("ncc") NhaCungCap entity, BindingResult errors) {
-		if (errors.hasErrors()) {
-			model.addAttribute("message", "Vui lòng sửa các lỗi ");
+	public String delete(Model model, @ModelAttribute("ncc") NhaCungCap entity) {
+		if (entity.getMaNCC()==null) {
+			model.addAttribute("message", "Vui lòng chọn 1 nhà cung cấp để xóa ");
 		} else {
 			try {
 				dao.delete(entity.getMaNCC());
@@ -98,7 +98,7 @@ public class NhaCungCapController {
 			}
 		}
 		model.addAttribute("nccs", dao.findAll());
-		return "admin/nhacungcap/edit";
+		return "admin/nhacungcap/index";
 	}
 
 	@GetMapping("admin/nhacungcap/edit/{id}")

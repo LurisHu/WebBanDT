@@ -16,6 +16,7 @@ public class QuanLyNguoiDungController {
 	@Autowired
 	NguoiDungDAO dao;
 
+	//Admin
 	@RequestMapping("admin/nguoidung/admin/index")
 	public String index(Model model) {
 		model.addAttribute("nds", dao.findAllAdmin());
@@ -52,6 +53,7 @@ public class QuanLyNguoiDungController {
 		return "admin/nguoidung/admin/index";
 	}
 	
+	//Customer
 	@RequestMapping("admin/nguoidung/customer/index")
 	public String indexCustomer(Model model) {
 		model.addAttribute("nds", dao.findAllCustomer());

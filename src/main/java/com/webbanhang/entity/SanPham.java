@@ -11,21 +11,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 @Entity
 @Table(name="sanpham")
 public class SanPham {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="MaSP")
+	@Column(name="MaSP",nullable = false)
 	private Integer maSP;
-	
+	@NotEmpty(message="Không để trống tên sản phẩm")
 	@Column(name="TENSP")
 	private String tenSP;
 	@Column(name="MOTA")
 	private String moTa;
 	@Column(name="GIASP")
+	@NotNull(message="Không để trống giá sản phẩm")
 	private Double giaSP;
 	@Column(name="SOLUONG")
+	@NotNull(message="Không để trống số lượng sản phẩm")
 	private Integer soLuong;
 	@Column(name="SOLUONGBAN")
 	private Integer soLuongBan;
@@ -34,8 +38,10 @@ public class SanPham {
 	@Column(name="SOLANXEM")
 	private Integer soLanXem;
 	@Column(name="GIAMGIA")
+	@NotNull(message="Không để trống giảm giá sản phẩm")
 	private Double giamGia;
 	@Column(name="HINHANH")
+	@NotEmpty(message="Không để trống hình ảnh sản phẩm")
 	private String image;
 	
 	@ManyToOne

@@ -1,7 +1,9 @@
 /* chỉnh kích thước panel */
-.cart-container{
-    padding-left: 270px;
-    padding-right: 270px;
+.cart-container {
+	min-height: 70.5%;
+	position: relative;
+	padding-left: 270px;
+	padding-right: 270px;
 }
 .panel-cart{
     box-shadow:1px 1px 10px 1px #888888;
@@ -54,7 +56,7 @@
     border-bottom: 1px solid #e2e2e2;
 }
 
-/* Nút chọn số lượng */
+/* nút chọn số lượng */
 .quantity {
     display: inline-block; }
    
@@ -140,3 +142,4 @@
     margin-top: -33px;
     margin-bottom: 11px;
 }
+
