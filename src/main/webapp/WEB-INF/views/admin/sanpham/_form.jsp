@@ -84,7 +84,7 @@
 			<input type="file" name="up_photo" onchange="openFile(this)" />
 			<form:hidden path="image" />
 			<img id="anh"
-				src="/static/images/${form.image==null?'default.png':form.image}"
+				src="/static/images/${product.image==null?'default.png':product.image}"
 				height="192px" width="192px">
 		</div>
 		<div class="form-group col-md-7"></div>
