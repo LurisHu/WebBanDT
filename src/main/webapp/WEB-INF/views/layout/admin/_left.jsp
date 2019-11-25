@@ -43,7 +43,7 @@
 			</div>
 		</div></li>
 
-	<li class="nav-item"><a class="nav-link" href="/admin/sanpham/index/0">
+	<li class="nav-item"><a class="nav-link" href="/admin/sanpham/index">
 			<i class="	fas fa-pencil-alt"></i> <span>Quản lý sản phẩm</span>
 	</a></li>
 

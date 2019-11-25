@@ -2,7 +2,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <h3>DANH SÁCH SẢN PHẨM</h3>
-
+<div class="search-product col-md-6">
+	<input type="text" id="product" placeholder="Search ........">
+</div>
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -39,18 +41,4 @@
 		</c:forEach>
 	</tbody>
 </table>
-<div class="Categories">
-	<div class="clear-fix">
-		<div class="right-categories">
-			<div>
-				<ul class="pager">
-					<li><a href="/admin/sanpham/index/0">First</a></li>
-					<li><a href="/admin/sanpham/index/${pageNo-1}">Previous</a></li>
-					<li><a href="/admin/sanpham/index/${pageNo+1}">Next</a></li>
-					<li><a href="/admin/sanpham/index/${lastPageNo}">Last</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
 

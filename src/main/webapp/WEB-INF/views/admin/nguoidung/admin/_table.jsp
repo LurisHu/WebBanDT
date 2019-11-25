@@ -4,6 +4,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <h3>DANH SÁCH ADMIN</h3>
 <div class="table-responsive">
+	<div class="search-product col-md-6">
+		<input type="text" id="product" placeholder="Search ........">
+	</div>
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -34,7 +37,8 @@
 					<td>${user.loaiKH==0?"Admin":user.loaiKH==1?"Khách hàng mới":user.loaiKH==2?"Khách hàng thân thiết":"Không rõ"}</td>
 					<td>${user.isAdmin==true?"Người quản trị":"Khách hàng"}</td>
 					<td>${user.phone}</td>
-					<td><a href="/admin/nguoidung/admin/edit/${user.maNguoiDung}" class="btn btn-info">Edit</a></td>
+					<td><a href="/admin/nguoidung/admin/edit/${user.maNguoiDung}"
+						class="btn btn-info">Edit</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

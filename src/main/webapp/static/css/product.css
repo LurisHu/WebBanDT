@@ -27,6 +27,7 @@ td {
     margin-top: 20px;
     font-size: 17px;
     background-color:  #dadada;
+    float: right;
 }
 #product {
     background-position: 10px 12px;

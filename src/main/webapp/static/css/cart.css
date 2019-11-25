@@ -1,24 +1,19 @@
-html body {
-   margin:0;
-   padding:0;
-   height:100%;
-}
-/* chá»‰nh kÃ­ch thÆ°á»›c panel */
-.cart-container{
-    min-height:70%;
-    position:relative;
-    padding-left: 270px;
-    padding-right: 270px;
+/* chỉnh kích thước panel */
+.cart-container {
+	min-height: 70.5%;
+	position: relative;
+	padding-left: 270px;
+	padding-right: 270px;
 }
 .panel-cart{
     box-shadow:1px 1px 10px 1px #888888;
 }
-/* Ä�iá»�u chá»‰nh panel-img */
+/* điều chỉnh panel-img */
 .panel-img{
     padding: 7px;
     border: 1px solid #e2e2e2;
 }
-/* Ä�iá»�u chá»‰nh panel-item */
+/* điều chỉnh panel-item */
 .name-item{
     display: block;
     position: relative;
@@ -61,8 +56,8 @@ html body {
     border-bottom: 1px solid #e2e2e2;
 }
 
-/* NÃºt chá»�n sá»‘ lÆ°á»£ng */
-.quantity {
+
+/* nút chọn số lượng */
     display: inline-block; }
    
    .quantity .input-text.qty {
@@ -147,3 +142,4 @@ html body {
     margin-top: -33px;
     margin-bottom: 11px;
 }
+
