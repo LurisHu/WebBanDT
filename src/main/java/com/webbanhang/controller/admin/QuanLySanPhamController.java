@@ -75,12 +75,12 @@ public class QuanLySanPhamController {
 	@PostMapping("admin/sanpham/create")
 	public String create(Model model, @RequestParam("up_photo") MultipartFile file,
 			@Validated @ModelAttribute("product") SanPham product, BindingResult errors) {
+		product.setImage(uploadService.uploadImage(file));
 		int pageNo = 0;
 		if (errors.hasErrors()) {
 			model.addAttribute("message", "Vui lòng sửa các lỗi ");
 		} else {
 			try {
-				product.setImage(uploadService.uploadImage(file));
 				dao.create(product);
 				model.addAttribute("message", "Thêm sản phẩm thành công");
 			} catch (Exception e) {
@@ -106,12 +106,12 @@ public class QuanLySanPhamController {
 	@PostMapping("admin/sanpham/update")
 	public String update(Model model, @RequestParam("up_photo") MultipartFile file,
 			@Validated @ModelAttribute("product") SanPham product, BindingResult errors) {
+		product.setImage(uploadService.uploadImage(file));
 		int pageNo = 0;
 		if (errors.hasErrors()) {
 			model.addAttribute("message", "Vui lòng sửa các lỗi ");
 		} else {
 			try {
-				product.setImage(uploadService.uploadImage(file));
 				dao.update(product);
 				model.addAttribute("message", "Cập nhật sản phẩm thành công");
 			} catch (Exception e) {
@@ -136,7 +136,9 @@ public class QuanLySanPhamController {
 	}
 	
 	@PostMapping("admin/sanpham/delete")
-	public String delete(Model model, @ModelAttribute("product") SanPham product) {
+	public String delete(Model model, @RequestParam("up_photo") MultipartFile file,
+			@ModelAttribute("product") SanPham product) {
+		product.setImage(uploadService.uploadImage(file));
 		int pageNo = 0;
 		if(product.getMaSP()==null) {
 			model.addAttribute("message", "Vui lòng chọn 1 sản phẩm để xóa ");
