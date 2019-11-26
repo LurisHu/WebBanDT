@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="danhsachdiachi")
@@ -16,14 +17,17 @@ public class DanhSachDiaChi {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="MaDSDIACHI")
 	private Integer maDiaChi;
-	
 	@Column(name="DIACHI")
+	@NotEmpty(message="Không để trống địa chỉ")
 	private String diaChi;
 	@Column(name="TENTINH")
+	@NotEmpty(message="Không để trống tỉnh/thành phố")
 	private String tenTinh;
 	@Column(name="QUANHUYEN")
+	@NotEmpty(message="Không để trống quận/huyện")
 	private String quanHuyen;
 	@Column(name="PHUONGXA")
+	@NotEmpty(message="Không để trống phường/xã")
 	private String phuongXa;
 
 	@ManyToOne

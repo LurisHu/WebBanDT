@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="hoadon")
 public class HoaDon {
@@ -25,6 +27,7 @@ public class HoaDon {
 	
 	@Column(name="NGAYDAT")
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date ngayDat;
 	@Column(name="TONGTIEN")
 	private Double tongTien;

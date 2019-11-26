@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Nhà cung cấp</title>
-</head>
 <style type="text/css">
 span[id*=errors] {
 	color: red;
@@ -21,9 +15,6 @@ span[id*=error] {
 	padding-bottom: 5px;
 }
 </style>
-<body>
-	<jsp:include page="_form.jsp"></jsp:include>
-	<hr>
-	<jsp:include page="_table.jsp"></jsp:include>
-</body>
-</html>
+<jsp:include page="_form.jsp"></jsp:include>
+<hr>
+<jsp:include page="_table.jsp"></jsp:include>

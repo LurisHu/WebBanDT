@@ -10,16 +10,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="danhmuc")
 public class DanhMuc {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="MaDM")
+	@Column(name="MaDM",nullable = false)
 	private Integer maDM;
-	
 	@Column(name="TENDM")
+	@NotEmpty(message="Không để trống tên danh mục")
 	private String tenDM;
 	@Column(name="MOTADM")
 	private String moTa;

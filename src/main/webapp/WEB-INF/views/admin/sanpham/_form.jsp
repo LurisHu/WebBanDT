@@ -26,7 +26,7 @@
 	<div class="form-row">
 		<div class="form-group col-md-6">
 			<label for="quantity">Số lượng sản phẩm</label>
-			<form:input path="soLuong" type="text" class="form-control"
+			<form:input path="soLuong" type="number" class="form-control"
 				id="quantity" />
 			<form:errors path="soLuong" />
 		</div>

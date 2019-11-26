@@ -18,8 +18,9 @@
 	<hr class="sidebar-divider my-0" />
 
 	<!-- Nav Item - Dashboard -->
-	<li class="nav-item active"><a class="nav-link" href="/admin/dashboard/index">
-			<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
+	<li class="nav-item active"><a class="nav-link"
+		href="/admin/dashboard/index"> <i
+			class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
 	</a></li>
 
 	<!-- Divider -->
@@ -38,13 +39,35 @@
 			data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">Quản lý người dùng:</h6>
-				<a class="collapse-item" href="/admin/nguoidung/admin/index">Quản lý Admin</a> <a
-					class="collapse-item" href="/admin/nguoidung/customer/index">Quản lý Customer</a>
+				<a class="collapse-item" href="/admin/nguoidung/admin/index">Quản
+					lý Admin</a> <a class="collapse-item"
+					href="/admin/nguoidung/customer/index">Quản lý Customer</a>
 			</div>
 		</div></li>
 
-	<li class="nav-item"><a class="nav-link" href="/admin/sanpham/index">
-			<i class="	fas fa-pencil-alt"></i> <span>Quản lý sản phẩm</span>
+	<li class="nav-item"><a class="nav-link"
+		href="/admin/sanpham/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
+				lý sản phẩm</span>
+	</a></li>
+	
+	<li class="nav-item"><a class="nav-link"
+		href="/admin/nhacungcap/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
+				lý nhà cung cấp</span>
+	</a></li>
+	
+	<li class="nav-item"><a class="nav-link"
+		href="/admin/danhmuc/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
+				lý danh mục</span>
+	</a></li>
+	
+	<li class="nav-item"><a class="nav-link"
+		href="/admin/diachi/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
+				lý địa chỉ</span>
+	</a></li>
+	
+	<li class="nav-item"><a class="nav-link"
+		href="/admin/hoadon/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
+				lý hóa đơn</span>
 	</a></li>
 
 	<!-- Nav Item - Tables -->

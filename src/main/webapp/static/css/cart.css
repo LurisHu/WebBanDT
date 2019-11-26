@@ -1,8 +1,5 @@
-
 /* chỉnh kích thước panel */
 .cart-container {
-	min-height: 70.5%;
-	position: relative;
 	padding-left: 270px;
 	padding-right: 270px;
 }

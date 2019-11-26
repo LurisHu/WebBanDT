@@ -47,4 +47,11 @@ public class TinhTrangHoaDon {
 	public void setHoaDon(List<HoaDon> hoaDon) {
 		this.hoaDon = hoaDon;
 	}
+
+	@Override
+	public String toString() {
+		return "" + tenTinhTrang + "";
+	}
+	
+	
 }

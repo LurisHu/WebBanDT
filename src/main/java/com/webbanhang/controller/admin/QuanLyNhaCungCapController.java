@@ -15,7 +15,7 @@ import com.webbanhang.dao.NhaCungCapDAO;
 import com.webbanhang.entity.NhaCungCap;
 
 @Controller
-public class NhaCungCapController {
+public class QuanLyNhaCungCapController {
 	@Autowired
 	NhaCungCapDAO dao;
 
@@ -33,7 +33,7 @@ public class NhaCungCapController {
 	 */
 
 	@GetMapping("admin/nhacungcap/create")
-	public String edit1(Model model) {
+	public String create(Model model) {
 		model.addAttribute("nccs", dao.findAll());
 		model.addAttribute("ncc", new NhaCungCap());
 		return "admin/nhacungcap/index";
@@ -77,17 +77,17 @@ public class NhaCungCapController {
 		model.addAttribute("nccs", dao.findAll());
 		return "admin/nhacungcap/index";
 	}
-	
+
 	@GetMapping("admin/nhacungcap/delete")
-	public String edit3(Model model) {
+	public String delete(Model model) {
 		model.addAttribute("nccs", dao.findAll());
 		model.addAttribute("ncc", new NhaCungCap());
 		return "admin/nhacungcap/index";
 	}
 
-	@RequestMapping("/admin/nhacungcap/delete")
+	@PostMapping("/admin/nhacungcap/delete")
 	public String delete(Model model, @ModelAttribute("ncc") NhaCungCap entity) {
-		if (entity.getMaNCC()==null) {
+		if (entity.getMaNCC() == null) {
 			model.addAttribute("message", "Vui lòng chọn 1 nhà cung cấp để xóa ");
 		} else {
 			try {

@@ -3,9 +3,12 @@ package com.webbanhang.controller.admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.webbanhang.dao.DanhMucDAO;
@@ -23,25 +26,71 @@ public class QuanLyDanhMucController {
 		return "admin/danhmuc/index";
 	}
 
-	@RequestMapping("admin/danhmuc/create")
+	@GetMapping("admin/danhmuc/create")
 	public String create(Model model, @ModelAttribute("dm") DanhMuc dm) {
-		dao.create(dm);
 		model.addAttribute("dms", dao.findAll());
-		return "redirect:/admin/danhmuc/index";
+		return "admin/danhmuc/index";
 	}
 
-	@RequestMapping("admin/danhmuc/update")
+	@PostMapping("admin/danhmuc/create")
+	public String create(Model model, @Validated @ModelAttribute("dm") DanhMuc dm, BindingResult errors) {
+		if (errors.hasErrors()) {
+			model.addAttribute("message", "Vui lòng sửa các lỗi ");
+		} else {
+			try {
+				dao.create(dm);
+				model.addAttribute("message", "Thêm danh mục thành công");
+			} catch (Exception e) {
+				model.addAttribute("message", "Thêm danh mục thất bại");
+			}
+		}
+		model.addAttribute("dms", dao.findAll());
+		return "admin/danhmuc/index";
+	}
+
+	@GetMapping("admin/danhmuc/update")
 	public String update(Model model, @ModelAttribute("dm") DanhMuc dm) {
-		dao.update(dm);
 		model.addAttribute("dms", dao.findAll());
-		return "redirect:/admin/danhmuc/edit/"+dm.getMaDM();
+		return "admin/danhmuc/index";
 	}
-
-	@RequestMapping("/admin/danhmuc/delete")
-	public String delete(Model model, @ModelAttribute("dm") DanhMuc entity) {
-		dao.delete(entity.getMaDM());
+	
+	@PostMapping("admin/danhmuc/update")
+	public String update(Model model, @Validated @ModelAttribute("dm") DanhMuc dm, BindingResult errors) {
+		if (errors.hasErrors()) {
+			model.addAttribute("message", "Vui lòng sửa các lỗi ");
+		} else {
+			try {
+				dao.update(dm);
+				model.addAttribute("message", "Cập nhật danh mục thành công");
+			} catch (Exception e) {
+				model.addAttribute("message", "Cập nhật mục thất bại");
+			}
+		}
 		model.addAttribute("dms", dao.findAll());
-		return "redirect:/admin/danhmuc/index";
+		return "admin/danhmuc/index";
+	}
+	
+	@GetMapping("admin/danhmuc/delete")
+	public String delete(Model model) {
+		model.addAttribute("dm", new DanhMuc());
+		model.addAttribute("dms", dao.findAll());
+		return "admin/danhmuc/index";
+	}
+	
+	@PostMapping("/admin/danhmuc/delete")
+	public String delete(Model model, @ModelAttribute("dm") DanhMuc dm) {
+		if (dm.getMaDM() == null) {
+			model.addAttribute("message", "Vui lòng chọn 1 danh mục để xóa ");
+		} else {
+			try {
+				dao.delete(dm.getMaDM());
+				model.addAttribute("message", "Xóa danh mục thành công");
+			} catch (Exception e) {
+				model.addAttribute("message", "Xóa danh mục thất bại");
+			}
+		}
+		model.addAttribute("dms", dao.findAll());
+		return "admin/danhmuc/index";
 	}
 
 	@GetMapping("admin/danhmuc/edit/{id}")
