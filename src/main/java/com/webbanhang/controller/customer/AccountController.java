@@ -90,17 +90,19 @@ public class AccountController {
 			try {
 				dao.create(nd);
 				String activeKey = DigestUtils.sha1Hex(nd.getMaNguoiDung() + nd.getEmail() + (new Date()));
-				String message = "Xin chào " + nd.getHoTen()
-						+ "! \nBạn đã đăng ký tài khoản thành công\nĐể hoàn tất đăng ký, bạn vui lòng nhấp vào link này:\n"
-						+ "http://localhost:8080/active?id=" + nd.getMaNguoiDung() + "&activeKey=" + activeKey
-						+ "\n(Hoặc copy đường link và paste vào trình duyệt web)\nLink sẽ hết hạn sau 24 tiếng\nBan quản trị web, trân trọng!";
+				
 				// create a cookie
 				Cookie cookie = new Cookie("activeKey", activeKey);
 				cookie.setPath("/");
 				cookie.setMaxAge(86400);// Limit time of cookie 86400 second = 24 hours
 				// add cookie to response
 				response.addCookie(cookie);
-
+				
+				String message = "Xin chào " + nd.getHoTen()
+				+ "! \nBạn đã đăng ký tài khoản thành công\nĐể hoàn tất đăng ký, bạn vui lòng nhấp vào link này:\n"
+				+ "http://localhost:8080/active?id=" + nd.getMaNguoiDung() + "&activeKey=" + activeKey
+				+ "\n(Hoặc copy đường link và paste vào trình duyệt web)\nLink sẽ hết hạn sau 24 tiếng\nBan quản trị web, trân trọng!";
+				
 				mailer.sendEmail(nd.getEmail(),
 						"Xin chào bạn " + nd.getHoTen() + ", chúc mừng bạn đã đăng ký thành công", message);
 				model.addAttribute("message", "Đăng ký thành công");
@@ -142,6 +144,59 @@ public class AccountController {
 			cookie.setMaxAge(0);// Delete cookie
 			// add cookie to response
 			response.addCookie(cookie);
+		} else {
+			// Some code if need
+		}
+		return "account/login/index";
+	}
+	@GetMapping(value = { "account/forgot-password", "forgot","forgot-password" })
+	public String forgot() {
+		
+		return "account/forgot/index";
+	}
+	
+	@PostMapping(value="account/forgot-password")
+	public String forgot(@RequestParam("email")String email,Model model,HttpServletResponse response) {
+		if(dao.findByEmail(email)!=null) {
+			NguoiDung nd=dao.findByEmail(email);
+			
+			String validateKey = DigestUtils.sha1Hex(email + (new Date()));
+			// create a cookie
+			Cookie cookie = new Cookie("validateKey", validateKey);
+			cookie.setPath("/");
+			cookie.setMaxAge(86400);// Limit time of cookie 86400 second = 24 hours
+			// add cookie to response
+			response.addCookie(cookie);
+			
+			String message = "Xác nhận yêu cầu cập nhật lại mật khẩu"
+			+ "Xin chào "+dao.findByEmail(email).getHoTen()+"!"
+			+ "http://localhost:8080/reset?id=" + nd.getMaNguoiDung() + "&validateKey=" + validateKey
+			+ "\n(Hoặc copy đường link và paste vào trình duyệt web)\nLink sẽ hết hạn sau 24 tiếng\nBan quản trị web, trân trọng!";
+			
+			mailer.sendEmail(email,
+					"Xin chào bạn " + nd.getHoTen() + ", chúc mừng bạn đã đăng ký thành công", message);
+			model.addAttribute("message", "Một link hướng dẫn lấy lại mật khẩu đã được gửi đến email "+email+".");
+		}else {
+			model.addAttribute("message", "Email này chưa đăng ký tài khoản tại web, vui lòng kiểm tra lại!");
+		}
+		return "account/forgot/index";
+	}
+	@GetMapping("reset")
+	public String resetPassword(HttpServletResponse response,
+			@CookieValue(value = "validateKey", defaultValue = "none") String validateKeyCookies,
+			@RequestParam("id") Integer userId, @RequestParam("validateKey") String validateKeyFromEmail) {
+		if (validateKeyCookies.equals(validateKeyFromEmail)) {
+			NguoiDung user = dao.findById(userId);
+			user.setIsActive(true);
+			dao.update(user);
+
+			// create a cookie
+			Cookie cookie = new Cookie("activeKey", "");
+			cookie.setPath("/");
+			cookie.setMaxAge(0);// Delete cookie
+			// add cookie to response
+			response.addCookie(cookie);
+			return "ksvsnj";
 		} else {
 			// Some code if need
 		}
