@@ -106,18 +106,16 @@ public class QuanLySanPhamController {
 	@PostMapping("admin/sanpham/update")
 	public String update(Model model, @RequestParam("up_photo") MultipartFile file,
 			@Validated @ModelAttribute("product") SanPham product, BindingResult errors) {
-		
-		if (file.isEmpty() && !(dao.findById(product.getMaSP()).getImage().equals("default.png"))) {
-			product.setImage(dao.findById(product.getMaSP()).getImage());
-		}else {
-			product.setImage(uploadService.uploadImage(file));
-		}
-		
 		int pageNo = 0;
 		if (errors.hasErrors()) {
 			model.addAttribute("message", "Vui lòng sửa các lỗi ");
 		} else {
 			try {
+				if (file.isEmpty() && !(dao.findById(product.getMaSP()).getImage().equals("default.png"))) {
+					product.setImage(dao.findById(product.getMaSP()).getImage());
+				} else {
+					product.setImage(uploadService.uploadImage(file));
+				}
 				dao.update(product);
 				model.addAttribute("message", "Cập nhật sản phẩm thành công");
 			} catch (Exception e) {
@@ -146,9 +144,9 @@ public class QuanLySanPhamController {
 			@ModelAttribute("product") SanPham product) {
 		product.setImage(uploadService.uploadImage(file));
 		int pageNo = 0;
-		if(product.getMaSP()==null) {
+		if (product.getMaSP() == null) {
 			model.addAttribute("message", "Vui lòng chọn 1 sản phẩm để xóa ");
-		}else {
+		} else {
 			try {
 				dao.delete(product.getMaSP());
 				model.addAttribute("message", "Xóa nhà cung cấp thành công");
