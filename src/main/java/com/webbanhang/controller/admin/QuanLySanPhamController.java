@@ -102,11 +102,17 @@ public class QuanLySanPhamController {
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
 	}
-	
+
 	@PostMapping("admin/sanpham/update")
 	public String update(Model model, @RequestParam("up_photo") MultipartFile file,
 			@Validated @ModelAttribute("product") SanPham product, BindingResult errors) {
-		product.setImage(uploadService.uploadImage(file));
+		
+		if (file.isEmpty() && !(dao.findById(product.getMaSP()).getImage().equals("default.png"))) {
+			product.setImage(dao.findById(product.getMaSP()).getImage());
+		}else {
+			product.setImage(uploadService.uploadImage(file));
+		}
+		
 		int pageNo = 0;
 		if (errors.hasErrors()) {
 			model.addAttribute("message", "Vui lòng sửa các lỗi ");
@@ -134,7 +140,7 @@ public class QuanLySanPhamController {
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
 	}
-	
+
 	@PostMapping("admin/sanpham/delete")
 	public String delete(Model model, @RequestParam("up_photo") MultipartFile file,
 			@ModelAttribute("product") SanPham product) {
