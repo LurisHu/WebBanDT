@@ -16,18 +16,22 @@
 	<div class="form-group">
 		<label for="formGroupExampleInput">Ngày Đặt</label>
 		<form:input cssClass="form-control" path="ngayDat" type="date" />
+		<form:errors path="ngayDat"/>
 	</div>
 	<div class="form-group">
 		<label for="formGroupExampleInput2">Tổng tiền</label>
 		<form:input cssClass="form-control" path="tongTien" />
+		<form:errors path="tongTien"/>
 	</div>
 	<div class="form-group">
 		<label for="formGroupExampleInput2">Địa chỉ giao</label>
 		<form:input cssClass="form-control" path="diaChiGiao" />
+		<form:errors path="diaChiGiao"/>
 	</div>
 	<div class="form-group">
 		<label for="formGroupExampleInput2">Phí vận chuyển</label>
 		<form:input cssClass="form-control" path="phiVanChuyen" />
+		<form:errors path="phiVanChuyen"/>
 	</div>
 	<div class="form-group">
 		<label for="formGroupExampleInput2">Comment</label>

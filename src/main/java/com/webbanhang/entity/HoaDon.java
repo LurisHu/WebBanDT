@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -28,12 +30,16 @@ public class HoaDon {
 	@Column(name="NGAYDAT")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message = "Vui lòng chọn ngày đặt")
 	private Date ngayDat;
 	@Column(name="TONGTIEN")
+	@NotNull(message="Không để trống tổng tiền")
 	private Double tongTien;
 	@Column(name="DIACHIGIAO")
+	@NotEmpty(message="Không để trống địa chỉ giao")
 	private String diaChiGiao;
 	@Column(name="PHIVANCHUYEN")
+	@NotNull(message="Không để trống phí vận chuyện")
 	private Double phiVanChuyen;
 	@Column(name="COMMENT")
 	private String comment;
