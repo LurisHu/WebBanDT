@@ -20,6 +20,7 @@
 				<th>Loại khách hàng</th>
 				<th>Quyền hạn</th>
 				<th>Phone</th>
+				<th>Trạng thái hoạt động</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -37,6 +38,7 @@
 					<td>${user.loaiKH==0?"Admin":user.loaiKH==1?"Khách hàng mới":user.loaiKH==2?"Khách hàng thân thiết":"Không rõ"}</td>
 					<td>${user.isAdmin==true?"Người quản trị":"Khách hàng"}</td>
 					<td>${user.phone}</td>
+					<td>${user.isActive==false?"Chưa kích hoạt":"Đã kích hoạt"}</td>
 					<td><a href="/admin/nguoidung/admin/edit/${user.maNguoiDung}"
 						class="btn btn-info">Edit</a></td>
 				</tr>

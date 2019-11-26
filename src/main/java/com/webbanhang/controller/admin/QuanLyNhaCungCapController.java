@@ -25,13 +25,7 @@ public class QuanLyNhaCungCapController {
 		model.addAttribute("ncc", new NhaCungCap());
 		return "admin/nhacungcap/index";
 	}
-
-	/*
-	 * @RequestMapping("admin/nhacungcap/edit") public String edit(Model model) {
-	 * model.addAttribute("nccs", dao.findAll()); model.addAttribute("ncc", new
-	 * NhaCungCap()); return "admin/nhacungcap/edit"; }
-	 */
-
+	
 	@GetMapping("admin/nhacungcap/create")
 	public String create(Model model) {
 		model.addAttribute("nccs", dao.findAll());

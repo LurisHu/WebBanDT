@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<h3>DANH SÁCH KHÁCH HÀNG</h3>
+<h3>DANH SÁCH ADMIN</h3>
 <div class="table-responsive">
 	<div class="search-product col-md-6">
 		<input type="text" id="product" placeholder="Search ........">
@@ -20,6 +20,7 @@
 				<th>Loại khách hàng</th>
 				<th>Quyền hạn</th>
 				<th>Phone</th>
+				<th>Trạng thái hoạt động</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -34,11 +35,11 @@
 							pattern="dd-MM-yyyy" /></td>
 					<td>${user.gioiTinh==true?"Nam":"Nữ"}</td>
 					<td>${user.mangXH}</td>
-					<td>${user.loaiKH==0?"Admin":user.loaiKH==1?"Khách hàng mới":user.loaiKH==2?"Khách hàng thân thiết":"Không rõ"}</td>
+					<td>${user.loaiKH==0?"Khách hàng mới":"Khách hàng thân thiết"}</td>
 					<td>${user.isAdmin==true?"Người quản trị":"Khách hàng"}</td>
 					<td>${user.phone}</td>
-					<td><a
-						href="/admin/nguoidung/customer/edit/${user.maNguoiDung}"
+					<td>${user.isActive==false?"Chưa kích hoạt":"Đã kích hoạt"}</td>
+					<td><a href="/admin/nguoidung/customer/edit/${user.maNguoiDung}"
 						class="btn btn-info">Edit</a></td>
 				</tr>
 			</c:forEach>
