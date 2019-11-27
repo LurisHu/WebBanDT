@@ -149,9 +149,9 @@ public class QuanLySanPhamController {
 		} else {
 			try {
 				dao.delete(product.getMaSP());
-				model.addAttribute("message", "Xóa nhà cung cấp thành công");
+				model.addAttribute("message", "Xóa sản phẩm thành công");
 			} catch (Exception e) {
-				model.addAttribute("message", "Xóa nhà cung cấp thất bại");
+				model.addAttribute("message", "Xóa sản phẩm thất bại");
 			}
 		}
 		model.addAttribute("product", product);

@@ -56,8 +56,11 @@ public class AccountController {
 		} else if (!pw.equals(user.getMatKhau())) {
 			model.addAttribute("message", "Mật khẩu không chính xác");
 		} else {
+			String url = (String) session.getAttribute("back-url");
 			model.addAttribute("message", "Đăng nhập thành công");
-			if (user.getIsAdmin() == true) {
+			if(url != null) {
+				return "redirect:" + url;
+			}else if (user.getIsAdmin() == true) {
 				return "redirect:/admin/dashboard/index";
 			} else {
 				return "redirect:/customer/sanpham/index";

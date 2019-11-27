@@ -55,7 +55,7 @@ public class CartController {
 		return "redirect:/cart/view";
 	}
 	
-	@RequestMapping("cart/thanhtoan")
+	@RequestMapping("/cart/thanhtoan")
 	public String thanhtoan() {
 		return "customer/cart/bill";
 	}

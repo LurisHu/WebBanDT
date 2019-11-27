@@ -43,8 +43,9 @@
 					class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<!-- Trigger the modal with a button -->
-					<li><a id="A1" href="#" data-toggle="modal"
-						data-target="#myModal1">Đăng nhập</a></li>
+					<!-- <li><a id="A1" href="#" data-toggle="modal"
+						data-target="#myModal1">Đăng nhập</a></li> -->
+						<li><a id="A1" href="/account/login" >Đăng nhập</a></li>
 					<li><a id="A1" href="#">Thông tin cá nhân</a></li>
 					<li><a id="A1" href="#">Đổi mật khẩu</a></li>
 					<li><a id="A1" href="#">Lịch sử mua hàng</a></li>
