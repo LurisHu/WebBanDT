@@ -29,6 +29,7 @@ public class AuthorizeInterceptor extends HandlerInterceptorAdapter {
 			response.sendRedirect("/account/login");
 			return false;
 		}
+		System.out.println(session.getAttribute("role"));
 		return true;
 	}
 }

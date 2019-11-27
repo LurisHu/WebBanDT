@@ -50,14 +50,15 @@ public class AccountController {
 	public String login(Model model, @RequestParam("email") String email, @RequestParam("password") String pw) {
 		model.addAttribute("nd", dao.findByEmail(email));
 		NguoiDung user = dao.findByEmail(email);
-		session.setAttribute("user", user);
 		if (user == null) {
 			model.addAttribute("message", "Email không tồn tại");
 		} else if (!pw.equals(user.getMatKhau())) {
 			model.addAttribute("message", "Mật khẩu không chính xác");
 		} else {
-			String url = (String) session.getAttribute("back-url");
 			model.addAttribute("message", "Đăng nhập thành công");
+			session.setAttribute("user", user);
+			session.setAttribute("role", user.getIsAdmin());
+			String url = (String) session.getAttribute("back-url");
 			if(url != null) {
 				return "redirect:" + url;
 			}else if (user.getIsAdmin() == true) {
