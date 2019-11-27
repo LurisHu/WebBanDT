@@ -80,7 +80,7 @@ public class NguoiDungDAOImpl implements NguoiDungDAO {
 	public NguoiDung findByEmail(String email) {
 		try {
 			String hql = "Select e from " + NguoiDung.class.getName() + " e " //
-					+ " Where e.email = :email ";
+					+ " Where e.email = :email and e.isActive = true ";
 
 			Query query = entityManager.createQuery(hql, NguoiDung.class);
 			query.setParameter("email", email);
