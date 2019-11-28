@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webbanhang.dao.DanhSachDiaChiDAO;
 import com.webbanhang.dao.NguoiDungDAO;
-import com.webbanhang.entity.DanhMuc;
 import com.webbanhang.entity.DanhSachDiaChi;
 
 @Controller
@@ -39,10 +38,10 @@ public class QuanLyDiaChiController {
 	}
 	
 	@PostMapping("admin/diachi/create")
-	public String create(Model model, @ModelAttribute("dc") DanhSachDiaChi dc,
+	public String create(Model model, @Validated @ModelAttribute("dc") DanhSachDiaChi dc, BindingResult errors,
 			@RequestParam("city")String city,
 			@RequestParam("district")String district,
-			@RequestParam("ward")String ward, @Validated @ModelAttribute("dm") DanhMuc dm, BindingResult errors) {
+			@RequestParam("ward")String ward) {
 		city=city.substring(city.indexOf("-")+1, city.length());
 		district=district.substring(district.indexOf("-")+1, district.length());
 		ward=ward.substring(ward.indexOf("-")+1, ward.length());

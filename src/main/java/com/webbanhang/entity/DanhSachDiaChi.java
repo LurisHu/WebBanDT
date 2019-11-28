@@ -21,13 +21,10 @@ public class DanhSachDiaChi {
 	@NotEmpty(message="Không để trống địa chỉ")
 	private String diaChi;
 	@Column(name="TENTINH")
-	@NotEmpty(message="Không để trống tỉnh/thành phố")
 	private String tenTinh;
 	@Column(name="QUANHUYEN")
-	@NotEmpty(message="Không để trống quận/huyện")
 	private String quanHuyen;
 	@Column(name="PHUONGXA")
-	@NotEmpty(message="Không để trống phường/xã")
 	private String phuongXa;
 
 	@ManyToOne

@@ -1,4 +1,5 @@
 <%@ page pageEncoding="utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- Header -->
 <!-- Navbar -->
 <nav class="navbar nav1">
@@ -39,18 +40,32 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown"><a href="#" id="nav2"
 				class="dropdown-toggle" data-toggle="dropdown"><span
-					class="glyphicon glyphicon-user"></span> Sign up <span
-					class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<!-- Trigger the modal with a button -->
-					<!-- <li><a id="A1" href="#" data-toggle="modal"
+					class="glyphicon glyphicon-user"></span> 
+					<c:if test="${empty user}">
+						Sign up
+					</c:if>
+					<c:if test="${not empty user}">
+						${user}
+					</c:if>
+				<span class="caret"></span></a> 
+				<c:if test="${not empty user}">
+					<ul class="dropdown-menu">
+						<!-- Trigger the modal with a button -->
+						<!-- <li><a id="A1" href="#" data-toggle="modal"
 						data-target="#myModal1">Đăng nhập</a></li> -->
-						<li><a id="A1" href="/account/login" >Đăng nhập</a></li>
-					<li><a id="A1" href="#">Thông tin cá nhân</a></li>
-					<li><a id="A1" href="#">Đổi mật khẩu</a></li>
-					<li><a id="A1" href="#">Lịch sử mua hàng</a></li>
-					<li><a id="A1" href="/account/logout">Đăng xuất</a></li>
-				</ul></li>
+						<li><a id="A1" href="#">Thông tin cá nhân</a></li>
+						<li><a id="A1" href="#">Đổi mật khẩu</a></li>
+						<li><a id="A1" href="#">Lịch sử mua hàng</a></li>
+						<li><a id="A1" href="/account/logout">Đăng xuất</a></li>
+					</ul>
+				</c:if> <c:if test="${empty user}">
+					<ul class="dropdown-menu">
+						<!-- Trigger the modal with a button -->
+						<!-- <li><a id="A1" href="#" data-toggle="modal"
+						data-target="#myModal1">Đăng nhập</a></li> -->
+						<li><a id="A1" href="/account/login">Đăng nhập</a></li>
+					</ul>
+				</c:if></li>
 			<!--  test -->
 			<li><a href="/cart/view" id="nav2"><span
 					class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng</a></li>
