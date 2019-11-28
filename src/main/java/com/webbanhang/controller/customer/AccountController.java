@@ -59,9 +59,9 @@ public class AccountController {
 			session.setAttribute("user", user);
 			session.setAttribute("role", user.getIsAdmin());
 			String url = (String) session.getAttribute("back-url");
-			if(url != null) {
+			if (url != null) {
 				return "redirect:" + url;
-			}else if (user.getIsAdmin() == true) {
+			} else if (user.getIsAdmin() == true) {
 				return "redirect:/admin/dashboard/index";
 			} else {
 				return "redirect:/customer/sanpham/index";
@@ -94,19 +94,19 @@ public class AccountController {
 			try {
 				dao.create(nd);
 				String activeKey = DigestUtils.sha1Hex(nd.getMaNguoiDung() + nd.getEmail() + (new Date()));
-				
+
 				// create a cookie
 				Cookie cookie = new Cookie("activeKey", activeKey);
 				cookie.setPath("/");
 				cookie.setMaxAge(86400);// Limit time of cookie 86400 second = 24 hours
 				// add cookie to response
 				response.addCookie(cookie);
-				
+
 				String message = "Xin chào " + nd.getHoTen()
-				+ "! \nBạn đã đăng ký tài khoản thành công\nĐể hoàn tất đăng ký, bạn vui lòng nhấp vào link này:\n"
-				+ "http://localhost:8080/active?id=" + nd.getMaNguoiDung() + "&activeKey=" + activeKey
-				+ "\n(Hoặc copy đường link và paste vào trình duyệt web)\nLink sẽ hết hạn sau 24 tiếng\nBan quản trị web, trân trọng!";
-				
+						+ "! \nBạn đã đăng ký tài khoản thành công\nĐể hoàn tất đăng ký, bạn vui lòng nhấp vào link này:\n"
+						+ "http://localhost:8080/active?id=" + nd.getMaNguoiDung() + "&activeKey=" + activeKey
+						+ "\n(Hoặc copy đường link và paste vào trình duyệt web)\nLink sẽ hết hạn sau 24 tiếng\nBan quản trị web, trân trọng!";
+
 				mailer.sendEmail(nd.getEmail(),
 						"Xin chào bạn " + nd.getHoTen() + ", chúc mừng bạn đã đăng ký thành công", message);
 				model.addAttribute("message", "Đăng ký thành công");
@@ -153,57 +153,88 @@ public class AccountController {
 		}
 		return "account/login/index";
 	}
-	@GetMapping(value = { "account/forgot-password", "forgot","forgot-password" })
+
+	@GetMapping(value = { "account/forgot-password", "forgot", "forgot-password" })
 	public String forgot() {
-		
 		return "account/forgot/index";
 	}
-	
-	@PostMapping(value="account/forgot-password")
-	public String forgot(@RequestParam("email")String email,Model model,HttpServletResponse response) {
-		if(dao.findByEmail(email)!=null) {
-			NguoiDung nd=dao.findByEmail(email);
-			
+
+	@PostMapping(value = "account/forgot-password")
+	public String forgot(@RequestParam("email") String email, Model model, HttpServletResponse response) {
+		if (dao.findByEmail(email) != null) {
+			NguoiDung nd = dao.findByEmail(email);
+
 			String validateKey = DigestUtils.sha1Hex(email + (new Date()));
 			// create a cookie
-			Cookie cookie = new Cookie("validateKey", validateKey);
-			cookie.setPath("/");
-			cookie.setMaxAge(86400);// Limit time of cookie 86400 second = 24 hours
+			Cookie cookieValidateKey = new Cookie("validateKey", validateKey);
+
+			cookieValidateKey.setPath("/");
+			cookieValidateKey.setMaxAge(86400);// Limit time of cookie 86400 second = 24 hours
+
+			Cookie cookieId = new Cookie("id", nd.getMaNguoiDung().toString());
+
+			cookieId.setPath("/");
+			cookieId.setMaxAge(86400);// Limit time of cookie 86400 second = 24 hours
 			// add cookie to response
-			response.addCookie(cookie);
-			
-			String message = "Xác nhận yêu cầu cập nhật lại mật khẩu"
-			+ "Xin chào "+dao.findByEmail(email).getHoTen()+"!"
-			+ "http://localhost:8080/reset?id=" + nd.getMaNguoiDung() + "&validateKey=" + validateKey
-			+ "\n(Hoặc copy đường link và paste vào trình duyệt web)\nLink sẽ hết hạn sau 24 tiếng\nBan quản trị web, trân trọng!";
-			
-			mailer.sendEmail(email,
-					"Xin chào bạn " + nd.getHoTen() + ", chúc mừng bạn đã đăng ký thành công", message);
-			model.addAttribute("message", "Một link hướng dẫn lấy lại mật khẩu đã được gửi đến email "+email+".");
-		}else {
+			response.addCookie(cookieValidateKey);
+			response.addCookie(cookieId);
+
+			String message = "Xác nhận yêu cầu cập nhật lại mật khẩu" + "Xin chào " + dao.findByEmail(email).getHoTen()
+					+ "!" + "http://localhost:8080/reset?validateKey=" + validateKey
+					+ "\n(Hoặc copy đường link và paste vào trình duyệt web)\nLink sẽ hết hạn sau 24 tiếng\nBan quản trị web, trân trọng!";
+
+			mailer.sendEmail(email, "Xin chào bạn " + nd.getHoTen() + ", chúc mừng bạn đã đăng ký thành công", message);
+			model.addAttribute("message", "Một link hướng dẫn lấy lại mật khẩu đã được gửi đến email " + email + ".");
+		} else {
 			model.addAttribute("message", "Email này chưa đăng ký tài khoản tại web, vui lòng kiểm tra lại!");
 		}
 		return "account/forgot/index";
 	}
+
 	@GetMapping("reset")
 	public String resetPassword(HttpServletResponse response,
-			@CookieValue(value = "validateKey", defaultValue = "none") String validateKeyCookies,
-			@RequestParam("id") Integer userId, @RequestParam("validateKey") String validateKeyFromEmail) {
+			@CookieValue(value = "validateKey", defaultValue = "not") String validateKeyCookies,
+			@CookieValue(value = "id", defaultValue = "none") String userIdCookie,
+			@RequestParam(value="validateKey",defaultValue = "none") String validateKeyFromEmail, Model model) {
 		if (validateKeyCookies.equals(validateKeyFromEmail)) {
-			NguoiDung user = dao.findById(userId);
-			user.setIsActive(true);
-			dao.update(user);
-
-			// create a cookie
-			Cookie cookie = new Cookie("activeKey", "");
-			cookie.setPath("/");
-			cookie.setMaxAge(0);// Delete cookie
-			// add cookie to response
-			response.addCookie(cookie);
-			return "ksvsnj";
+			model.addAttribute("isValidValidate", true);
 		} else {
-			// Some code if need
+			model.addAttribute("isValidValidate", false);
 		}
-		return "account/login/index";
+		return "account/reset/index";
+	}
+
+	@PostMapping("reset")
+	public String resetPassword(HttpServletResponse response,
+			@CookieValue(value = "validateKey", defaultValue = "not") String validateKeyCookies,
+			@CookieValue(value = "id", defaultValue = "none") String userIdCookie,
+			@RequestParam("validateKey") String validateKeyFromEmail, Model model, @RequestParam("password") String pwd,
+			@RequestParam("re-password") String repwd) {
+		if (validateKeyCookies.equals(validateKeyFromEmail)) {
+			if (pwd.equals(repwd)) {
+				NguoiDung user = dao.findById(Integer.parseInt(userIdCookie));
+				user.setMatKhau(pwd);
+				dao.update(user);
+				model.addAttribute("message", "Đã thay đổi mật khẩu mới thành công!");
+				model.addAttribute("isValidValidate", true);
+			} else {
+				model.addAttribute("isValidValidate", false);
+			}
+			// create a cookie
+			Cookie cookieValidate = new Cookie("validateKey", "");
+			cookieValidate.setPath("/");
+			cookieValidate.setMaxAge(0);// Delete cookie
+			// add cookie to response
+			response.addCookie(cookieValidate);
+			// create a cookie
+			Cookie cookieId = new Cookie("id", "");
+			cookieId.setPath("/");
+			cookieId.setMaxAge(0);// Delete cookie
+			// add cookie to response
+			response.addCookie(cookieId);
+		} else {
+			model.addAttribute("isValidValidate", false);
+		}
+		return "account/reset/index";
 	}
 }
