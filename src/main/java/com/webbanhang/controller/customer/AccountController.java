@@ -198,6 +198,7 @@ public class AccountController {
 			@RequestParam(value="validateKey",defaultValue = "none") String validateKeyFromEmail, Model model) {
 		if (validateKeyCookies.equals(validateKeyFromEmail)) {
 			model.addAttribute("isValidValidate", true);
+			model.addAttribute("validateKeyFromEmail", validateKeyFromEmail);
 		} else {
 			model.addAttribute("isValidValidate", false);
 		}
@@ -208,7 +209,7 @@ public class AccountController {
 	public String resetPassword(HttpServletResponse response,
 			@CookieValue(value = "validateKey", defaultValue = "not") String validateKeyCookies,
 			@CookieValue(value = "id", defaultValue = "none") String userIdCookie,
-			@RequestParam("validateKey") String validateKeyFromEmail, Model model, @RequestParam("password") String pwd,
+			@RequestParam(value="validateKey",defaultValue = "null") String validateKeyFromEmail, Model model, @RequestParam("password") String pwd,
 			@RequestParam("re-password") String repwd) {
 		if (validateKeyCookies.equals(validateKeyFromEmail)) {
 			if (pwd.equals(repwd)) {
@@ -218,7 +219,7 @@ public class AccountController {
 				model.addAttribute("message", "Đã thay đổi mật khẩu mới thành công!");
 				model.addAttribute("isValidValidate", true);
 			} else {
-				model.addAttribute("isValidValidate", false);
+				model.addAttribute("message", "Mật khẩu bạn nhập không khớp! Vui lòng kiểm tra lại");
 			}
 			// create a cookie
 			Cookie cookieValidate = new Cookie("validateKey", "");

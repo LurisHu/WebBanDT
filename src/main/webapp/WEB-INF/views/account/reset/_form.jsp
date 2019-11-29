@@ -16,6 +16,7 @@
 					name="re-password" placeholder="Nhập lại mật khẩu mới"
 					required="required">
 			</div>
+			<input type="hidden" name="validateKey" value="${validateKeyFromEmail}"/>
 			<button type="submit" class="btn btn-primary">Xác nhận</button>
 		</form>
 	</c:when>
