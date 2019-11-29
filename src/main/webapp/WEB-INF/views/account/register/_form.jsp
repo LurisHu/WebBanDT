@@ -1,89 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<div class="tab-pane">
-	<form:form cssClass="form-horizontal" modelAttribute="nd">
+<div class="re-form">
+	<form:form class="login-form" modelAttribute="nd">
 		<form:hidden path="maNguoiDung" />
-	<!-- ${message} -->
-	<div class="form-group">
-			<label class="col-sm-2 control-label">Họ tên</label>
-			<div class="col-sm-5 has-success">
-				<form:input cssClass="form-control" path="hoTen" />
+		<div class="login-mod">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="phone"><b>Email</b></label>
+					<form:input path="email" class="form-control control-re"
+						placeholder="Vui lòng nhập Email" />
+					<form:errors path="email" />
+					<p style="color: red">${checkEmail}</p>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="user-re"><b>Họ tên</b></label>
+					<form:input class="form-control control-re" path="hoTen"
+						placeholder="Vui lòng nhập Họ tên" />
+					<form:errors path="hoTen" />
+					<p></p>
+				</div>
 			</div>
-			<div class="col-sm-5 has-success">
-				<form:errors path="hoTen" />
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="email"><b>Facebook</b></label>
+					<form:input path="mangXH" class="form-control control-re"
+						placeholder="Vui lòng nhập Facebook" />
+					<p></p>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="email"><b>Số điện thoại</b></label>
+					<form:input path="phone" class="form-control control-re"
+						placeholder="Vui lòng nhập SĐT" />
+					<form:errors path="phone" />
+					<p></p>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="pass-re"><b>Mật khẩu</b></label>
+					<form:input path="matKhau" class="form-control control-re"
+						placeholder="Vui lòng nhập Mật khẩu" />
+					<form:errors path="matKhau" />
+					<p></p>
+				</div>
 			</div>
-		</div>
-
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Email</label>
-			<div class="col-sm-5 has-success">
-				<form:input path="email" class="form-control" />
-			</div>
-			<div class="col-sm-5 has-success">
-				<form:errors path="email" />
-				<p style="color:red">${checkEmail}</p>
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Mật khẩu</label>
-			<div class="col-sm-5 has-success">
-				<form:input path="matKhau" class="form-control" />
-			</div>
-			<div class="col-sm-5 has-success">
-				<form:errors path="matKhau" />
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Ngày sinh</label>
-			<div class="col-sm-5 has-success">
-				<form:input path="ngaySinh" class="form-control" type="date" />
-			</div>
-			<div class="col-sm-5 has-success">
-				<form:errors path="ngaySinh" />
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Giới tính</label>
-			<div class="col-sm-5 has-success">
-				<form:select path="gioiTinh" cssClass="form-control">
-					<form:option value="true" label="Nam" />
-					<form:option value="false" label="Nữ" />
-				</form:select>
-			</div>
-			<div class="col-sm-5 has-success">
-				<form:errors path="gioiTinh" />
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Facebook</label>
-			<div class="col-sm-5 has-success">
-				<form:input path="mangXH" class="form-control" />
-			</div>
-		</div>
-
-		<form:hidden path="loaiKH" value="0" />
-
-		<div class="form-group">
-			<label class="col-sm-2 control-label">Phone</label>
-			<div class="col-sm-5 has-success">
-				<form:input path="phone" class="form-control" />
-			</div>
-			<div class="col-sm-5 has-success">
-				<form:errors path="phone" />
-			</div>
-		</div>
-
-		<form:hidden path="isAdmin" value="false" />
-		<form:hidden path="isActive" value="false" />
-		<div class="form-group">
-			<div class="col-sm-offset-2 control-label">
-				<button class="btn btn-primary">Đăng ký</button>
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="birth-re"><b>Ngày sinh</b></label>
+					<form:input path="ngaySinh" class="form-control control-re"
+						type="date" />
+					<form:errors path="ngaySinh" />
+					<p></p>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="gender-re"><b>Giới tính</b></label>
+					<form:select path="gioiTinh" class="form-control control-re">
+						<form:option value="true" label="Nam" />
+						<form:option value="false" label="Nữ" />
+					</form:select>
+					<p></p>
+				</div>
+				<form:hidden path="loaiKH" value="0" />
+				<form:hidden path="isAdmin" value="false" />
+				<form:hidden path="isActive" value="false" />
+				<div class="form-group col-md-6">
+					<button type="submit" class="btn btn-block btn-re">Đăng ký</button>
+				</div>
 			</div>
 		</div>
 	</form:form>
 </div>
+<br/>

@@ -191,7 +191,7 @@ public class AccountController {
 		return "account/forgot/index";
 	}
 
-	@GetMapping("reset")
+	@GetMapping("/account/reset")
 	public String resetPassword(HttpServletResponse response,
 			@CookieValue(value = "validateKey", defaultValue = "not") String validateKeyCookies,
 			@CookieValue(value = "id", defaultValue = "none") String userIdCookie,
@@ -204,7 +204,7 @@ public class AccountController {
 		return "account/reset/index";
 	}
 
-	@PostMapping("reset")
+	@PostMapping("/account/reset")
 	public String resetPassword(HttpServletResponse response,
 			@CookieValue(value = "validateKey", defaultValue = "not") String validateKeyCookies,
 			@CookieValue(value = "id", defaultValue = "none") String userIdCookie,

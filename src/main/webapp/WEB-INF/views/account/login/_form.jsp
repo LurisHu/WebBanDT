@@ -1,21 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<form action="/account/login" method="post">
-<label style="color:red">${message}</label>
-	<div class="form-group">
-		<label for="email">Email address:</label> <input id="email"
-			type="email" class="form-control" name="email" placeholder="Email"
-			value="${nd.email}" required="required">
+<form class="login-form" action="/account/login" method="post">
+	<div class="login-mod">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="username"><b>Email</b></label> <input type="email"
+					name="email" class="form-control control-login-user" id="email"
+					placeholder="Vui lòng nhập Email" value="${nd.email}"
+					required="required">
+			</div>
+			<div class="form-group col-md-6">
+				<button type="submit" class="btn btn-block btn-login">Đăng
+					nhập</button>
+				<p class="login-p">Hoặc đăng nhập bằng</p>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="pass"><b>Mật khẩu</b></label> <input type="password"
+					class="form-control control-login-pass" id="password"
+					placeholder="Vui lòng nhập Password" name="password"
+					placeholder="Password" value="${nd.matKhau}" required="required">
+				<p class="login-re">
+					<a href="/account/forgot-password">Quên mật khẩu?</a>
+				</p>
+			</div>
+			<div class="form-group col-md-6">
+				<button type="submit" class="btn btn-block btn-fb">Facebook</button>
+			</div>
+		</div>
 	</div>
-	<div class="form-group">
-		<label for="pwd">Password:</label> <input id="password"
-			type="password" class="form-control" name="password"
-			placeholder="Password" value="${nd.matKhau}" required="required">
-	</div>
-	<div class="form-group form-check">
-		<label class="form-check-label"> <input
-			class="form-check-input" type="checkbox"> Remember me
-		</label>
-	</div>
-	<button type="submit" class="btn btn-primary">Login</button>
 </form>
