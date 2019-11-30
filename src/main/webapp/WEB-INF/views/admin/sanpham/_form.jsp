@@ -80,12 +80,13 @@
 	<div class="form-row">
 		<div class="form-group col-md-5">
 			<label for="inputId">Chọn ảnh</label><br />
-			<form:errors path="image" />
 			<input type="file" name="up_photo" onchange="openFile(this)" />
-			<form:hidden path="image" />
+			<form:hidden path="image" /><br/>
+			<form:errors path="image" />
 			<img id="anh"
 				src="/static/images/${product.image==null?'default.png':product.image}"
 				height="192px" width="192px">
+				
 		</div>
 		<div class="form-group col-md-7"></div>
 	</div>
