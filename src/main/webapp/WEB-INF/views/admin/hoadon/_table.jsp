@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<h3>DANH SÁCH HÓA ĐƠN</h3>
 <table class="table mt-5">
 	<thead class="thead-dark">
 		<tr>
@@ -13,6 +14,7 @@
 			<th scope="col">Phí vận chuyển</th>
 			<th scope="col">Comment</th>
 			<th scope="col">Trạng thái</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -26,7 +28,7 @@
 				<td>${hoadon.phiVanChuyen}</td>
 				<td>${hoadon.comment}</td>
 				<td>${hoadon.tinhTrangHD}</td>
-				<td><a href="/admin/hoadon/edit/${hoadon.maHD}">Edit</a></td>
+				<td><a href="/admin/hoadon/edit/${hoadon.maHD}" class="btn btn-info">Edit</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>

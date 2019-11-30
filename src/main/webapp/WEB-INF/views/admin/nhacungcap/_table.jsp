@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<h3>DANH SÁCH NHÀ CUNG CẤP</h3>
 <table class="table mt-5">
 	<thead class="thead-dark">
 		<tr>
@@ -18,7 +19,7 @@
 				<td>${ncc.maNCC}</td>
 				<td>${ncc.tenNCC}</td>
 				<td>${ncc.moTa}</td>
-				<td><a href="/admin/nhacungcap/edit/${ncc.maNCC}">Edit</a></td>
+				<td><a href="/admin/nhacungcap/edit/${ncc.maNCC}" class="btn btn-info">Edit</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>

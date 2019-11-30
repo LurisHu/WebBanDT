@@ -15,6 +15,15 @@ span[id*=error] {
 	padding-bottom: 5px;
 }
 </style>
-<jsp:include page="_form.jsp"></jsp:include>
-<hr>
-<jsp:include page="_table.jsp"></jsp:include>
+<div class="form-admin">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="h1">
+				<h1>QUẢN LÝ DANH MỤC</h1>
+			</div>
+			<jsp:include page="_form.jsp"></jsp:include>
+			<hr>
+			<jsp:include page="_table.jsp"></jsp:include>
+		</div>
+	</div>
+</div>

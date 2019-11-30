@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<h3>DANH SÁCH ADMIN</h3>
+<h3>DANH SÁCH KHÁCH HÀNG</h3>
 <div class="table-responsive">
 	<div class="search-product col-md-6">
 		<input type="text" id="product" placeholder="Search ........">
