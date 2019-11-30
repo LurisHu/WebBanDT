@@ -15,38 +15,42 @@
 				test="${not empty sessionScope['scopedTarget.cartService'].items}">
 				<c:forEach var="p"
 					items="${sessionScope['scopedTarget.cartService'].items}">
-					<div class="panel panel-mini">
-						<div class="panel-body">
-							<img class="panel-img" src="/static/images/${p.image}"
-								style="max-width: 120px; height: 120px;">
-							<div class="name-item">
-								<h4>
-									<b>${p.tenSP}</b>
-								</h4>
-							</div>
-							<div class="price-item ">
-								<h4>
-									<fmt:formatNumber value="${p.giaSP}" />
-									<sup>đ</sup>
-								</h4>
-							</div>
-							<div class="quantity buttons_added number-item">
-								<input type="button" value="-" class="minus"><input
-									type="number" step="1" min="1" max="" name="quantity"
-									value="${p.soLuong}" title="Qty" class="input-text qty text"
-									size="4" pattern="" inputmode=""><input type="button"
-									value="+" class="plus">
-							</div>
-							<form method="post">
+					<form method="post">
+						<div class="panel panel-mini">
+							<div class="panel-body">
+								<img class="panel-img" src="/static/images/${p.image}"
+									style="max-width: 120px; height: 120px;">
+								<div class="name-item">
+									<h4>
+										<b>${p.tenSP}</b>
+									</h4>
+								</div>
+								<div class="price-item ">
+									<h4>
+										<fmt:formatNumber value="${p.giaSP}" />
+										<sup>đ</sup>
+									</h4>
+								</div>
+								<div class="quantity buttons_added number-item">
+									<c:if test="${p.soLuong > 1}">
+										<input type="submit" value="-" class="minus"
+											formaction="/removeQty/${p.maSP}">
+									</c:if>
+									<input type="number" step="1" min="1" max="" name="quantity"
+										value="${p.soLuong}" title="Qty" class="input-text qty text"
+										size="4" pattern="" inputmode="" readonly="readonly">
+										<input type="submit" value="+" formaction="/addQty/${p.maSP}"
+										class="plus">
+								</div>
 								<div class="delete-cart">
 									<button type="submit" class="btn btn-default btn-cart"
 										formaction="/cart/remove/${p.maSP}">
 										<span class="glyphicon glyphicon-remove-sign"></span>
 									</button>
 								</div>
-							</form>
+							</div>
 						</div>
-					</div>
+					</form>
 				</c:forEach>
 				<div class="panel">
 					<div class="panel-body">

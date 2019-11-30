@@ -28,6 +28,15 @@ public class CartService {
 		p.setSoLuong(1);
 		items.add(p);
 	}
+	
+	public void removeQty(Integer id) {
+		for (SanPham item : items) {
+			if (item.getMaSP() == id) {
+				item.setSoLuong(item.getSoLuong() - 1);
+				return;
+			}
+		}
+	}
 
 	public void remove(Integer id) {
 		for (SanPham item : items) {

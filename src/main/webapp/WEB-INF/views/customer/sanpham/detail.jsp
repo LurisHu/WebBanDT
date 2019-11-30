@@ -99,11 +99,11 @@
 						</div>
 						<p id="mota">${item.moTa}</p>
 						<div class="form-group">
-							<label class="control-label col-sm-4"><b>Số lượng:</b></label>
+							<!-- <label class="control-label col-sm-4"><b>Số lượng:</b></label>
 							<div class="col-sm-3">
 								<input type="number" id="number" min="1" class="form-control"
 									placeholder="1">
-							</div>
+							</div> -->
 						</div>
 						<div>
 							<button type="button" class="btn btn-lg" id="now">Mua
