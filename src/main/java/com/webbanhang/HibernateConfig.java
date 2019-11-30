@@ -19,7 +19,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 public class HibernateConfig {
 	@Autowired
 	Environment env;
-	
+
 	@Bean
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -29,7 +29,7 @@ public class HibernateConfig {
 		dataSource.setPassword(env.getProperty("spring.datasource.password"));
 		return dataSource;
 	}
-	
+
 	@Autowired
 	@Bean
 	public SessionFactory getSessionFactory(DataSource dataSource) throws Exception {
@@ -39,12 +39,13 @@ public class HibernateConfig {
 		Properties props = factoryBean.getHibernateProperties();
 		props.put("hibernate.dialect", env.getProperty("spring.jpa.database-platform"));
 		props.put("hibernate.show_sql", env.getProperty("spring.jpa.show-sql"));
-		props.put("current_session_context_class", env.getProperty("spring.jpa.properties.hibernate.current_session_context_class"));
+		props.put("current_session_context_class",
+				env.getProperty("spring.jpa.properties.hibernate.current_session_context_class"));
 		factoryBean.afterPropertiesSet();
 		SessionFactory sessionFactory = factoryBean.getObject();
 		return sessionFactory;
 	}
-	
+
 	@Autowired
 	@Bean
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {

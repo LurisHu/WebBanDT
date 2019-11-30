@@ -20,38 +20,38 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="hoadon")
+@Table(name = "hoadon")
 public class HoaDon {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="MaHD")
+	@Column(name = "MaHD")
 	private Integer maHD;
-	
-	@Column(name="NGAYDAT")
+
+	@Column(name = "NGAYDAT")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "Vui lòng chọn ngày đặt")
 	private Date ngayDat;
-	@Column(name="TONGTIEN")
-	@NotNull(message="Không để trống tổng tiền")
+	@Column(name = "TONGTIEN")
+	@NotNull(message = "Không để trống tổng tiền")
 	private Double tongTien;
-	@Column(name="DIACHIGIAO")
-	@NotEmpty(message="Không để trống địa chỉ giao")
+	@Column(name = "DIACHIGIAO")
+	@NotEmpty(message = "Không để trống địa chỉ giao")
 	private String diaChiGiao;
-	@Column(name="PHIVANCHUYEN")
-	@NotNull(message="Không để trống phí vận chuyện")
+	@Column(name = "PHIVANCHUYEN")
+	@NotNull(message = "Không để trống phí vận chuyện")
 	private Double phiVanChuyen;
-	@Column(name="COMMENT")
+	@Column(name = "COMMENT")
 	private String comment;
-	
+
 	@ManyToOne
-	@JoinColumn(name="MaKH")
+	@JoinColumn(name = "MaKH")
 	private NguoiDung nguoiDungHD;
-	
+
 	@ManyToOne
-	@JoinColumn(name="TINHTRANG")
+	@JoinColumn(name = "TINHTRANG")
 	private TinhTrangHoaDon tinhTrangHD;
-	
+
 	@OneToMany(mappedBy = "hoaDonHDCT")
 	List<HoaDonChiTiet> hoaDonChiTiet;
 

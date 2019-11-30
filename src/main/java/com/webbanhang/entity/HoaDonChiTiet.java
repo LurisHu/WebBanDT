@@ -10,25 +10,25 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="hoadonchitiet")
+@Table(name = "hoadonchitiet")
 public class HoaDonChiTiet {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="MaHDCT")
+	@Column(name = "MaHDCT")
 	private Integer maHDCT;
-	@Column(name="GIASP")
+	@Column(name = "GIASP")
 	private Double giaSP;
-	@Column(name="SOLUONG")
+	@Column(name = "SOLUONG")
 	private Integer soLuong;
-	@Column(name="GIAMGIA")
+	@Column(name = "GIAMGIA")
 	private Double giamGia;
-	
+
 	@ManyToOne
-	@JoinColumn(name="MaHD")
+	@JoinColumn(name = "MaHD")
 	private HoaDon hoaDonHDCT;
-	
+
 	@ManyToOne
-	@JoinColumn(name="MaSP")
+	@JoinColumn(name = "MaSP")
 	private SanPham sanPhamHDCT;
 
 	public Integer getMaHDCT() {

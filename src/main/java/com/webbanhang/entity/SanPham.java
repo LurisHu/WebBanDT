@@ -13,51 +13,52 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+
 @Entity
-@Table(name="sanpham")
+@Table(name = "sanpham")
 public class SanPham {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="MaSP",nullable = false)
+	@Column(name = "MaSP", nullable = false)
 	private Integer maSP;
-	@NotEmpty(message="Không để trống tên sản phẩm")
-	@Column(name="TENSP")
+	@NotEmpty(message = "Không để trống tên sản phẩm")
+	@Column(name = "TENSP")
 	private String tenSP;
-	@Column(name="MOTA")
+	@Column(name = "MOTA")
 	private String moTa;
-	@Column(name="GIASP")
-	@NotNull(message="Không để trống giá sản phẩm")
+	@Column(name = "GIASP")
+	@NotNull(message = "Không để trống giá sản phẩm")
 	private Double giaSP;
-	@Column(name="SOLUONG")
-	@NotNull(message="Không để trống số lượng sản phẩm")
+	@Column(name = "SOLUONG")
+	@NotNull(message = "Không để trống số lượng sản phẩm")
 	private Integer soLuong;
-	@Column(name="SOLUONGBAN")
+	@Column(name = "SOLUONGBAN")
 	private Integer soLuongBan;
-	@Column(name="SPDACBIET")
+	@Column(name = "SPDACBIET")
 	private Boolean spDacBiet;
-	@Column(name="SOLANXEM")
+	@Column(name = "SOLANXEM")
 	private Integer soLanXem;
-	@Column(name="GIAMGIA")
-	@NotNull(message="Không để trống giảm giá sản phẩm")
+	@Column(name = "GIAMGIA")
+	@NotNull(message = "Không để trống giảm giá sản phẩm")
 	private Double giamGia;
-	@Column(name="HINHANH")
-	@NotEmpty(message="Không để trống hình ảnh sản phẩm")
+	@Column(name = "HINHANH")
+	@NotEmpty(message = "Không để trống hình ảnh sản phẩm")
 	private String image;
-	
+
 	@ManyToOne
-	@JoinColumn(name="MaNCC")
+	@JoinColumn(name = "MaNCC")
 	NhaCungCap nhaCungCap;
-	
+
 	@ManyToOne
-	@JoinColumn(name="MaDM")
+	@JoinColumn(name = "MaDM")
 	DanhMuc danhMuc;
 
 	@OneToMany(mappedBy = "sanPhamBL")
 	List<BinhLuan> binhLuan;
-	
+
 	@OneToMany(mappedBy = "sanPhamDG")
 	List<DanhGia> danhGia;
-	
+
 	@OneToMany(mappedBy = "sanPhamHDCT")
 	List<HoaDonChiTiet> hoaDonChiTiet;
 

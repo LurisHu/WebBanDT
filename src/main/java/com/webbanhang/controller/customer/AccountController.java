@@ -195,7 +195,7 @@ public class AccountController {
 	public String resetPassword(HttpServletResponse response,
 			@CookieValue(value = "validateKey", defaultValue = "not") String validateKeyCookies,
 			@CookieValue(value = "id", defaultValue = "none") String userIdCookie,
-			@RequestParam(value="validateKey",defaultValue = "none") String validateKeyFromEmail, Model model) {
+			@RequestParam(value = "validateKey", defaultValue = "none") String validateKeyFromEmail, Model model) {
 		if (validateKeyCookies.equals(validateKeyFromEmail)) {
 			model.addAttribute("isValidValidate", true);
 			model.addAttribute("validateKeyFromEmail", validateKeyFromEmail);
@@ -209,8 +209,8 @@ public class AccountController {
 	public String resetPassword(HttpServletResponse response,
 			@CookieValue(value = "validateKey", defaultValue = "not") String validateKeyCookies,
 			@CookieValue(value = "id", defaultValue = "none") String userIdCookie,
-			@RequestParam(value="validateKey",defaultValue = "null") String validateKeyFromEmail, Model model, @RequestParam("password") String pwd,
-			@RequestParam("re-password") String repwd) {
+			@RequestParam(value = "validateKey", defaultValue = "null") String validateKeyFromEmail, Model model,
+			@RequestParam("password") String pwd, @RequestParam("re-password") String repwd) {
 		if (validateKeyCookies.equals(validateKeyFromEmail)) {
 			if (pwd.equals(repwd)) {
 				NguoiDung user = dao.findById(Integer.parseInt(userIdCookie));
