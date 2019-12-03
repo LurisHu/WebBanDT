@@ -42,7 +42,7 @@
 				class="dropdown-toggle" data-toggle="dropdown"><span
 					class="glyphicon glyphicon-user"></span> 
 					<c:if test="${empty user}">
-						Sign up
+						Tài khoản
 					</c:if>
 					<c:if test="${not empty user}">
 						${user}
@@ -64,6 +64,7 @@
 						<!-- <li><a id="A1" href="#" data-toggle="modal"
 						data-target="#myModal1">Đăng nhập</a></li> -->
 						<li><a id="A1" href="/account/login">Đăng nhập</a></li>
+						<li><a id="A1" href="/account/register">Đăng ký</a></li>
 						<li><a id="A1" href="/account/forgot-password">Quên mật khẩu</a></li>
 					</ul>
 				</c:if></li>

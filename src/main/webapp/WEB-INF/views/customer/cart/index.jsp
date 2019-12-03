@@ -39,7 +39,7 @@
 									<input type="number" step="1" min="1" max="" name="quantity"
 										value="${p.soLuong}" title="Qty" class="input-text qty text"
 										size="4" pattern="" inputmode="" readonly="readonly">
-										<input type="submit" value="+" formaction="/addQty/${p.maSP}"
+									<input type="submit" value="+" formaction="/addQty/${p.maSP}"
 										class="plus">
 								</div>
 								<div class="delete-cart">
@@ -67,26 +67,25 @@
 				</div>
 
 				<div class="information">
-					<form:form modelAttribute="hoadonchitiet"
-						class="form-horizontal form-information">
+					<form class="form-horizontal form-information">
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Họ tên</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control"
-									placeholder="Họ tên của bạn">
+									placeholder="Họ tên của bạn" name="hoTen">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Số điện thoại</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control"
-									placeholder="Số điện thoại của bạn">
+									placeholder="Số điện thoại của bạn" name="SDT">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Tỉnh/Thành phố</label>
 							<div class="col-md-10">
-								<select id="first" class="form-control">
+								<select id="first" class="form-control" name="tinhThanh">
 									<option value="0" selected="selected">Chọn Tỉnh/Thành
 										phố</option>
 								</select>
@@ -95,7 +94,8 @@
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Quận/Huyện</label>
 							<div class="col-md-10">
-								<select id="second" class="form-control" disabled="disabled">
+								<select id="second" class="form-control" disabled="disabled"
+									name="quanHuyen">
 									<option value="0" selected="selected">Chọn Quận/Huyện</option>
 								</select>
 							</div>
@@ -103,7 +103,8 @@
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Phường/Xã</label>
 							<div class="col-md-10">
-								<select id="third" class="form-control" disabled="disabled">
+								<select id="third" class="form-control" disabled="disabled"
+									name="phuongXa">
 									<option value="0" selected="selected">Chọn Phường/Xã</option>
 								</select>
 							</div>
@@ -112,8 +113,15 @@
 							<label class=" col-sm-2 label-information" for="message">Địa
 								chỉ</label>
 							<div class="col-md-10">
-								<textarea name="text" cols="30" rows="3" class="form-control"
+								<textarea name="diaChi" cols="30" rows="3" class="form-control"
 									placeholder="Ví dụ: 52, đường Trần Hưng Đạo"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class=" col-sm-2 label-information" for="comment">Yêu
+								cầu khác</label>
+							<div class="col-md-10">
+								<textarea name="comment" cols="30" rows="3" class="form-control"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -122,7 +130,7 @@
 									formaction="/cart/thanhtoan">Thanh toán</button>
 							</div>
 						</div>
-					</form:form>
+					</form>
 				</div>
 			</c:if>
 			<c:if test="${empty sessionScope['scopedTarget.cartService'].items}">

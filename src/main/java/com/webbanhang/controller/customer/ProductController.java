@@ -19,7 +19,7 @@ public class ProductController {
 	@Autowired
 	HttpSession session;
 	
-	@RequestMapping("customer/sanpham/index")
+	@RequestMapping(value= {"customer/sanpham/index",""})
 	public String index(Model model) {
 		model.addAttribute("form", new SanPham());
 		int PageNo = 0;

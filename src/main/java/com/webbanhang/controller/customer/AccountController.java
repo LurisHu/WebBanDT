@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +48,7 @@ public class AccountController {
 	}
 
 	@PostMapping("/account/login")
-	public String login(Model model, @RequestParam("email") String email, @RequestParam("password") String pw) {
+	public String login(Model model,HttpServletResponse response, @RequestParam("email") String email, @RequestParam("password") String pw) {
 		model.addAttribute("nd", dao.findByEmail(email));
 		NguoiDung user = dao.findByEmail(email);
 		if (user == null) {
@@ -59,7 +60,17 @@ public class AccountController {
 			session.setAttribute("user", user);
 			session.setAttribute("role", user.getIsAdmin());
 			String url = (String) session.getAttribute("back-url");
+
+			// create a cookie
+			Cookie cookie = new Cookie("userId", user.getMaNguoiDung().toString());
+			cookie.setPath("/");
+			// add cookie to response
+			response.addCookie(cookie);
 			if (url != null) {
+				System.out.println(url);
+				if(url.equals("/cart/thanhtoan")) {
+					return "redirect:/cart/view";
+				}
 				return "redirect:" + url;
 			} else if (user.getIsAdmin() == true) {
 				return "redirect:/admin/dashboard/index";
