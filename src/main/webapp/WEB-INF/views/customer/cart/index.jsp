@@ -2,6 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<style type="text/css">
+label.error {
+	display: inline-block;
+	color: red;
+	width: 200px;
+}
+</style>
 <div class="cart-container">
 	<div class="cart-header">
 		<h3>Giỏ hàng của bạn</h3>
@@ -67,19 +74,21 @@
 				</div>
 
 				<div class="information">
-					<form class="form-horizontal form-information">
+					<form class="form-horizontal form-information" id="thanhToan"
+						action="/cart/thanhtoan">
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Họ tên</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control"
-									placeholder="Họ tên của bạn" name="hoTen">
+									placeholder="Họ tên của bạn" name="hoTen" required="required">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Số điện thoại</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control"
-									placeholder="Số điện thoại của bạn" name="SDT">
+									placeholder="Số điện thoại của bạn" name="SDT"
+									required="required">
 							</div>
 						</div>
 						<div class="form-group">
@@ -126,8 +135,7 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-submit"
-									formaction="/cart/thanhtoan">Thanh toán</button>
+								<button type="submit" class="btn btn-submit">Thanh toán</button>
 							</div>
 						</div>
 					</form>
@@ -143,3 +151,48 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
+		$.validator.addMethod("tinhThanhValidation", function(value, element) {
+			return value != '0'
+		}, "Vui lòng chọn tỉnh thành.");
+
+		$("#thanhToan").validate({
+			rules : {
+				hoTen : "required",
+				SDT : "required",
+				tinhThanh : {
+					tinhThanhValidation : true
+				},
+				quanHuyen : {
+					tinhThanhValidation : true
+				},
+				phuongXa : {
+					tinhThanhValidation : true
+				},
+				diaChi : {
+					required : true,
+					minlength : 10
+				}
+			},
+			messages : {
+				hoTen : "Vui lòng nhập họ tên",
+				SDT : "Vui lòng nhập số điện thoại",
+				tinhThanh : {
+					tinhThanhValidation : "Vui lòng chọn tỉnh thành."
+				},
+				quanHuyen : {
+					tinhThanhValidation : "Vui lòng chọn quận huyện."
+				},
+				phuongXa : {
+					tinhThanhValidation : "Vui lòng chọn phường xã."
+				},
+				diaChi : {
+					required : "Vui lòng nhập địa chỉ",
+					minlength : "Địa chỉ ngắn vậy, chém gió ah?"
+				}
+			}
+		});
+	});
+</script>

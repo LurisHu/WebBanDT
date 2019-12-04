@@ -22,6 +22,11 @@
 <link href="/static/css/detail.css" rel="stylesheet" />
 <link href="/static/css/bill.css" rel="stylesheet" />
 <link href="/static/css/validate.css" rel="stylesheet">
+<!-- jQuery -->
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
 </head>
 <body class="container-fluid">
 	<div>
@@ -46,10 +51,9 @@
 		</footer>
 	</div>
 
-	<!-- jQuery -->
-	<script src="/static/js/jquery.min.js"></script>
 	<!-- Bootstrap -->
 	<script src="/static/js/bootstrap.min.js"></script>
+	
 	<!-- My own js -->
 	<script type="text/javascript">
 		$(document)
