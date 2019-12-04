@@ -13,15 +13,20 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.webbanhang.interceptor.AdminInterceptor;
 import com.webbanhang.interceptor.AuthorizeInterceptor;
 
 @Configuration
 public class InterConfig implements WebMvcConfigurer {
 	@Autowired
 	AuthorizeInterceptor auth;
+	
+	@Autowired
+	AdminInterceptor admin;
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(auth).addPathPatterns("/cart/thanhtoan", "/admin/**");
+		registry.addInterceptor(admin).addPathPatterns("/admin/**");
+		registry.addInterceptor(auth).addPathPatterns("/cart/thanhtoan");
 	}
 }

@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,7 +47,9 @@ public class AccountController {
 	}
 
 	@PostMapping("/account/login")
-	public String login(Model model,HttpServletResponse response, @RequestParam("email") String email, @RequestParam("password") String pw) {
+	public String login(Model model,HttpServletResponse response,
+			@RequestParam("email") String email,
+			@RequestParam("password") String pw) {
 		model.addAttribute("nd", dao.findByEmail(email));
 		NguoiDung user = dao.findByEmail(email);
 		if (user == null) {
@@ -58,7 +59,8 @@ public class AccountController {
 		} else {
 			model.addAttribute("message", "Đăng nhập thành công");
 			session.setAttribute("user", user);
-			session.setAttribute("role", user.getIsAdmin());
+			session.setAttribute("userRole", user.getIsAdmin());
+			System.out.println(session.getAttribute("userRole"));
 			String url = (String) session.getAttribute("back-url");
 
 			// create a cookie
