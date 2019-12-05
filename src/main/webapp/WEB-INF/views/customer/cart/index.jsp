@@ -82,7 +82,7 @@ label.error {
 								value="${p.soLuong}" title="Qty" class="input-text qty text"
 								size="4" pattern="" inputmode="" readonly="readonly">
 						</c:forEach>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label class=" col-sm-2 label-information">Họ tên</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control"
@@ -96,7 +96,7 @@ label.error {
 									placeholder="Số điện thoại của bạn" name="SDT"
 									required="required">
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Tỉnh/Thành phố</label>
 							<div class="col-md-10">

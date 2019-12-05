@@ -103,7 +103,10 @@ public class CartController {
 		hd.setNguoiDungHD(ndDao.findById(userId));
 		hd.setNgayDat(new Date());
 		hd.setTongTien(thanhTien);
-		hd.setDiaChiGiao(diaChi + " Phường " + phuongXa + " Quận/Huyện " + quanHuyen + " Tỉnh " + tinhThanh);
+		String[] phuong = phuongXa.split("-");
+		String[] huyen = quanHuyen.split("-");
+		String[] tinh = tinhThanh.split("-");
+		hd.setDiaChiGiao(diaChi + " - " + phuong[1] + " - " + huyen[1] + " - " + tinh[1]);
 		hd.setPhiVanChuyen(20000.0);
 		hd.setComment(comment);
 		hd.setTinhTrangHD(ttDao.findById(2));
