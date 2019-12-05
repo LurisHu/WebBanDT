@@ -12,9 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.webbanhang.dao.HoaDonChiTietDAO;
 import com.webbanhang.entity.HoaDonChiTiet;
+
 @Transactional
 @Repository
-public class HoaDonChiTietDAOImpl implements HoaDonChiTietDAO{
+public class HoaDonChiTietDAOImpl implements HoaDonChiTietDAO {
 	@Autowired
 	SessionFactory factory;
 
@@ -28,7 +29,7 @@ public class HoaDonChiTietDAOImpl implements HoaDonChiTietDAO{
 	public List<HoaDonChiTiet> findAll() {
 		String hql = "FROM HoaDonChiTiet";
 		Session session = factory.getCurrentSession();
-		TypedQuery<HoaDonChiTiet> query = session.createQuery(hql,HoaDonChiTiet.class);
+		TypedQuery<HoaDonChiTiet> query = session.createQuery(hql, HoaDonChiTiet.class);
 		return query.getResultList();
 	}
 
@@ -47,9 +48,18 @@ public class HoaDonChiTietDAOImpl implements HoaDonChiTietDAO{
 
 	@Override
 	public HoaDonChiTiet delete(Integer id) {
-		HoaDonChiTiet entity=this.findById(id);
+		HoaDonChiTiet entity = this.findById(id);
 		Session session = factory.getCurrentSession();
 		session.remove(entity);
 		return entity;
 	}
+
+	@Override
+	public List<HoaDonChiTiet> findByHoaDon(Integer id) {
+		String hql = "FROM HoaDonChiTiet WHERE MaHD =" + id;
+		Session session = factory.getCurrentSession();
+		TypedQuery<HoaDonChiTiet> query = session.createQuery(hql, HoaDonChiTiet.class);
+		return query.getResultList();
+	}
+
 }

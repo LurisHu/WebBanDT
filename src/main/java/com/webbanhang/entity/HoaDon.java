@@ -126,4 +126,11 @@ public class HoaDon {
 	public void setHoaDonChiTiet(List<HoaDonChiTiet> hoaDonChiTiet) {
 		this.hoaDonChiTiet = hoaDonChiTiet;
 	}
+
+	@Override
+	public String toString() {
+		return "" + maHD + "";
+	}
+	
+	
 }

@@ -75,4 +75,12 @@ public class HoaDonDAOImpl implements HoaDonDAO {
 		int pageCount = (int) Math.ceil(1.0*count/pageSize);
 		return pageCount;
 	}
+
+	@Override
+	public List<HoaDon> findHoaDonCustomer(Integer customerId) {
+		String hql = "FROM HoaDon WHERE MaKH = " + customerId + "ORDER BY NGAYDAT DESC";
+		Session session = factory.getCurrentSession();
+		TypedQuery<HoaDon> query = session.createQuery(hql, HoaDon.class);
+		return query.getResultList();
+	}
 }

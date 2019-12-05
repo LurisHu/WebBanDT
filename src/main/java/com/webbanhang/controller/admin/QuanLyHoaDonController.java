@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.webbanhang.dao.HoaDonDAO;
+import com.webbanhang.dao.NguoiDungDAO;
 import com.webbanhang.dao.TinhTrangHoaDonDAO;
 import com.webbanhang.entity.HoaDon;
 
@@ -24,7 +25,7 @@ public class QuanLyHoaDonController {
 	TinhTrangHoaDonDAO ttdao;
 
 	@Autowired
-	TinhTrangHoaDonDAO khdao;
+	NguoiDungDAO khdao;
 
 	@RequestMapping("admin/hoadon/index/{pageNo}")
 	public String index(Model model, @PathVariable("pageNo") int pageNo) {

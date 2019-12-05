@@ -12,4 +12,5 @@ public interface HoaDonDAO {
 	HoaDon delete(Integer id);
 	List<HoaDon> findPageHoaDon(int pageNo);
 	int getPageCountHoaDon();
+	List<HoaDon> findHoaDonCustomer(Integer customerId);
 }

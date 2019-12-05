@@ -10,4 +10,5 @@ public interface HoaDonChiTietDAO {
 	HoaDonChiTiet create(HoaDonChiTiet entity);
 	void update(HoaDonChiTiet entity);
 	HoaDonChiTiet delete(Integer id);
+	List<HoaDonChiTiet> findByHoaDon(Integer id);
 }
