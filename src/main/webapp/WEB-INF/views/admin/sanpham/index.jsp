@@ -29,5 +29,13 @@ span[id*=error] {
 		</div>
 	</div>
 </div>
+<div>
+	<ul class="pager">
+		<li><a href="/admin/sanpham/index/0">First</a></li>
+		<li><a href="/admin/sanpham/index/${pageNo-1}">Previous</a></li>
+		<li><a href="/admin/sanpham/index/${pageNo+1}">Next</a></li>
+		<li><a href="/admin/sanpham/index/${lastPageNo}">Last</a></li>
+	</ul>
+</div>
 <!-- End Form -->
 

@@ -10,4 +10,6 @@ public interface HoaDonDAO {
 	HoaDon create(HoaDon entity);
 	void update(HoaDon entity);
 	HoaDon delete(Integer id);
+	List<HoaDon> findPageHoaDon(int pageNo);
+	int getPageCountHoaDon();
 }

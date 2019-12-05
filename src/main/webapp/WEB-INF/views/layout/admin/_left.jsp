@@ -46,7 +46,7 @@
 		</div></li>
 
 	<li class="nav-item"><a class="nav-link"
-		href="/admin/sanpham/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
+		href="/admin/sanpham/index/0"> <i class="	fas fa-pencil-alt"></i> <span>Quản
 				lý sản phẩm</span>
 	</a></li>
 	
@@ -66,7 +66,7 @@
 	</a></li>
 	
 	<li class="nav-item"><a class="nav-link"
-		href="/admin/hoadon/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
+		href="/admin/hoadon/index/0"> <i class="	fas fa-pencil-alt"></i> <span>Quản
 				lý hóa đơn</span>
 	</a></li>
 

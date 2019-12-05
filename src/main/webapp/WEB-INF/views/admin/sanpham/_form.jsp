@@ -94,6 +94,6 @@
 		<button class="btn btn-primary" formaction="/admin/sanpham/create">Create</button>
 		<button class="btn btn-warning" formaction="/admin/sanpham/update">Update</button>
 		<button class="btn btn-danger" formaction="/admin/sanpham/delete">Delete</button>
-		<button class="btn btn-info" formaction="/admin/sanpham/index">Reset</button>
+		<button class="btn btn-info" formaction="/admin/sanpham/index/0">Reset</button>
 	</div>
 </form:form>

@@ -12,9 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.webbanhang.dao.HoaDonDAO;
 import com.webbanhang.entity.HoaDon;
+
 @Transactional
 @Repository
-public class HoaDonDAOImpl implements HoaDonDAO{
+public class HoaDonDAOImpl implements HoaDonDAO {
 	@Autowired
 	SessionFactory factory;
 
@@ -28,7 +29,7 @@ public class HoaDonDAOImpl implements HoaDonDAO{
 	public List<HoaDon> findAll() {
 		String hql = "FROM HoaDon";
 		Session session = factory.getCurrentSession();
-		TypedQuery<HoaDon> query = session.createQuery(hql,HoaDon.class);
+		TypedQuery<HoaDon> query = session.createQuery(hql, HoaDon.class);
 		return query.getResultList();
 	}
 
@@ -47,9 +48,31 @@ public class HoaDonDAOImpl implements HoaDonDAO{
 
 	@Override
 	public HoaDon delete(Integer id) {
-		HoaDon entity=this.findById(id);
+		HoaDon entity = this.findById(id);
 		Session session = factory.getCurrentSession();
 		session.remove(entity);
 		return entity;
+	}
+
+	@Override
+	public List<HoaDon> findPageHoaDon(int pageNo) {
+		int pageSize = 10;
+		String hql = "FROM HoaDon ORDER BY NGAYDAT";
+		Session session = factory.getCurrentSession();
+		TypedQuery<HoaDon> query = session.createQuery(hql, HoaDon.class);
+		query.setFirstResult(pageNo * pageSize);
+		query.setMaxResults(pageSize);
+		return query.getResultList();
+	}
+
+	@Override
+	public int getPageCountHoaDon() {
+		int pageSize = 10;
+		String hql = "SELECT count(h) FROM HoaDon h";
+		Session session = factory.getCurrentSession();
+		TypedQuery<Long> query = session.createQuery(hql,Long.class);
+		long count = query.getSingleResult();
+		int pageCount = (int) Math.ceil(1.0*count/pageSize);
+		return pageCount;
 	}
 }

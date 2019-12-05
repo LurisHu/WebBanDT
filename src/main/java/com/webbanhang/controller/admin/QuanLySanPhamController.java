@@ -41,11 +41,17 @@ public class QuanLySanPhamController {
 	@Autowired
 	UploadService uploadService;
 
-	@RequestMapping("admin/sanpham/index")
-	public String index(Model model) {
-		int pageNo = 0;
+	@RequestMapping("admin/sanpham/index/{pageNo}")
+	public String index(Model model, @PathVariable("pageNo") int pageNo) {
+		if(pageNo >= dao.getPageCountProducts()) {
+			pageNo = 0;
+		}else if(pageNo < 0) {
+			pageNo = dao.getPageCountProducts()-1;
+		}
 		model.addAttribute("product", new SanPham());
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
+		model.addAttribute("pageNo", pageNo);
+		model.addAttribute("lastPageNo", dao.getPageCountProducts()-1);
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
@@ -56,7 +62,7 @@ public class QuanLySanPhamController {
 		int pageNo = 0;
 		SanPham product = dao.findById(id);
 		model.addAttribute("product", product);
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
@@ -66,7 +72,7 @@ public class QuanLySanPhamController {
 	public String create(Model model) {
 		int pageNo = 0;
 		model.addAttribute("product", new SanPham());
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
@@ -87,7 +93,7 @@ public class QuanLySanPhamController {
 				model.addAttribute("message", "Thêm sản phẩm thất bại");
 			}
 		}
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
@@ -123,7 +129,7 @@ public class QuanLySanPhamController {
 			}
 		}
 		model.addAttribute("product", product);
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
@@ -133,7 +139,7 @@ public class QuanLySanPhamController {
 	public String delete(Model model) {
 		int pageNo = 0;
 		model.addAttribute("product", new SanPham());
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
@@ -155,7 +161,7 @@ public class QuanLySanPhamController {
 			}
 		}
 		model.addAttribute("product", product);
-		model.addAttribute("products", dao.findAll());
+		model.addAttribute("products", dao.findPageProduct(pageNo));
 		model.addAttribute("nccs", nccdao.findAll());
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
