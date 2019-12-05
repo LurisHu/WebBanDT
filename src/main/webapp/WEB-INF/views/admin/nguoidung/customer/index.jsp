@@ -27,3 +27,11 @@ span[id*=error] {
 		</div>
 	</div>
 </div>
+<div>
+	<ul class="pager">
+		<li><a href="/admin/nguoidung/customer/index/0">First</a></li>
+		<li><a href="/admin/nguoidung/customer/index/${pageNo-1}">Previous</a></li>
+		<li><a href="/admin/nguoidung/customer/index/${pageNo+1}">Next</a></li>
+		<li><a href="/admin/nguoidung/customer/index/${lastPageNo}">Last</a></li>
+	</ul>
+</div>

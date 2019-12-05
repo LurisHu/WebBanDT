@@ -57,7 +57,7 @@ public class HoaDonDAOImpl implements HoaDonDAO {
 	@Override
 	public List<HoaDon> findPageHoaDon(int pageNo) {
 		int pageSize = 10;
-		String hql = "FROM HoaDon ORDER BY NGAYDAT";
+		String hql = "FROM HoaDon ORDER BY NGAYDAT DESC";
 		Session session = factory.getCurrentSession();
 		TypedQuery<HoaDon> query = session.createQuery(hql, HoaDon.class);
 		query.setFirstResult(pageNo * pageSize);

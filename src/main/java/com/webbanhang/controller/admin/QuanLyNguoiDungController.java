@@ -30,9 +30,16 @@ public class QuanLyNguoiDungController {
 	EmailService mailer;
 
 	// Admin
-	@RequestMapping("admin/nguoidung/admin/index")
-	public String index(Model model) {
-		model.addAttribute("nds", dao.findAllAdmin());
+	@RequestMapping("admin/nguoidung/admin/index/{pageNo}")
+	public String index(Model model, @PathVariable("pageNo") int pageNo) {
+		if(pageNo >= dao.getPageCountAdmin()) {
+			pageNo = 0;
+		}else if(pageNo < 0) {
+			pageNo = dao.getPageCountAdmin()-1;
+		}
+		model.addAttribute("pageNo", pageNo);
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin()-1);
+		model.addAttribute("nds", dao.findPageAdmin(pageNo));
 		model.addAttribute("nd", new NguoiDung());
 		return "admin/nguoidung/admin/index";
 	}
@@ -41,7 +48,7 @@ public class QuanLyNguoiDungController {
 	@GetMapping("admin/nguoidung/admin/create")
 	public String create(Model model) {
 		model.addAttribute("nd", new NguoiDung());
-		model.addAttribute("nds", dao.findAllAdmin());
+		model.addAttribute("nds", dao.findPageAdmin(0));
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -76,7 +83,7 @@ public class QuanLyNguoiDungController {
 				model.addAttribute("message", "Thêm Admin thất bại");
 			}
 		}
-		model.addAttribute("nds", dao.findAllAdmin());
+		model.addAttribute("nds", dao.findPageAdmin(0));
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -84,7 +91,7 @@ public class QuanLyNguoiDungController {
 	@GetMapping("admin/nguoidung/admin/update")
 	public String update(Model model) {
 		model.addAttribute("nd", new NguoiDung());
-		model.addAttribute("nds", dao.findAllAdmin());
+		model.addAttribute("nds", dao.findPageAdmin(0));
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -104,7 +111,7 @@ public class QuanLyNguoiDungController {
 				model.addAttribute("message", "Cập nhật Admin thất bại");
 			}
 		}
-		model.addAttribute("nds", dao.findAllAdmin());
+		model.addAttribute("nds", dao.findPageAdmin(0));
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -112,7 +119,7 @@ public class QuanLyNguoiDungController {
 	@GetMapping("admin/nguoidung/admin/delete")
 	public String delete(Model model) {
 		model.addAttribute("nd", new NguoiDung());
-		model.addAttribute("nds", dao.findAllAdmin());
+		model.addAttribute("nds", dao.findPageAdmin(0));
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -128,7 +135,7 @@ public class QuanLyNguoiDungController {
 				model.addAttribute("message", "Xóa Admin thất bại");
 			}
 		}
-		model.addAttribute("nds", dao.findAllAdmin());
+		model.addAttribute("nds", dao.findPageAdmin(0));
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -136,16 +143,23 @@ public class QuanLyNguoiDungController {
 	@GetMapping("admin/nguoidung/admin/edit/{id}")
 	public String edit(Model model, @PathVariable("id") Integer id) {
 		NguoiDung entity = dao.findById(id);
-		model.addAttribute("nds", dao.findAllAdmin());
+		model.addAttribute("nds", dao.findPageAdmin(0));
 		model.addAttribute("nd", entity);
 		return "admin/nguoidung/admin/index";
 	}
 
 	// -----------------------------------------------------------
 	// Customer
-	@RequestMapping("admin/nguoidung/customer/index")
-	public String indexCus(Model model) {
-		model.addAttribute("nds", dao.findAllCustomer());
+	@RequestMapping("admin/nguoidung/customer/index/{pageNo}")
+	public String indexCus(Model model, @PathVariable("pageNo") int pageNo) {
+		if(pageNo >= dao.getPageCountCustomer()) {
+			pageNo = 0;
+		}else if(pageNo < 0) {
+			pageNo = dao.getPageCountCustomer()-1;
+		}
+		model.addAttribute("pageNo", pageNo);
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer()-1);
+		model.addAttribute("nds", dao.findPageCustomer(pageNo));
 		model.addAttribute("nd", new NguoiDung());
 		return "admin/nguoidung/customer/index";
 	}
@@ -154,7 +168,7 @@ public class QuanLyNguoiDungController {
 	@GetMapping("admin/nguoidung/customer/create")
 	public String createCus(Model model) {
 		model.addAttribute("nd", new NguoiDung());
-		model.addAttribute("nds", dao.findAllCustomer());
+		model.addAttribute("nds", dao.findPageCustomer(0));
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -191,7 +205,7 @@ public class QuanLyNguoiDungController {
 				model.addAttribute("message", "Thêm khách hàng thất bại");
 			}
 		}
-		model.addAttribute("nds", dao.findAllCustomer());
+		model.addAttribute("nds", dao.findPageCustomer(0));
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -199,7 +213,7 @@ public class QuanLyNguoiDungController {
 	@GetMapping("admin/nguoidung/customer/update")
 	public String updateCus(Model model) {
 		model.addAttribute("nd", new NguoiDung());
-		model.addAttribute("nds", dao.findAllCustomer());
+		model.addAttribute("nds", dao.findPageCustomer(0));
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -218,7 +232,7 @@ public class QuanLyNguoiDungController {
 				model.addAttribute("message", "Cập nhật khách hàng thất bại");
 			}
 		}
-		model.addAttribute("nds", dao.findAllCustomer());
+		model.addAttribute("nds", dao.findPageCustomer(0));
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -226,7 +240,7 @@ public class QuanLyNguoiDungController {
 	@GetMapping("admin/nguoidung/customer/delete")
 	public String deleteCus(Model model) {
 		model.addAttribute("nd", new NguoiDung());
-		model.addAttribute("nds", dao.findAllCustomer());
+		model.addAttribute("nds", dao.findPageCustomer(0));
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -242,7 +256,7 @@ public class QuanLyNguoiDungController {
 				model.addAttribute("message", "Xóa khách hàng thất bại");
 			}
 		}
-		model.addAttribute("nds", dao.findAllCustomer());
+		model.addAttribute("nds", dao.findPageCustomer(0));
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -250,7 +264,7 @@ public class QuanLyNguoiDungController {
 	@GetMapping("admin/nguoidung/customer/edit/{id}")
 	public String editCus(Model model, @PathVariable("id") Integer id) {
 		NguoiDung entity = dao.findById(id);
-		model.addAttribute("nds", dao.findAllCustomer());
+		model.addAttribute("nds", dao.findPageCustomer(0));
 		model.addAttribute("nd", entity);
 		return "admin/nguoidung/customer/index";
 	}

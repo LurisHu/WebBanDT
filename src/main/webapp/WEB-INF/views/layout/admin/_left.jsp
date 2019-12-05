@@ -39,9 +39,9 @@
 			data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">Quản lý người dùng:</h6>
-				<a class="collapse-item" href="/admin/nguoidung/admin/index">Quản
+				<a class="collapse-item" href="/admin/nguoidung/admin/index/0">Quản
 					lý Admin</a> <a class="collapse-item"
-					href="/admin/nguoidung/customer/index">Quản lý Customer</a>
+					href="/admin/nguoidung/customer/index/0">Quản lý Customer</a>
 			</div>
 		</div></li>
 

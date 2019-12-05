@@ -23,7 +23,7 @@
 				<th>${loop.index+1}</th>
 				<td>${hoadon.nguoiDungHD}</td>
 				<td><fmt:formatDate value="${hoadon.ngayDat}" pattern="dd-MM-yyyy" /></td>
-				<td>${hoadon.tongTien}</td>
+				<td><fmt:formatNumber value="${hoadon.tongTien}" /></td>
 				<td>${hoadon.diaChiGiao}</td>
 				<td>${hoadon.phiVanChuyen}</td>
 				<td>${hoadon.comment}</td>

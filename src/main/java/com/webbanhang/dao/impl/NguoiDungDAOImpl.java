@@ -40,18 +40,24 @@ public class NguoiDungDAOImpl implements NguoiDungDAO {
 	}
 
 	@Override
-	public List<NguoiDung> findAllAdmin() {
+	public List<NguoiDung> findPageAdmin(int pageNo) {
+		int pageSize = 10;
 		String hql = "FROM NguoiDung WHERE isAdmin = '1'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<NguoiDung> query = session.createQuery(hql, NguoiDung.class);
+		query.setFirstResult(pageNo * pageSize);
+		query.setMaxResults(pageSize);
 		return query.getResultList();
 	}
 
 	@Override
-	public List<NguoiDung> findAllCustomer() {
+	public List<NguoiDung> findPageCustomer(int pageNo) {
+		int pageSize = 10;
 		String hql = "FROM NguoiDung WHERE isAdmin = '0'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<NguoiDung> query = session.createQuery(hql, NguoiDung.class);
+		query.setFirstResult(pageNo * pageSize);
+		query.setMaxResults(pageSize);
 		return query.getResultList();
 	}
 
@@ -89,5 +95,27 @@ public class NguoiDungDAOImpl implements NguoiDungDAO {
 		} catch (NoResultException e) {
 			return null;
 		}
+	}
+
+	@Override
+	public int getPageCountAdmin() {
+		int pageSize = 10;
+		String hql = "SELECT count(h) FROM NguoiDung h WHERE isAdmin = '1'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<Long> query = session.createQuery(hql,Long.class);
+		long count = query.getSingleResult();
+		int pageCount = (int) Math.ceil(1.0*count/pageSize);
+		return pageCount;
+	}
+
+	@Override
+	public int getPageCountCustomer() {
+		int pageSize = 10;
+		String hql = "SELECT count(h) FROM NguoiDung h WHERE isAdmin = '0'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<Long> query = session.createQuery(hql,Long.class);
+		long count = query.getSingleResult();
+		int pageCount = (int) Math.ceil(1.0*count/pageSize);
+		return pageCount;
 	}
 }
