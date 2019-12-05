@@ -95,7 +95,7 @@ public class CartController {
 	public String thanhtoan(@RequestParam("hoTen") String hoTen, @RequestParam("SDT") String SDT,
 			@RequestParam("tinhThanh") String tinhThanh, @RequestParam("quanHuyen") String quanHuyen,
 			@RequestParam("phuongXa") String phuongXa, @RequestParam("diaChi") String diaChi,
-			@RequestParam("comment") String comment,
+			@RequestParam("comment") String comment, @RequestParam("quantity") int quantity,
 			@CookieValue(value = "userId", defaultValue = "not") Integer userId) {
 		// Tạo hóa đơn
 		Double thanhTien = cart.getAmount();
@@ -118,7 +118,7 @@ public class CartController {
 			SanPham sp = listSP.get(i);
 			HoaDonChiTiet temp = new HoaDonChiTiet();
 			temp.setGiaSP(sp.getGiaSP());
-			temp.setSoLuong(1);
+			temp.setSoLuong(quantity);
 			temp.setGiamGia(sp.getGiamGia());
 			temp.setHoaDonHDCT(hdDao.findById(hd.getMaHD()));
 			temp.setSanPhamHDCT(sp);

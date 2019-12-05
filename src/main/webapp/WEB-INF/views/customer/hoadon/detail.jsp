@@ -8,9 +8,10 @@
 		<tr>
 			<th scope="col">#</th>
 			<th scope="col">Sản phẩm</th>
-			<th scope="col">Giá</th>
+			<th scope="col">Đơn giá</th>
 			<th scope="col">Số Lượng</th>
 			<th scope="col">Giảm giá</th>
+			<th scope="col">Thành tiền</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -21,7 +22,8 @@
 				<td>${detail.sanPhamHDCT}</td>
 				<td><fmt:formatNumber value="${detail.giaSP}"/></td>
 				<td>${detail.soLuong}</td>
-				<td>${detail.giamGia}</td>
+				<td><fmt:formatNumber value="${detail.giamGia*detail.soLuong}"/></td>
+				<td><fmt:formatNumber value="${(detail.giaSP*detail.soLuong)-(detail.giamGia*detail.soLuong)}"/></td>
 			</tr>
 		</c:forEach>
 	</tbody>

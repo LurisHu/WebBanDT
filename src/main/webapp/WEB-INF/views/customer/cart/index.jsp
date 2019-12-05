@@ -76,6 +76,12 @@ label.error {
 				<div class="information">
 					<form class="form-horizontal form-information" id="thanhToan"
 						action="/cart/thanhtoan">
+						<c:forEach var="p"
+							items="${sessionScope['scopedTarget.cartService'].items}">
+							<input type="hidden" step="1" min="1" max="" name="quantity"
+								value="${p.soLuong}" title="Qty" class="input-text qty text"
+								size="4" pattern="" inputmode="" readonly="readonly">
+						</c:forEach>
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Họ tên</label>
 							<div class="col-sm-10">
