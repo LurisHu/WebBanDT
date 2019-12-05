@@ -49,6 +49,12 @@ public class CartController {
 		return "customer/cart/index";
 	}
 
+	@RequestMapping("cart/buynow/{id}")
+	public String buynow(@PathVariable("id") Integer id) {
+		cart.add(id);
+		return "redirect:/cart/view";
+	}
+	
 	@RequestMapping("cart/add/{id}")
 	public String add(@PathVariable("id") Integer id) {
 		cart.add(id);

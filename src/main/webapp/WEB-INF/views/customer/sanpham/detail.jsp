@@ -106,7 +106,7 @@
 							</div> -->
 						</div>
 						<div>
-							<button type="button" class="btn btn-lg" id="now">Mua
+							<button class="btn btn-lg" id="now" formaction="/cart/buynow/${item.maSP}">Mua
 								ngay</button>
 							<button class="btn btn-lg" id="addcart"
 								formaction="/cart/add/${item.maSP}">Thêm vào giỏ</button>
