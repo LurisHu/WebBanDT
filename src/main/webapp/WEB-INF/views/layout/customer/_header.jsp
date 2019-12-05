@@ -55,7 +55,7 @@
 						data-target="#myModal1">Đăng nhập</a></li> -->
 						<li><a id="A1" href="#">Thông tin cá nhân</a></li>
 						<li><a id="A1" href="#">Đổi mật khẩu</a></li>
-						<li><a id="A1" href="#">Lịch sử mua hàng</a></li>
+						<li><a id="A1" href="/bill/view">Lịch sử mua hàng</a></li>
 						<li><a id="A1" href="/account/logout">Đăng xuất</a></li>
 					</ul>
 				</c:if> <c:if test="${empty user}">

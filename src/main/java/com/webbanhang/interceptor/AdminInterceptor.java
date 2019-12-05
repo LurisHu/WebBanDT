@@ -38,7 +38,6 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 		} else {
 			if (!userDao.findById(Integer.parseInt(cookieService.getCookieFromUser("userId", request))).getIsAdmin()) {
 				session.setAttribute("back-url", request.getRequestURI());
-				session.setAttribute("message", "Email này không phải Admin");
 				response.sendRedirect("/account/login");
 				return false;
 			}
