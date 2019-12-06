@@ -3,10 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <h3>DANH SÁCH KHÁCH HÀNG</h3>
+<div class="search-product col-md-6">
+	<form method="post">
+		<input type="text" id="product" placeholder="Search ........" name="search">
+		<button class="btn btn-info" style="float: right"
+			formaction="/admin/nguoidung/customer/search">Search</button>
+	</form>
+</div>
 <div class="table-responsive">
-	<div class="search-product col-md-6">
-		<input type="text" id="product" placeholder="Search ........">
-	</div>
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -39,7 +43,8 @@
 					<td>${user.isAdmin==true?"Người quản trị":"Khách hàng"}</td>
 					<td>${user.phone}</td>
 					<td>${user.isActive==false?"Chưa kích hoạt":"Đã kích hoạt"}</td>
-					<td><a href="/admin/nguoidung/customer/edit/${user.maNguoiDung}"
+					<td><a
+						href="/admin/nguoidung/customer/edit/${user.maNguoiDung}"
 						class="btn btn-info">Edit</a></td>
 				</tr>
 			</c:forEach>

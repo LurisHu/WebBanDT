@@ -69,6 +69,6 @@
 		<button class="btn btn-danger"
 			formaction="/admin/nguoidung/customer/delete">Delete</button>
 		<button class="btn btn-info"
-			formaction="/admin/nguoidung/customer/index">Reset</button>
+			formaction="/admin/nguoidung/customer/index/0">Reset</button>
 	</div>
 </form:form>

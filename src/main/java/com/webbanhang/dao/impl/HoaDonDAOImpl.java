@@ -2,6 +2,7 @@ package com.webbanhang.dao.impl;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
@@ -86,6 +87,17 @@ public class HoaDonDAOImpl implements HoaDonDAO {
 
 	@Override
 	public List<HoaDon> SearchHoaDon(Integer id) {
-		return null;
+		try {
+			int pageSize = 10;
+			String hql = "Select e from " + HoaDon.class.getName() + " e " //
+					+ " Where e.maHD like :id ORDER BY NGAYDAT DESC";
+			Session session = factory.getCurrentSession();
+			TypedQuery<HoaDon> query = session.createQuery(hql, HoaDon.class);
+			query.setParameter("id", "%"+id+"%");
+			query.setMaxResults(pageSize);
+			return query.getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 }

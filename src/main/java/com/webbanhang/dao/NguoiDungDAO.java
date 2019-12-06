@@ -9,6 +9,8 @@ public interface NguoiDungDAO {
 	List<NguoiDung> findAll();
 	List<NguoiDung> findPageAdmin(int pageNo);
 	List<NguoiDung> findPageCustomer(int pageNo);
+	List<NguoiDung> searchAdmin(String email);
+	List<NguoiDung> searchCustomer(String email);
 	NguoiDung create(NguoiDung entity);
 	void update(NguoiDung entity);
 	NguoiDung delete(Integer id);

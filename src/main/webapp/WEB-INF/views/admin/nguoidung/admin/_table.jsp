@@ -3,10 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <h3>DANH SÁCH ADMIN</h3>
+<div class="search-product col-md-6">
+	<form method="post">
+		<input type="text" id="product" placeholder="Search ........" name="search">
+		<button class="btn btn-info" style="float: right"
+			formaction="/admin/nguoidung/admin/search">Search</button>
+	</form>
+</div>
 <div class="table-responsive">
-	<div class="search-product col-md-6">
-		<input type="text" id="product" placeholder="Search ........">
-	</div>
 	<table class="table table-hover">
 		<thead>
 			<tr>

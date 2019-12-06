@@ -108,9 +108,9 @@ public class QuanLyHoaDonController {
 	
 	@RequestMapping("admin/hoadon/search")
 	public String search(Model model, @RequestParam("search") String id) {
-		Integer ma = Integer.parseInt(id);
+		Integer maHD = Integer.parseInt(id);
 		model.addAttribute("hoadon", new HoaDon());
-		model.addAttribute("hoadons", dao.SearchHoaDon(ma));
+		model.addAttribute("hoadons", dao.SearchHoaDon(maHD));
 		model.addAttribute("trangThai", ttdao.findAll());
 		return "admin/sanpham/index";
 	}

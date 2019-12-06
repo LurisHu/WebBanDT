@@ -3,6 +3,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <h3>DANH SÁCH HÓA ĐƠN</h3>
+<!-- <div class="search-product col-md-6">
+	<form method = "post">
+		<input type="number" id="product" placeholder="Search ........" name="search"><br />
+		<button class="btn btn-info" style="float: right" formaction="/admin/hoadon/search">Search</button>
+	</form>
+</div> -->
 <table class="table mt-5">
 	<thead class="thead-dark">
 		<tr>

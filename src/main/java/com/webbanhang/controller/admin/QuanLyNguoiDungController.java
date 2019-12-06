@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webbanhang.dao.NguoiDungDAO;
 import com.webbanhang.entity.NguoiDung;
@@ -32,13 +33,13 @@ public class QuanLyNguoiDungController {
 	// Admin
 	@RequestMapping("admin/nguoidung/admin/index/{pageNo}")
 	public String index(Model model, @PathVariable("pageNo") int pageNo) {
-		if(pageNo >= dao.getPageCountAdmin()) {
+		if (pageNo >= dao.getPageCountAdmin()) {
 			pageNo = 0;
-		}else if(pageNo < 0) {
-			pageNo = dao.getPageCountAdmin()-1;
+		} else if (pageNo < 0) {
+			pageNo = dao.getPageCountAdmin() - 1;
 		}
 		model.addAttribute("pageNo", pageNo);
-		model.addAttribute("lastPageNo", dao.getPageCountAdmin()-1);
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		model.addAttribute("nds", dao.findPageAdmin(pageNo));
 		model.addAttribute("nd", new NguoiDung());
 		return "admin/nguoidung/admin/index";
@@ -148,17 +149,25 @@ public class QuanLyNguoiDungController {
 		return "admin/nguoidung/admin/index";
 	}
 
+	// Search Admin
+	@RequestMapping("admin/nguoidung/admin/search")
+	public String search(Model model, @RequestParam("search") String email) {
+		model.addAttribute("nd", new NguoiDung());
+		model.addAttribute("nds", dao.searchAdmin(email));
+		return "admin/nguoidung/admin/index";
+	}
+
 	// -----------------------------------------------------------
 	// Customer
 	@RequestMapping("admin/nguoidung/customer/index/{pageNo}")
 	public String indexCus(Model model, @PathVariable("pageNo") int pageNo) {
-		if(pageNo >= dao.getPageCountCustomer()) {
+		if (pageNo >= dao.getPageCountCustomer()) {
 			pageNo = 0;
-		}else if(pageNo < 0) {
-			pageNo = dao.getPageCountCustomer()-1;
+		} else if (pageNo < 0) {
+			pageNo = dao.getPageCountCustomer() - 1;
 		}
 		model.addAttribute("pageNo", pageNo);
-		model.addAttribute("lastPageNo", dao.getPageCountCustomer()-1);
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer() - 1);
 		model.addAttribute("nds", dao.findPageCustomer(pageNo));
 		model.addAttribute("nd", new NguoiDung());
 		return "admin/nguoidung/customer/index";
@@ -266,6 +275,14 @@ public class QuanLyNguoiDungController {
 		NguoiDung entity = dao.findById(id);
 		model.addAttribute("nds", dao.findPageCustomer(0));
 		model.addAttribute("nd", entity);
+		return "admin/nguoidung/customer/index";
+	}
+
+	// Search Customer
+	@RequestMapping("admin/nguoidung/customer/search")
+	public String searchCustomer(Model model, @RequestParam("search") String email) {
+		model.addAttribute("nd", new NguoiDung());
+		model.addAttribute("nds", dao.searchCustomer(email));
 		return "admin/nguoidung/customer/index";
 	}
 }

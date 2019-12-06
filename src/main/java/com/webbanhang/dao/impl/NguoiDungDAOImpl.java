@@ -118,4 +118,36 @@ public class NguoiDungDAOImpl implements NguoiDungDAO {
 		int pageCount = (int) Math.ceil(1.0*count/pageSize);
 		return pageCount;
 	}
+
+	@Override
+	public List<NguoiDung> searchAdmin(String email) {
+		try {
+			int pageSize = 10;
+			String hql = "Select e from " + NguoiDung.class.getName() + " e " //
+					+ " Where e.email like :email and isAdmin = '1'";
+			Session session = factory.getCurrentSession();
+			TypedQuery<NguoiDung> query = session.createQuery(hql, NguoiDung.class);
+			query.setParameter("email", "%"+email+"%");
+			query.setMaxResults(pageSize);
+			return query.getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+
+	@Override
+	public List<NguoiDung> searchCustomer(String email) {
+		try {
+			int pageSize = 10;
+			String hql = "Select e from " + NguoiDung.class.getName() + " e " //
+					+ " Where e.email like :email and isAdmin = '0'";
+			Session session = factory.getCurrentSession();
+			TypedQuery<NguoiDung> query = session.createQuery(hql, NguoiDung.class);
+			query.setParameter("email", "%"+email+"%");
+			query.setMaxResults(pageSize);
+			return query.getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
 }

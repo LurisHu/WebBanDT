@@ -75,6 +75,6 @@
 			formaction="/admin/nguoidung/admin/update">Update</button>
 		<button class="btn btn-danger"
 			formaction="/admin/nguoidung/admin/delete">Delete</button>
-		<button class="btn btn-info" formaction="/admin/nguoidung/admin/index">Reset</button>
+		<button class="btn btn-info" formaction="/admin/nguoidung/admin/index/0">Reset</button>
 	</div>
 </form:form>
