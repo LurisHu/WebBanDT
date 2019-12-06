@@ -83,4 +83,9 @@ public class HoaDonDAOImpl implements HoaDonDAO {
 		TypedQuery<HoaDon> query = session.createQuery(hql, HoaDon.class);
 		return query.getResultList();
 	}
+
+	@Override
+	public List<HoaDon> SearchHoaDon(Integer id) {
+		return null;
+	}
 }

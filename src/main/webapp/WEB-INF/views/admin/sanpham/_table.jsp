@@ -3,7 +3,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <h3>DANH SÁCH SẢN PHẨM</h3>
 <div class="search-product col-md-6">
-	<input type="text" id="product" placeholder="Search ........">
+	<form method = "post">
+		<input type="text" id="product" placeholder="Search ........" name="search"><br />
+		<button class="btn btn-info" style="float: right" formaction="/admin/sanpham/search">Search</button>
+	</form>
 </div>
 <table class="table table-hover">
 	<thead>

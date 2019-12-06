@@ -166,4 +166,14 @@ public class QuanLySanPhamController {
 		model.addAttribute("danhmuc", dmdao.findAll());
 		return "admin/sanpham/index";
 	}
+	
+	@RequestMapping("admin/sanpham/search")
+	public String search(Model model, @RequestParam("search") String name) {
+		model.addAttribute("product", new SanPham());
+		model.addAttribute("products", dao.findByName(name));
+		model.addAttribute("nccs", nccdao.findAll());
+		model.addAttribute("danhmuc", dmdao.findAll());
+		System.out.println(dao.findByName(name));
+		return "admin/sanpham/index";
+	}
 }

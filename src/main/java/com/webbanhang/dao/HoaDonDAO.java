@@ -7,6 +7,7 @@ import com.webbanhang.entity.HoaDon;
 public interface HoaDonDAO {
 	HoaDon findById(Integer id);
 	List<HoaDon> findAll();
+	List<HoaDon> SearchHoaDon(Integer id);
 	HoaDon create(HoaDon entity);
 	void update(HoaDon entity);
 	HoaDon delete(Integer id);

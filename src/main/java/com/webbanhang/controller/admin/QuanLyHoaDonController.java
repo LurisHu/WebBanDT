@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webbanhang.dao.HoaDonDAO;
 import com.webbanhang.dao.NguoiDungDAO;
@@ -103,5 +104,14 @@ public class QuanLyHoaDonController {
 		model.addAttribute("trangThai", ttdao.findAll());
 		model.addAttribute("hoadon", entity);
 		return "admin/hoadon/index";
+	}
+	
+	@RequestMapping("admin/hoadon/search")
+	public String search(Model model, @RequestParam("search") String id) {
+		Integer ma = Integer.parseInt(id);
+		model.addAttribute("hoadon", new HoaDon());
+		model.addAttribute("hoadons", dao.SearchHoaDon(ma));
+		model.addAttribute("trangThai", ttdao.findAll());
+		return "admin/sanpham/index";
 	}
 }

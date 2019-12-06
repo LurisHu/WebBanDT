@@ -7,6 +7,7 @@ import com.webbanhang.entity.SanPham;
 public interface SanPhamDAO {
 	SanPham findById(Integer id);
 	List<SanPham> findAll();
+	List<SanPham> findByName(String name);
 	List<SanPham> findPageProduct(int PageNo);
 	SanPham create(SanPham entity);
 	void update(SanPham entity);
