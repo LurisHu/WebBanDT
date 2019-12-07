@@ -44,27 +44,40 @@
 					href="/admin/nguoidung/customer/index/0">Quản lý Customer</a>
 			</div>
 		</div></li>
+	<li class="nav-item"><a class="nav-link collapsed" href="#"
+		data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+		aria-controls="collapseTwo"> <i class="fas fa-fw fa-cog"></i> <span>Thống kê</span>
+	</a>
+		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+			data-parent="#accordionSidebar">
+			<div class="bg-white py-2 collapse-inner rounded">
+				<h6 class="collapse-header">Thống kê:</h6>
+				<a class="collapse-item" href="/admin/report/inventory-by-category">Tồn kho</a>
+				<a class="collapse-item" href="/admin/report/revenue-by-category">Doanh thu từng loại</a>
+				<a class="collapse-item" href="/admin/report/revenue-by-customer">Doanh thu khách hàng</a>
+			</div>
+		</div></li>
 
 	<li class="nav-item"><a class="nav-link"
-		href="/admin/sanpham/index/0"> <i class="	fas fa-pencil-alt"></i> <span>Quản
-				lý sản phẩm</span>
+		href="/admin/sanpham/index/0"> <i class="	fas fa-pencil-alt"></i>
+			<span>Quản lý sản phẩm</span>
 	</a></li>
-	
+
 	<li class="nav-item"><a class="nav-link"
-		href="/admin/nhacungcap/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
-				lý nhà cung cấp</span>
+		href="/admin/nhacungcap/index"> <i class="	fas fa-pencil-alt"></i>
+			<span>Quản lý nhà cung cấp</span>
 	</a></li>
-	
+
 	<li class="nav-item"><a class="nav-link"
 		href="/admin/danhmuc/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
 				lý danh mục</span>
 	</a></li>
-	
+
 	<li class="nav-item"><a class="nav-link"
 		href="/admin/diachi/index"> <i class="	fas fa-pencil-alt"></i> <span>Quản
 				lý địa chỉ</span>
 	</a></li>
-	
+
 	<li class="nav-item"><a class="nav-link"
 		href="/admin/hoadon/index/0"> <i class="	fas fa-pencil-alt"></i> <span>Quản
 				lý hóa đơn</span>
