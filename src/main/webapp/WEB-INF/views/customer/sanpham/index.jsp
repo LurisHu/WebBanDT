@@ -40,7 +40,7 @@
 			<!-- Showproduct -->
 			<div class="product">
 				<div class="col-sm-12">
-					<strong>Điện thoại</strong> <a id="link" href="#"
+					<strong>Điện thoại bán chạy nhất</strong> <a id="link" href="#"
 						type="button" class="btn btn-link">Iphone</a> <a id="link"
 						href="#" type="button" class="btn btn-link">Samsung</a> <a
 						id="link" href="#" type="button" class="btn btn-link">Oppo</a> <a
