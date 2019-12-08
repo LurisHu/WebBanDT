@@ -3,6 +3,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <div class="container-fluid body">
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=460287461293455&autoLogAppEvents=1"></script>
 	<div class="col-sm-12">
 		<div class="path">
 			<a href="/customer/sanpham/index">Trang chủ</a>&nbsp;/&nbsp;<a
@@ -106,8 +109,8 @@
 							</div> -->
 						</div>
 						<div>
-							<button class="btn btn-lg" id="now" formaction="/cart/buynow/${item.maSP}">Mua
-								ngay</button>
+							<button class="btn btn-lg" id="now"
+								formaction="/cart/buynow/${item.maSP}">Mua ngay</button>
 							<button class="btn btn-lg" id="addcart"
 								formaction="/cart/add/${item.maSP}">Thêm vào giỏ</button>
 						</div>
@@ -152,7 +155,7 @@
 									<p>${p.tenSP}</p>
 									<b>
 										<p id="color-price">
-											<fmt:formatNumber value="${p.giaSP}"/>
+											<fmt:formatNumber value="${p.giaSP}" />
 										</p>
 									</b>
 								</div>
@@ -379,9 +382,11 @@
 			</div>
 		</div>
 		<hr>
+		<div class="fb-comments"
+			data-href="http://localhost:8080/${requestScope['javax.servlet.forward.request_uri']}"
+			data-width="" data-numposts="5"></div>
 	</div>
 </div>
-
 <%-- <h1>Product Detail</h1>
 	<ul>
 		<li>${item.maSP}</li>
