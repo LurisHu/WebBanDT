@@ -221,25 +221,24 @@ public class AccountController {
 	}
 
 	@GetMapping(value = { "update", "account/update" })
-	public String resetPassword(HttpServletResponse response) {
+	public String resetPassword() {
 		return "account/update/index";
 	}
 
 	@PostMapping("account/update")
 	public String resetPassword(HttpServletResponse response, Model model,
-			@CookieValue(value = "userId", defaultValue = "none") Integer userId,
+			@CookieValue(value = "userId", defaultValue = "none") String userId,
 			@CookieValue(value = "authorKey", defaultValue = "none") String authorKeySHA256,
 			@RequestParam("oldPassword") String oldPassword, @RequestParam("password") String pwd,
 			@RequestParam("re-password") String repwd) {
-		NguoiDung user = dao.findById(userId);
+		NguoiDung user = dao.findById(Integer.parseInt(userId));
 		if (pwd.equals(repwd)) {
-			if (secureService.validatePass(userId, oldPassword)) {
+			if (secureService.validatePass(Integer.parseInt(userId), oldPassword)) {
 				if (secureService.checkValidOfHashKeySha256(authorKeySHA256, user.getMaNguoiDung() + user.getEmail())) {
 					user.setMatKhau(pwd);
 					dao.update(user);
 					model.addAttribute("message", "Mật khẩu của bạn được cập nhật thành công");
-				}
-				else {
+				} else {
 					model.addAttribute("message", "Không xác thực được người dùng");
 				}
 			} else {
@@ -251,4 +250,58 @@ public class AccountController {
 		return "account/update/index";
 	}
 
+	@GetMapping("account/edit")
+	public String editAccount(@CookieValue(value = "userId", defaultValue = "none") String userId,
+			@CookieValue(value = "authorKey", defaultValue = "none") String authorKey, Model model) {
+		model.addAttribute("nd", new NguoiDung());
+		try {
+			NguoiDung user = dao.findById(Integer.parseInt(userId));
+			if (userId != "none" && authorKey != "none") {
+				if (user != null && secureService.checkValidOfHashKeySha256(authorKey,
+						user.getMaNguoiDung() + user.getEmail())) {
+					model.addAttribute("nd", user);
+				} else {
+					model.addAttribute("message", "Không xác thực được tài khoản. Xin thử đăng nhập lại!");
+				}
+			} else {
+				model.addAttribute("message", "Không xác thực được tài khoản. Xin thử đăng nhập lại!");
+			}
+		} catch (Exception e) {
+			model.addAttribute("message",
+					"Đã xảy ra lỗi trong qua trình truy vấn. Vui lòng đăng xuất và đăng nhập lại");
+			System.out.println("Error message:" + e);
+		}
+		return "account/edit/index";
+	}
+
+	@PostMapping("account/edit")
+	public String editAccount(@CookieValue(value = "userId", defaultValue = "none") String userId,
+			@Validated @ModelAttribute("nd") NguoiDung nd, BindingResult errors, Model model) {
+		// Set default values to update customer
+		nd.setLoaiKH(0);
+		nd.setIsAdmin(false);
+
+		// update account
+		if (errors.hasErrors()) {
+			model.addAttribute("message", "Xin vui lòng sửa các lỗi sau đây");
+			System.out.println("Xin vui lòng sửa các lỗi sau đây"+errors.toString());
+			try {
+				if(!(nd.getEmail().equals(dao.findById(Integer.parseInt(userId)).getEmail()))) {
+					if(dao.findByEmail(nd.getEmail())!=null) {
+						model.addAttribute("checkEmail", "Email không hợp lệ hoặc đã được sử dụng!");
+					}
+				}
+			} catch (Exception e) {
+				model.addAttribute("message", "Rấc tiếc đã có lỗi xảy ra trong quá trình xác thực xin vui lòng thử lại sau!");
+			}
+		} else {
+			try {
+				dao.update(nd);
+				model.addAttribute("message", "Cập nhật thông tin thành công");
+			} catch (Exception e) {
+				model.addAttribute("message", "Đã có lỗi xảy ra. Vui lòng thử lại");
+			}
+		}
+		return "account/edit/index";
+	}
 }
