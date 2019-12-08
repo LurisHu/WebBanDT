@@ -10,11 +10,8 @@
 		<thead>
 			<tr>
 				<th>Loại</th>
-				<th>Số lượng</th>
+				<th>Số lượng tồn</th>
 				<th>Giá trị</th>
-				<th>Giá TN</th>
-				<th>Giá CN</th>
-				<th>Giá TB</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,9 +20,6 @@
 					<td>${array[0]}</td>
 					<td>${array[1]}</td>
 					<td><fmt:formatNumber value="${array[2]}"/> VNĐ</td>
-					<td>${array[3]}</td>
-					<td>${array[4]}</td>
-					<td>${array[5]}</td>
 				</tr>
 			</c:forEach>
 		</tbody>

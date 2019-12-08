@@ -3,23 +3,21 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="container">
-	<h2>DOANH SỐ TỪNG LOẠI</h2>
+	<h2>SỐ LƯỢNG BÁN THEO HÃNG</h2>
 	<p>The .table class adds basic styling (light padding and only
 		horizontal dividers) to a table:</p>
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Loại</th>
+				<th>Hãng</th>
 				<th>Số lượng bán</th>
-				<th>Doanh số</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="array" items="${data}">
 				<tr>
 					<td>${array[0]}</td>
-					<td>${array[1]}</td>
-					<td><fmt:formatNumber value="${array[2]}"/> VNĐ</td>
+					<td>${array[1]} Cái</td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -29,9 +27,9 @@
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 	var mydata = [ 
-			[ 'Loại', 'Doanh số' ],
+			[ 'Hãng', 'Số lượng' ],
 			<c:forEach var="array" items="${data}">
-			[ '${array[0]}', ${array[2]} ], 
+			[ '${array[0]}', ${array[1]} ], 
 			</c:forEach>
 			];
 	google.charts.load("current", {
@@ -42,7 +40,7 @@
 		var data = google.visualization.arrayToDataTable(mydata);
 
 		var options = {
-			title : 'Revenue By Category',
+			title : '',
 			is3D : true,
 		};
 

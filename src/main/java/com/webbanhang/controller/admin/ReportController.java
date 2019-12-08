@@ -37,4 +37,16 @@ public class ReportController {
 		model.addAttribute("data", dao.revenueByCustomer());
 		return "admin/report/revenue-by-customer";
 	}
+	
+	@RequestMapping("admin/report/revenue-by-month")
+	public String revenueByMonthCustomer(Model model) {
+		model.addAttribute("data", dao.revenueByMonth());
+		return "admin/report/revenue-by-month";
+	}
+	
+	@RequestMapping("admin/report/quantity-by-ncc")
+	public String quantityByNCC(Model model) {
+		model.addAttribute("data", dao.quantityByNCC());
+		return "admin/report/quantity-by-ncc";
+	}
 }

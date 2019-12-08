@@ -3,13 +3,13 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="container">
-	<h2>DOANH SỐ TỪNG KHÁCH HÀNG</h2>
+	<h2>DOANH SỐ TỪNG THÁNG</h2>
 	<p>The .table class adds basic styling (light padding and only
 		horizontal dividers) to a table:</p>
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Khách Hàng</th>
+				<th>Tháng</th>
 				<th>Số lượng bán</th>
 				<th>Doanh số</th>
 			</tr>
@@ -29,7 +29,7 @@
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
     var mydata = [ 
-		[ 'Khách Hàng', 'Doanh số' ],
+		[ 'Tháng', 'Doanh số' ],
 		<c:forEach var="array" items="${data}">
 		[ '${array[0]}', ${array[2]} ], 
 		</c:forEach>
@@ -41,7 +41,7 @@
         var data = google.visualization.arrayToDataTable(mydata);
 
         var options = {
-          title: 'Revenue By Customer',
+          title: '',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
