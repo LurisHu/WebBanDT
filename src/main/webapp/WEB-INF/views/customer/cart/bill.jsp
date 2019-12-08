@@ -21,8 +21,7 @@
 					<p>THÔNG TIN ĐẶT HÀNG</p>
 				</div>
 				<div class="panel-body body-mini">
-					<p>* Địa chỉ đặt hàng: 173/8-ấp 8-Vĩnh Công- Châu Thành-Long
-						An.</p>
+					<p>* Địa chỉ đặt hàng: ${diachi}</p>
 					<p>*Thanh toán khi nhận được hàng.</p>
 					<p>
 						*Tổng tiền:&ensp;<span><fmt:formatNumber
