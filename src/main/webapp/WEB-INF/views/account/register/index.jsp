@@ -3,7 +3,7 @@
 <div class="re-container">
 	<div class="re-login">
 		<div class="re-title-left">
-			<p>Tạo tài khoản Optimistic</p>
+			<p>Tạo tài khoản</p>
 		</div>
 		<div class="re-title-right">
 			<p>
