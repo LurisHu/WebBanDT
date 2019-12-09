@@ -11,7 +11,7 @@
 				<ul class="dropdown-menu">
 					<li><a id="A1" href="/customer/danhmuc/phone/0">Điện thoại</a></li>
 					<li><a id="A1" href="/customer/danhmuc/laptop/0">Laptop</a></li>
-					<li><a id="A1" href="#">Phụ kiện</a></li>
+					<li><a id="A1" href="/customer/danhmuc/phukien/0">Phụ kiện</a></li>
 				</ul></li>
 		</ul>
 		<div class="col-sm-3 col-md-3">

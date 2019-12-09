@@ -17,7 +17,9 @@ public interface SanPhamDAO {
 	List<SanPham> BestSellerPhuKien(int PageNo);
 	List<SanPham> findPagePhone(int PageNo);
 	List<SanPham> findPageLaptop(int PageNo);
+	List<SanPham> findPagePhuKien(int PageNo);
 	int getPageCountPhone();
 	int getPageCountLaptop();
+	int getPageCountPhuKien();
 	int getPageCountProducts();
 }

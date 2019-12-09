@@ -65,4 +65,17 @@ public class ProductController {
 		model.addAttribute("Laptop", dao.findPageLaptop(pageNo));
 		return "customer/danhmuc/laptop";
 	}
+	
+	@RequestMapping("/customer/danhmuc/phukien/{pageNo}")
+	public String phukien(Model model, @PathVariable("pageNo") int pageNo) {
+		if(pageNo >= dao.getPageCountLaptop()) {
+			pageNo = 0;
+		}else if(pageNo < 0) {
+			pageNo = dao.getPageCountLaptop()-1;
+		}
+		model.addAttribute("pageNo", pageNo);
+		model.addAttribute("lastPageNo", dao.getPageCountPhuKien()-1);
+		model.addAttribute("PhuKien", dao.findPagePhuKien(pageNo));
+		return "customer/danhmuc/phukien";
+	}
 }
