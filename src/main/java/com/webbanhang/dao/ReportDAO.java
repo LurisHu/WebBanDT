@@ -18,4 +18,6 @@ public interface ReportDAO {
 	List<Object[]> quantityByNCC();
 	Double revenueByMonthNow();
 	Double revenueByYearNow();
+	int userByData();
+	int adminByData();
 }

@@ -18,6 +18,8 @@ public class AdminController {
 		model.addAttribute("revenue", dao.revenueByMonth());
 		model.addAttribute("revenueMonthNow", dao.revenueByMonthNow());
 		model.addAttribute("revenueYearNow", dao.revenueByYearNow());
+		model.addAttribute("userNow", dao.userByData());
+		model.addAttribute("adminNow", dao.adminByData());
 		return "admin/dashboard/index";
 	}
 }

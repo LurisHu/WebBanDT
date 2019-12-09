@@ -97,4 +97,24 @@ public class ReportDAOImpl implements ReportDAO {
 		Double revenue = query.getSingleResult();
 		return revenue;
 	}
+
+	@Override
+	public int userByData() {
+		String hql = "SELECT count(u) " + "FROM NguoiDung u "
+				+ "WHERE isAdmin = '0'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<Long> query = session.createQuery(hql, Long.class);
+		long user = query.getSingleResult();
+		return (int) user;
+	}
+
+	@Override
+	public int adminByData() {
+		String hql = "SELECT count(u) " + "FROM NguoiDung u "
+				+ "WHERE isAdmin = '1'";
+		Session session = factory.getCurrentSession();
+		TypedQuery<Long> query = session.createQuery(hql, Long.class);
+		long admin = query.getSingleResult();
+		return (int) admin;
+	}
 }
