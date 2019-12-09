@@ -383,8 +383,8 @@
 		</div>
 		<hr>
 		<div class="fb-comments"
-			data-href="http://localhost:8080/${requestScope['javax.servlet.forward.request_uri']}"
-			data-width="" data-numposts="5"></div>
+	data-href="http://localhost:8080/${requestScope['javax.servlet.forward.request_uri']}"
+	data-width="" data-numposts="5"></div>\
 	</div>
 </div>
 <%-- <h1>Product Detail</h1>

@@ -53,7 +53,7 @@
 						<!-- Trigger the modal with a button -->
 						<!-- <li><a id="A1" href="#" data-toggle="modal"
 						data-target="#myModal1">Đăng nhập</a></li> -->
-						<li><a id="A1" href="#">Thông tin cá nhân</a></li>
+						<li><a id="A1" href="/account/edit">Thông tin cá nhân</a></li>
 						<li><a id="A1" href="/account/update">Đổi mật khẩu</a></li>
 						<li><a id="A1" href="/bill/view">Lịch sử mua hàng</a></li>
 						<li><a id="A1" href="/account/logout">Đăng xuất</a></li>

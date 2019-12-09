@@ -179,7 +179,8 @@ label.error {
 				},
 				diaChi : {
 					required : true,
-					minlength : 10
+					minlength : 10,
+					maxlength : 250
 				}
 			},
 			messages : {
@@ -196,7 +197,8 @@ label.error {
 				},
 				diaChi : {
 					required : "Vui lòng nhập địa chỉ",
-					minlength : "Địa chỉ ngắn vậy, chém gió ah?"
+					minlength : "Địa chỉ dài tối thiểu là 10 ký tự",
+					maxlength : "Địa chỉ dài tối đa 250 ký tự"
 				}
 			}
 		});
