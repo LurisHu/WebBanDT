@@ -19,13 +19,13 @@
 		<tbody>
 			<c:forEach var="user" items="${dcs}">
 				<tr>
-					<td>${user.maDiaChi}</td>
-					<td>${user.diaChi}</td>
-					<td>${user.tenTinh}</td>
-					<td>${user.quanHuyen}</td>
-					<td>${user.phuongXa}</td>
-					<td>${user.nguoiDungDC}</td>
-					<td><a href="/admin/diachi/edit/${user.maDiaChi}">Edit</a></td>
+					<th>${user.maDiaChi}</th>
+					<th>${user.diaChi}</th>
+					<th>${user.tenTinh}</th>
+					<th>${user.quanHuyen}</th>
+					<th>${user.phuongXa}</th>
+					<th>${user.nguoiDungDC}</th>
+					<th><a href="/admin/diachi/edit/${user.maDiaChi}">Edit</a></th>
 				</tr>
 			</c:forEach>
 		</tbody>

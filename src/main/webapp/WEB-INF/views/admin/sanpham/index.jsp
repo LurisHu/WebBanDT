@@ -19,7 +19,7 @@ span[id*=error] {
 	<div class="form-product">
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="h1-product">
+				<div class="text-center">
 					<h1>QUẢN LÝ SẢN PHẨM</h1>
 				</div>
 				<jsp:include page="_form.jsp"></jsp:include>

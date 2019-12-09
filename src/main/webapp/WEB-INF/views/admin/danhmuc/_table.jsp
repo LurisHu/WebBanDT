@@ -16,10 +16,10 @@
 		<c:forEach var="dm" items="${dms}" varStatus="loop">
 			<tr>
 				<th>${loop.index+1}</th>
-				<td>${dm.maDM}</td>
-				<td>${dm.tenDM}</td>
-				<td>${dm.moTa}</td>
-				<td><a href="/admin/danhmuc/edit/${dm.maDM}" class="btn btn-info">Edit</a></td>
+				<th>${dm.maDM}</th>
+				<th>${dm.tenDM}</th>
+				<th>${dm.moTa}</th>
+				<th><a href="/admin/danhmuc/edit/${dm.maDM}" class="btn btn-info">Edit</a></th>
 			</tr>
 		</c:forEach>
 	</tbody>

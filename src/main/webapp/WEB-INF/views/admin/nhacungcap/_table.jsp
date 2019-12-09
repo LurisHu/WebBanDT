@@ -16,10 +16,10 @@
 		<c:forEach var="ncc" items="${nccs}" varStatus="loop">
 			<tr>
 				<th>${loop.index+1}</th>
-				<td>${ncc.maNCC}</td>
-				<td>${ncc.tenNCC}</td>
-				<td>${ncc.moTa}</td>
-				<td><a href="/admin/nhacungcap/edit/${ncc.maNCC}" class="btn btn-info">Edit</a></td>
+				<th>${ncc.maNCC}</th>
+				<th>${ncc.tenNCC}</th>
+				<th>${ncc.moTa}</th>
+				<th><a href="/admin/nhacungcap/edit/${ncc.maNCC}" class="btn btn-info">Edit</a></th>
 			</tr>
 		</c:forEach>
 	</tbody>

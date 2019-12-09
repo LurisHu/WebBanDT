@@ -18,7 +18,7 @@ span[id*=error] {
 <div class="form-admin">
 	<div class="row">
 		<div class="col-sm-12">
-			<div class="h1">
+			<div class="text-center">
 				<h1>QUẢN LÝ ADMIN</h1>
 			</div>
 			<jsp:include page="_form.jsp"></jsp:include>

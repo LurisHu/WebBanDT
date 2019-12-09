@@ -54,7 +54,7 @@
 				<h6 class="collapse-header">Thống kê:</h6>
 				<a class="collapse-item" href="/admin/report/inventory-by-category">Tồn kho</a>
 				<a class="collapse-item" href="/admin/report/revenue-by-category">Doanh thu từng loại</a>
-				<a class="collapse-item" href="/admin/report/revenue-by-customer">Doanh thu khách hàng</a>
+				<!-- <a class="collapse-item" href="/admin/report/revenue-by-customer">Doanh thu khách hàng</a> -->
 				<a class="collapse-item" href="/admin/report/revenue-by-month">Doanh thu từng tháng</a>
 				<a class="collapse-item" href="/admin/report/quantity-by-ncc">Số lượng bán theo hãng</a>
 			</div>
