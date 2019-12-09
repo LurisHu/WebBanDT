@@ -141,13 +141,13 @@
 	</div>
 	<div class="product">
 		<div class="col-sm-12">
-			<h3>Điện thoại tương tự</h3>
+			<h3>Sản phẩm tương tự</h3>
 		</div>
 		<div class="col-sm-12">
 			<div class="panel ">
 				<div class="panel-body">
 					<div class="showproduct">
-						<c:forEach var="p" items="${BestSellerPhone}">
+						<c:forEach var="p" items="${item.danhMuc.sanPham}" begin = "0" end = "5">
 							<div class="col-sm-2 detail-prt">
 								<a href="/customer/sanpham/detail/${p.maSP}"><img
 									src="/static/images/${p.image}" id="similar-product"></a> <br>
