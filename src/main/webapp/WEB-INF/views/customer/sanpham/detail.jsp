@@ -147,7 +147,8 @@
 			<div class="panel ">
 				<div class="panel-body">
 					<div class="showproduct">
-						<c:forEach var="p" items="${item.danhMuc.sanPham}" begin = "0" end = "5">
+						<c:forEach var="p" items="${item.danhMuc.sanPham}" begin="0"
+							end="5">
 							<div class="col-sm-2 detail-prt">
 								<a href="/customer/sanpham/detail/${p.maSP}"><img
 									src="/static/images/${p.image}" id="similar-product"></a> <br>
@@ -359,32 +360,11 @@
 	<div class="col-sm-12">
 		<h2>Nhận xét</h2>
 		<div class="media">
-			<div class="media-body">
-				<h4 class="media-heading">Media Top</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
+			<div class="fb-comments"
+				data-href="http://localhost:8080/${requestScope['javax.servlet.forward.request_uri']}"
+				data-width="" data-numposts="5"></div>
 		</div>
 		<hr>
-		<div class="media">
-			<div class="media-body">
-				<h4 class="media-heading">Media Middle</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
-		</div>
-		<hr>
-		<div class="fb-comments"
-	data-href="http://localhost:8080/${requestScope['javax.servlet.forward.request_uri']}"
-	data-width="" data-numposts="5"></div>\
 	</div>
 </div>
 <%-- <h1>Product Detail</h1>
