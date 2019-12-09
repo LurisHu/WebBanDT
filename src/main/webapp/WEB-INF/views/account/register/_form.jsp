@@ -37,7 +37,7 @@
 				</div>
 				<div class="form-group col-md-6">
 					<label for="pass-re"><b>Mật khẩu</b></label>
-					<form:input path="matKhau" class="form-control control-re"
+					<form:password path="matKhau" class="form-control control-re"
 						placeholder="Vui lòng nhập Mật khẩu" />
 					<form:errors path="matKhau" />
 					<p></p>
