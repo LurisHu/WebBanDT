@@ -58,7 +58,11 @@ public class SanPhamDAOImpl implements SanPhamDAO {
 	@Override
 	public List<SanPham> BestSellerPhone(int pageNo) {
 		int pageSize = 3;
-		String hql = "FROM SanPham WHERE MaDM= '1'";
+		String hql = "SELECT d.sanPhamHDCT "
+				+ "FROM HoaDonChiTiet d "
+				+ "WHERE d.sanPhamHDCT.danhMuc.maDM= '1' "
+				+ "GROUP BY d.sanPhamHDCT ";
+//		String hql = "FROM SanPham WHERE MaDM= '1'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql, SanPham.class);
 		query.setFirstResult(pageNo * pageSize);
@@ -69,7 +73,11 @@ public class SanPhamDAOImpl implements SanPhamDAO {
 	@Override
 	public List<SanPham> BestSellerLaptop(int pageNo) {
 		int pageSize = 3;
-		String hql = "FROM SanPham WHERE MaDM= '2'";
+		String hql = "SELECT d.sanPhamHDCT "
+				+ "FROM HoaDonChiTiet d "
+				+ "WHERE d.sanPhamHDCT.danhMuc.maDM= '2' "
+				+ "GROUP BY d.sanPhamHDCT";
+//		String hql = "FROM SanPham WHERE MaDM= '2'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql, SanPham.class);
 		query.setFirstResult(pageNo * pageSize);
@@ -80,7 +88,11 @@ public class SanPhamDAOImpl implements SanPhamDAO {
 	@Override
 	public List<SanPham> BestSellerPhuKien(int pageNo) {
 		int pageSize = 3;
-		String hql = "FROM SanPham WHERE MaDM= '3'";
+		String hql = "SELECT d.sanPhamHDCT "
+				+ "FROM HoaDonChiTiet d "
+				+ "WHERE d.sanPhamHDCT.danhMuc.maDM= '3' "
+				+ "GROUP BY d.sanPhamHDCT";
+//		String hql = "FROM SanPham WHERE MaDM= '3'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql, SanPham.class);
 		query.setFirstResult(pageNo * pageSize);
