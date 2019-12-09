@@ -297,6 +297,7 @@ public class AccountController {
 		} else {
 			try {
 				dao.update(nd);
+				session.setAttribute("user", nd);
 				model.addAttribute("message", "Cập nhật thông tin thành công");
 			} catch (Exception e) {
 				model.addAttribute("message", "Đã có lỗi xảy ra. Vui lòng thử lại");
