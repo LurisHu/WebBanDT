@@ -16,6 +16,8 @@ public class AdminController {
 	public String index(Model model) {
 		model.addAttribute("inventory", dao.inventoryByCategory());
 		model.addAttribute("revenue", dao.revenueByMonth());
+		model.addAttribute("revenueMonthNow", dao.revenueByMonthNow());
+		model.addAttribute("revenueYearNow", dao.revenueByYearNow());
 		return "admin/dashboard/index";
 	}
 }
