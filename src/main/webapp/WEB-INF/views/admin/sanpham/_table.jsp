@@ -22,6 +22,8 @@
 			<th>Số lần xem</th>
 			<th>SPDacBiet</th>
 			<th>Mô tả</th>
+			<th>Cấu hình chi tiết</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -38,6 +40,7 @@
 				<td>${product.soLanXem}</td>
 				<td>${product.spDacBiet==true?"Đặc biệt":"Không đặc biệt"}</td>
 				<td>${product.moTa}</td>
+				<td>${product.cauHinhSP}</td>
 				<td><a href="/admin/sanpham/edit/${product.maSP}"
 					class="btn btn-info">Edit</a></td>
 			</tr>

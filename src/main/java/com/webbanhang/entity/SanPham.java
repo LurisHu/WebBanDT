@@ -44,6 +44,9 @@ public class SanPham {
 	@Column(name = "HINHANH")
 	@NotEmpty(message = "Không để trống hình ảnh sản phẩm")
 	private String image;
+	@Column(name = "CAUHINHCHITIET")
+	@NotEmpty(message = "Không được để trống cấu hình sản phẩm")
+	private String cauHinhSP;
 
 	@ManyToOne
 	@JoinColumn(name = "MaNCC")
@@ -186,5 +189,13 @@ public class SanPham {
 	public String toString() {
 		return "" + tenSP + "";
 	}
-	
+
+	public String getCauHinhSP() {
+		return cauHinhSP;
+	}
+
+	public void setCauHinhSP(String cauHinhSP) {
+		this.cauHinhSP = cauHinhSP;
+	}
+
 }
