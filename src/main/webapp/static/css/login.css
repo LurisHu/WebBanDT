@@ -200,13 +200,14 @@
 @media only screen and (min-width:1618px) and (max-width:1718px){
 	.login-container{
     min-height:100%;
-    padding-left: 400px;
-    padding-right: 400px;
+    padding-left: 350px;
+    padding-right: 350px;
 }
 .login-left{
+	margin-left: 300px;
     float: left;
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 22px;
     color: #424242;
     font-weight: 400;
@@ -271,9 +272,10 @@
     padding-right: 350px;
 }
 .login-left{
+	margin-left: 50px;
     float: left;
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 22px;
     color: #424242;
     font-weight: 400;
@@ -538,11 +540,11 @@
 @media only screen and (min-width:1113px) and (max-width:1213px){
 	.login-container{
     min-height:100%;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 200px;
+    padding-right:200px;
 }
-.login-left{
-	margin-left: 45px;
+.login-left{	
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -605,10 +607,11 @@
 @media only screen and (min-width:1012px) and (max-width:1112px){
 	.login-container{
     min-height:100%;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 120px;
+    padding-right: 120px;
 }
 .login-left{
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -618,6 +621,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .login-right{
+	
     float: right;
     margin-top: 50px;
     margin-right:10px ;
@@ -676,6 +680,7 @@
     padding-right: 100px;
 }
 .login-left{
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -743,6 +748,7 @@
     padding-right: 80px;
 }
 .login-left{
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -810,6 +816,7 @@
     padding-right: 25px;
 }
 .login-left{
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -877,6 +884,7 @@
     padding-right: 1px;
 }
 .login-left{
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -941,9 +949,10 @@
 	.login-container{
     min-height:100%;
     padding-left: 10px;
-    padding-right: 0px;
+    padding-right: 10px;
 }
 .login-left{
+	margin-left: 150px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
