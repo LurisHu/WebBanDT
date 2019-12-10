@@ -48,42 +48,45 @@
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerPhone}">
-						<div class="col-sm-4 panel-group" style="cursor: pointer;">
-							<div class="panel">
-								<div class="panel-heading">
-									<h4>
-										<b>${p.tenSP}</b>
-									</h4>
-									<h4 id="price">
-										<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
-									</h4>
-									</p>
-								</div>
-								<div class="panel-body">
-									<div class="col-sm-7">
-										<p>
-											<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
-										</p>
-										<p>
-											<span class="label label-danger">Khuyến mãi</span>
-										</p>
-										<p>
-											<b>
-												<h4><fmt:formatNumber value="${p.giamGia}" />đ</h4>
-											</b>
-										</p>
-										<p>
-											<span class="label label-warning"><b>Trả góp 0%</b></span>
+						<a href="/customer/sanpham/detail/${p.maSP}">
+							<div class="col-sm-4 panel-group" style="cursor: pointer;">
+								<div class="panel">
+									<div class="panel-heading">
+										<h4>
+											<b>${p.tenSP}</b>
+										</h4>
+										<h4 id="price">
+											<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
+										</h4>
 										</p>
 									</div>
-									<div class="col-sm-5">
-										<a href="/customer/sanpham/detail/${p.maSP}"> <img
-											id="img3" src="/static/images/${p.image}" />
-										</a>
+									<div class="panel-body">
+										<div class="col-sm-7">
+											<p>
+												<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
+											</p>
+											<p>
+												<span class="label label-danger">Khuyến mãi</span>
+											</p>
+											<p>
+												<b>
+													<h4>
+														<fmt:formatNumber value="${p.giamGia}" />
+														đ
+													</h4>
+												</b>
+											</p>
+											<p>
+												<span class="label label-warning"><b>Trả góp 0%</b></span>
+											</p>
+										</div>
+										<div class="col-sm-5">
+											<img id="img3" src="/static/images/${p.image}" />
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</a>
 					</c:forEach>
 				</div>
 				<div class="col-sm-12">
@@ -95,42 +98,47 @@
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerLaptop}">
-						<div class="col-sm-4 panel-group" style="cursor: pointer;">
-							<div class="panel">
-								<div class="panel-heading">
-									<h4>
-										<b>${p.tenSP}</b>
-									</h4>
-									<h4 id="price">
-										<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
-									</h4>
-									</p>
-								</div>
-								<div class="panel-body">
-									<div class="col-sm-7">
-										<p>
-											<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
-										</p>
-										<p>
-											<span class="label label-danger">Khuyến mãi</span>
-										</p>
-										<p>
-											<b>
-												<h4><fmt:formatNumber value="${p.giamGia}" />đ</h4>
-											</b>
-										</p>
-										<p>
-											<span class="label label-warning"><b>Trả góp 0%</b></span>
+						<a href="/customer/sanpham/detail/${p.maSP}">
+							<div class="col-sm-4 panel-group" style="cursor: pointer;">
+								<div class="panel">
+									<div class="panel-heading">
+										<h4>
+											<b>${p.tenSP}</b>
+										</h4>
+										<h4 id="price">
+											<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
+										</h4>
 										</p>
 									</div>
-									<div class="col-sm-5">
-										<a href="/customer/sanpham/detail/${p.maSP}"> <img
-											id="img3" src="/static/images/${p.image}" />
-										</a>
+									<div class="panel-body">
+										<div class="col-sm-7">
+											<p>
+												<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
+											</p>
+											<p>
+												<span class="label label-danger">Khuyến mãi</span>
+											</p>
+											<p>
+												<b>
+													<h4>
+														<fmt:formatNumber value="${p.giamGia}" />
+														đ
+													</h4>
+												</b>
+											</p>
+											<p>
+												<span class="label label-warning"><b>Trả góp 0%</b></span>
+											</p>
+										</div>
+										<div class="col-sm-5">
+											<a href="/customer/sanpham/detail/${p.maSP}"> <img
+												id="img3" src="/static/images/${p.image}" />
+											</a>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</a>
 					</c:forEach>
 				</div>
 				<div class="col-sm-12">
@@ -142,42 +150,47 @@
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerPhuKien}">
-						<div class="col-sm-4 panel-group" style="cursor: pointer;">
-							<div class="panel">
-								<div class="panel-heading">
-									<h4>
-										<b>${p.tenSP}</b>
-									</h4>
-									<h4 id="price">
-										<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
-									</h4>
-									</p>
-								</div>
-								<div class="panel-body">
-									<div class="col-sm-7">
-										<p>
-											<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
-										</p>
-										<p>
-											<span class="label label-danger">Khuyến mãi</span>
-										</p>
-										<p>
-											<b>
-												<h4><fmt:formatNumber value="${p.giamGia}" />đ</h4>
-											</b>
-										</p>
-										<p>
-											<span class="label label-warning"><b>Trả góp 0%</b></span>
+						<a href="/customer/sanpham/detail/${p.maSP}">
+							<div class="col-sm-4 panel-group" style="cursor: pointer;">
+								<div class="panel">
+									<div class="panel-heading">
+										<h4>
+											<b>${p.tenSP}</b>
+										</h4>
+										<h4 id="price">
+											<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
+										</h4>
 										</p>
 									</div>
-									<div class="col-sm-5">
-										<a href="/customer/sanpham/detail/${p.maSP}"> <img
-											id="img3" src="/static/images/${p.image}" />
-										</a>
+									<div class="panel-body">
+										<div class="col-sm-7">
+											<p>
+												<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
+											</p>
+											<p>
+												<span class="label label-danger">Khuyến mãi</span>
+											</p>
+											<p>
+												<b>
+													<h4>
+														<fmt:formatNumber value="${p.giamGia}" />
+														đ
+													</h4>
+												</b>
+											</p>
+											<p>
+												<span class="label label-warning"><b>Trả góp 0%</b></span>
+											</p>
+										</div>
+										<div class="col-sm-5">
+											<a href="/customer/sanpham/detail/${p.maSP}"> <img
+												id="img3" src="/static/images/${p.image}" />
+											</a>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</a>
 					</c:forEach>
 				</div>
 			</div>
