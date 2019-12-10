@@ -4,8 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="container">
 	<h2>DOANH SỐ TỪNG KHÁCH HÀNG</h2>
-	<p>The .table class adds basic styling (light padding and only
-		horizontal dividers) to a table:</p>
 	<table class="table">
 		<thead>
 			<tr>
