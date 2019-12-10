@@ -50,6 +50,7 @@ public class QuanLyNguoiDungController {
 	public String create(Model model) {
 		model.addAttribute("nd", new NguoiDung());
 		model.addAttribute("nds", dao.findPageAdmin(0));
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -85,6 +86,7 @@ public class QuanLyNguoiDungController {
 			}
 		}
 		model.addAttribute("nds", dao.findPageAdmin(0));
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -93,6 +95,7 @@ public class QuanLyNguoiDungController {
 	public String update(Model model) {
 		model.addAttribute("nd", new NguoiDung());
 		model.addAttribute("nds", dao.findPageAdmin(0));
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -113,6 +116,7 @@ public class QuanLyNguoiDungController {
 			}
 		}
 		model.addAttribute("nds", dao.findPageAdmin(0));
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -121,6 +125,7 @@ public class QuanLyNguoiDungController {
 	public String delete(Model model) {
 		model.addAttribute("nd", new NguoiDung());
 		model.addAttribute("nds", dao.findPageAdmin(0));
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -137,6 +142,7 @@ public class QuanLyNguoiDungController {
 			}
 		}
 		model.addAttribute("nds", dao.findPageAdmin(0));
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -145,6 +151,7 @@ public class QuanLyNguoiDungController {
 	public String edit(Model model, @PathVariable("id") Integer id) {
 		NguoiDung entity = dao.findById(id);
 		model.addAttribute("nds", dao.findPageAdmin(0));
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		model.addAttribute("nd", entity);
 		return "admin/nguoidung/admin/index";
 	}
@@ -154,6 +161,7 @@ public class QuanLyNguoiDungController {
 	public String search(Model model, @RequestParam("search") String email) {
 		model.addAttribute("nd", new NguoiDung());
 		model.addAttribute("nds", dao.searchAdmin(email));
+		model.addAttribute("lastPageNo", dao.getPageCountAdmin() - 1);
 		return "admin/nguoidung/admin/index";
 	}
 
@@ -178,6 +186,7 @@ public class QuanLyNguoiDungController {
 	public String createCus(Model model) {
 		model.addAttribute("nd", new NguoiDung());
 		model.addAttribute("nds", dao.findPageCustomer(0));
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer() - 1);
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -215,6 +224,7 @@ public class QuanLyNguoiDungController {
 			}
 		}
 		model.addAttribute("nds", dao.findPageCustomer(0));
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer() - 1);
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -223,6 +233,7 @@ public class QuanLyNguoiDungController {
 	public String updateCus(Model model) {
 		model.addAttribute("nd", new NguoiDung());
 		model.addAttribute("nds", dao.findPageCustomer(0));
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer() - 1);
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -250,6 +261,7 @@ public class QuanLyNguoiDungController {
 	public String deleteCus(Model model) {
 		model.addAttribute("nd", new NguoiDung());
 		model.addAttribute("nds", dao.findPageCustomer(0));
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer() - 1);
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -266,6 +278,7 @@ public class QuanLyNguoiDungController {
 			}
 		}
 		model.addAttribute("nds", dao.findPageCustomer(0));
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer() - 1);
 		return "admin/nguoidung/customer/index";
 	}
 
@@ -274,6 +287,7 @@ public class QuanLyNguoiDungController {
 	public String editCus(Model model, @PathVariable("id") Integer id) {
 		NguoiDung entity = dao.findById(id);
 		model.addAttribute("nds", dao.findPageCustomer(0));
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer() - 1);
 		model.addAttribute("nd", entity);
 		return "admin/nguoidung/customer/index";
 	}
@@ -283,6 +297,7 @@ public class QuanLyNguoiDungController {
 	public String searchCustomer(Model model, @RequestParam("search") String email) {
 		model.addAttribute("nd", new NguoiDung());
 		model.addAttribute("nds", dao.searchCustomer(email));
+		model.addAttribute("lastPageNo", dao.getPageCountCustomer() - 1);
 		return "admin/nguoidung/customer/index";
 	}
 }
