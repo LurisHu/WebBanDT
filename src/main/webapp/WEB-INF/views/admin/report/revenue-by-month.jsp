@@ -4,26 +4,25 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="container">
 	<h2>DOANH SỐ TỪNG THÁNG</h2>
-	<p>The .table class adds basic styling (light padding and only
-		horizontal dividers) to a table:</p>
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Tháng</th>
-				<th>Số lượng bán</th>
-				<th>Doanh số</th>
+				<th class="text-center">Tháng</th>
+				<th class="text-center">Số lượng sản phẩm bán ra</th>
+				<th class="text-right">Doanh số</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="array" items="${data}">
 				<tr>
-					<td>${array[0]}</td>
-					<td>${array[1]}</td>
-					<td><fmt:formatNumber value="${array[2]}" /> VNĐ</td>
+					<td class="text-center">${array[0]}</td>
+					<td class="text-center">${array[1]}</td>
+					<td class="text-right"><fmt:formatNumber value="${array[2]}" /> VNĐ</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<h4>Biểu đồ</h4>
 </div>
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
@@ -51,4 +50,4 @@
         chart.draw(data, options);
       }
     </script>
-<div id="curve_chart" style="width: 900px; height: 500px"></div>
+<div id="curve_chart" style="width: 1225px; height: 500px"></div>

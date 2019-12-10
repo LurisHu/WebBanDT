@@ -3,9 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="container">
-	<h2>SỐ LƯỢNG BÁN THEO HÃNG</h2>
-	<p>The .table class adds basic styling (light padding and only
-		horizontal dividers) to a table:</p>
+	<h2>SỐ LƯỢNG SẢN PHẨM BÁN RA THEO HÃNG</h2>
 	<table class="table">
 		<thead>
 			<tr>
@@ -17,11 +15,12 @@
 			<c:forEach var="array" items="${data}">
 				<tr>
 					<td>${array[0]}</td>
-					<td>${array[1]} Cái</td>
+					<td>${array[1]} Sản phẩm</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<h4>Biểu đồ</h4>
 </div>
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
@@ -49,4 +48,4 @@
 				chart.draw(data, options);
 	}
 </script>
-<div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+<div id="piechart_3d" style="width: 1225px; height: 500px;"></div>
