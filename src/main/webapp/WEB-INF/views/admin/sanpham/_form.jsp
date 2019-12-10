@@ -87,7 +87,7 @@
 		<div class="form-group col-md-5">
 			<label for="inputId">Chọn ảnh</label><br /> <input type="file"
 				name="up_photo" onchange="openFile(this)" />
-			<form:hidden path="image" />
+			<form:hidden path="image" value="default"/>
 			<br />
 			<form:errors path="image" />
 			<img id="anh"
