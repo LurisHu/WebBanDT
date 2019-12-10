@@ -1,5 +1,9 @@
 package com.webbanhang.controller.customer;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +38,23 @@ public class ProductController {
 	public String detail(Model model,
 			@PathVariable("id")Integer id ) {
 		SanPham p = dao.findById(id);
+		String[] listCauHinh= p.getCauHinhSP().split("\\|");
+		HashMap<String, String> listData = new HashMap<String, String>();
+		
+		for(int i=0;i<listCauHinh.length;i++) {
+			if(listCauHinh[i].contains(":")) {
+				String[] cauHinh=listCauHinh[i].split(":");
+				listData.put(cauHinh[0], cauHinh[1]);
+			}
+			else {
+				listData.put(listCauHinh[i],"");
+			}
+			
+		}
 		model.addAttribute("item", p);
+		model.addAttribute("cauHinh", listData);
+		
+		
 //		int PageNo = 0;
 //		model.addAttribute("BestSellerPhone", dao.BestSellerPhone(PageNo));
 		return "customer/sanpham/detail";
@@ -60,6 +80,7 @@ public class ProductController {
 		}else if(pageNo < 0) {
 			pageNo = dao.getPageCountLaptop()-1;
 		}
+		
 		model.addAttribute("pageNo", pageNo);
 		model.addAttribute("lastPageNo", dao.getPageCountLaptop()-1);
 		model.addAttribute("Laptop", dao.findPageLaptop(pageNo));

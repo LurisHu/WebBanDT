@@ -128,22 +128,17 @@
 						</h4>
 					</div>
 					<table class="table">
-						<tr>
-							<th>Thiết kế:</th>
-							<td>Nguyên khối</td>
-						</tr>
-						<tr>
-							<th>Chất liệu:</th>
-							<td>Nhựa</td>
-						</tr>
-						<tr>
-							<th>RAM:</th>
-							<td>6 GB</td>
-						</tr>
-						<tr>
-							<th>Trọng lượng:</th>
-							<td>190 g</td>
-						</tr>
+						<c:forEach items="${cauHinh}" var="entry">
+							<tr>
+								<c:if test="${not empty entry.value}">
+									<th>${entry.key}:</th>
+									<td>${entry.value}</td>
+								</c:if>
+								<c:if test="${empty entry.value}">
+									<th colspan="2">${entry.key}</th>
+								</c:if>
+							</tr>
+						</c:forEach>
 					</table>
 				</div>
 			</div>

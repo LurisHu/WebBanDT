@@ -40,14 +40,9 @@
 								</div>
 								<div class="prt-if-content">
 									<ul>
-										<li><label>Màn hình:1242 x 2688 Pixels 6.5 inchs</label></li>
-										<li><label>Camera:&ensp; Triple 12MP Ultra Wide,
-												Wide and Telephoto cameras 12.0 MP</label></li>
-										<li><label>Pin:&emsp;&emsp;&ensp; Lâu hơn iPhone
-												Xs Max 5h</label></li>
-										<li><label>RAM:&emsp;&emsp; 4 GB</label></li>
-										<li><label>CPU:&emsp;&emsp; Apple A13 Bionic</label></li>
-										<li><label>HĐH:&emsp;&emsp; IS0 13</label></li>
+										<c:forTokens items="${p.cauHinhSP}" delims="\\|" var="mySplit">
+											<li><label><c:out value="${mySplit}" /></label></li>
+										</c:forTokens>
 									</ul>
 								</div>
 							</div>
