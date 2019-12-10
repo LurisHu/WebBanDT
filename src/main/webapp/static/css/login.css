@@ -70,6 +70,7 @@
     padding-right: 500px;
 }
 .login-left{
+	margin-left: 300px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -137,6 +138,7 @@
     padding-right: 450px;
 }
 .login-left{
+	margin-left: 300px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -272,7 +274,7 @@
     padding-right: 350px;
 }
 .login-left{
-	margin-left: 50px;
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -340,7 +342,7 @@
     padding-right: 300px;
 }
 .login-left{
-	margin-left: 50px;
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -408,7 +410,7 @@
     padding-right: 250px;
 }
 .login-left{
-	margin-left: 50px;
+	margin-left: 200px;
     float: left;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -476,6 +478,7 @@
     padding-right: 200px;
 }
 .login-left{
+	margin-left: 200px;
 	margin-left: 50px;
     float: left;
     margin-top: 40px;
