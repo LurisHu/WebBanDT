@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- Header -->
 <!-- Navbar -->
-<nav class="navbar nav1">
+<nav>
 	<div class="navbar navbar-inverse">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -20,7 +20,7 @@
 						<li><a id="A1" href="/customer/danhmuc/phone/0">Điện
 								thoại</a></li>
 						<li><a id="A1" href="/customer/danhmuc/laptop/0">Laptop</a></li>
-						<li><a id="A1" href="#">Phụ kiện</a></li>
+						<li><a id="A1" href="/customer/danhmuc/phukien/0">Phụ kiện</a></li>
 					</ul></li>
 			</ul>
 			<div class="col-sm-3 col-md-3">
@@ -54,11 +54,10 @@
 						Tài khoản
 					</c:if> <c:if test="${not empty user}">
 						${user}
-					</c:if> <span class="caret"></span></a> <c:if test="${not empty user}">
+					</c:if> 
+					<span class="caret"></span></a> 
+					<c:if test="${not empty user}">
 						<ul class="dropdown-menu">
-							<!-- Trigger the modal with a button -->
-							<!-- <li><a id="A1" href="#" data-toggle="modal"
-						data-target="#myModal1">Đăng nhập</a></li> -->
 							<li><a id="A1" href="#">Thông tin cá nhân</a></li>
 							<li><a id="A1" href="/account/update">Đổi mật khẩu</a></li>
 							<li><a id="A1" href="/bill/view">Lịch sử mua hàng</a></li>
@@ -66,9 +65,6 @@
 						</ul>
 					</c:if> <c:if test="${empty user}">
 						<ul class="dropdown-menu">
-							<!-- Trigger the modal with a button -->
-							<!-- <li><a id="A1" href="#" data-toggle="modal"
-						data-target="#myModal1">Đăng nhập</a></li> -->
 							<li><a id="A1" href="/account/login">Đăng nhập</a></li>
 							<li><a id="A1" href="/account/register">Đăng ký</a></li>
 							<li><a id="A1" href="/account/forgot-password">Quên mật
@@ -82,4 +78,6 @@
 		</div>
 	</div>
 </nav>
+
+
 <!-- End Navbar -->

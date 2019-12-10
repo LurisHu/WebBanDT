@@ -3,31 +3,32 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="container">
-	<h2>DOANH SỐ TỪNG KHÁCH HÀNG</h2>
+	<h2>DOANH SỐ TỪNG THÁNG</h2>
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Khách Hàng</th>
-				<th>Số lượng bán</th>
-				<th>Doanh số</th>
+				<th class="text-center">Tháng</th>
+				<th class="text-center">Số lượng sản phẩm bán ra</th>
+				<th class="text-right">Doanh số</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="array" items="${data}">
 				<tr>
-					<td>${array[0]}</td>
-					<td>${array[1]}</td>
-					<td><fmt:formatNumber value="${array[2]}" /> VNĐ</td>
+					<td class="text-center">${array[0]}</td>
+					<td class="text-center">${array[1]}</td>
+					<td class="text-right"><fmt:formatNumber value="${array[2]}" /> VNĐ</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<h4>Biểu đồ</h4>
 </div>
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
     var mydata = [ 
-		[ 'Khách Hàng', 'Doanh số' ],
+		[ 'Tháng', 'Doanh số' ],
 		<c:forEach var="array" items="${data}">
 		[ '${array[0]}', ${array[2]} ], 
 		</c:forEach>
@@ -39,7 +40,7 @@
         var data = google.visualization.arrayToDataTable(mydata);
 
         var options = {
-          title: 'Revenue By Customer',
+          title: '',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
@@ -49,4 +50,4 @@
         chart.draw(data, options);
       }
     </script>
-<div id="curve_chart" style="width: 900px; height: 500px"></div>
+<div id="curve_chart" style="width: 1225px; height: 500px"></div>

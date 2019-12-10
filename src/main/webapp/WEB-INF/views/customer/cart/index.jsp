@@ -40,7 +40,7 @@ label.error {
 								</div>
 								<div class="name-item-2">
 									<p>
-										Giảm giá:&nbsp;<span id="name-item-2">30.000<sup>đ</sup></span>
+										Giảm giá:&nbsp;<span id="name-item-2"><fmt:formatNumber value="${p.giamGia}" /><sup>đ</sup></span>
 									</p>
 								</div>
 								<div class="quantity buttons_added number-item">
@@ -184,7 +184,8 @@ label.error {
 				},
 				diaChi : {
 					required : true,
-					minlength : 10
+					minlength : 10,
+					maxlength : 250
 				}
 			},
 			messages : {
@@ -201,7 +202,8 @@ label.error {
 				},
 				diaChi : {
 					required : "Vui lòng nhập địa chỉ",
-					minlength : "Địa chỉ ngắn vậy, chém gió ah?"
+					minlength : "Địa chỉ dài tối thiểu là 10 ký tự",
+					maxlength : "Địa chỉ dài tối đa 250 ký tự"
 				}
 			}
 		});

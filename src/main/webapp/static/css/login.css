@@ -338,9 +338,10 @@
     padding-right: 300px;
 }
 .login-left{
+	margin-left: 50px;
     float: left;
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 22px;
     color: #424242;
     font-weight: 400;
@@ -405,9 +406,10 @@
     padding-right: 250px;
 }
 .login-left{
+	margin-left: 50px;
     float: left;
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 22px;
     color: #424242;
     font-weight: 400;
@@ -472,9 +474,10 @@
     padding-right: 200px;
 }
 .login-left{
+	margin-left: 50px;
     float: left;
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 22px;
     color: #424242;
     font-weight: 400;
@@ -539,12 +542,12 @@
     padding-right: 120px;
 }
 .login-left{
+	margin-left: 45px;
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
     font-size: 22px;
     color: #424242;
-    font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
 }
 .login-right{

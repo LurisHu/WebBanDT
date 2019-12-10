@@ -23,6 +23,12 @@
 		<form:textarea path="moTa" class="form-control" id="description"
 			rows="3" />
 	</div>
+	<div class="form-group">
+		<label for="configuration">Cấu hình sản phẩm</label>
+		<form:textarea path="cauHinhSP" class="form-control" id="configuration"
+			rows="3" placeholder="Cấu hình sản phẩm cách nhau bởi dấu | ví dự: 'RAM:8GB|Độ phân giải:15 inch|CPU: Core i5...'"/>
+		<form:errors path="cauHinhSP" />
+	</div>
 	<div class="form-row">
 		<div class="form-group col-md-6">
 			<label for="quantity">Số lượng sản phẩm</label>
@@ -79,14 +85,15 @@
 	</div>
 	<div class="form-row">
 		<div class="form-group col-md-5">
-			<label for="inputId">Chọn ảnh</label><br />
-			<input type="file" name="up_photo" onchange="openFile(this)" />
-			<form:hidden path="image" /><br/>
+			<label for="inputId">Chọn ảnh</label><br /> <input type="file"
+				name="up_photo" onchange="openFile(this)" />
+			<form:hidden path="image" value="default"/>
+			<br />
 			<form:errors path="image" />
 			<img id="anh"
 				src="/static/images/${product.image==null?'default.png':product.image}"
 				height="192px" width="192px">
-				
+
 		</div>
 		<div class="form-group col-md-7"></div>
 	</div>

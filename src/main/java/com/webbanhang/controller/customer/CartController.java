@@ -14,6 +14,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -96,7 +97,7 @@ public class CartController {
 			@RequestParam("tinhThanh") String tinhThanh, @RequestParam("quanHuyen") String quanHuyen,
 			@RequestParam("phuongXa") String phuongXa, @RequestParam("diaChi") String diaChi,
 			@RequestParam("comment") String comment, @RequestParam("quantity") int quantity,
-			@CookieValue(value = "userId", defaultValue = "not") Integer userId) {
+			@CookieValue(value = "userId", defaultValue = "not") Integer userId, Model model) {
 		// Tạo hóa đơn
 		Double thanhTien = cart.getAmount();
 		HoaDon hd = new HoaDon();
@@ -107,6 +108,7 @@ public class CartController {
 		String[] huyen = quanHuyen.split("-");
 		String[] tinh = tinhThanh.split("-");
 		hd.setDiaChiGiao(diaChi + " - " + phuong[1] + " - " + huyen[1] + " - " + tinh[1]);
+		model.addAttribute("diachi", diaChi + " - " + phuong[1] + " - " + huyen[1] + " - " + tinh[1]);
 		hd.setPhiVanChuyen(20000.0);
 		hd.setComment(comment);
 		hd.setTinhTrangHD(ttDao.findById(2));

@@ -26,7 +26,22 @@
 <link href="/static/css/product.css" rel="stylesheet">
 <link href="/static/css/manage-ad.css" rel="stylesheet">
 <link href="/static/css/manage-customer.css" rel="stylesheet">
+<!-- Bootstrap core JavaScript-->
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
 
+<!-- Custom scripts for all pages-->
+<script src="/static/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="/static/vendor/chart.js/Chart.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="/static/js/demo/chart-area-demo.js"></script>
+<script src="/static/js/demo/chart-pie-demo.js"></script>
+<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
 </head>
 <body id="page-top">
 
@@ -80,24 +95,6 @@
 		class="fas fa-angle-up"></i>
 	</a>
 
-	<!-- Bootstrap core JavaScript-->
-	<script src="/static/vendor/jquery/jquery.min.js"></script>
-	<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Core plugin JavaScript-->
-	<script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-	<!-- Custom scripts for all pages-->
-	<script src="/static/js/sb-admin-2.min.js"></script>
-
-	<!-- Page level plugins -->
-	<script src="/static/vendor/chart.js/Chart.min.js"></script>
-
-	<!-- Page level custom scripts -->
-	<script src="/static/js/demo/chart-area-demo.js"></script>
-	<script src="/static/js/demo/chart-pie-demo.js"></script>
-	<script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="/static/js/modules/script.js"></script>
 	<script type="text/javascript" src="/static/js/modules/upload.js"></script>
 	<script type="text/javascript">

@@ -19,7 +19,7 @@ span[id*=error] {
 	<div class="form-product">
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="h1-product">
+				<div class="text-center">
 					<h1>QUẢN LÝ SẢN PHẨM</h1>
 				</div>
 				<jsp:include page="_form.jsp"></jsp:include>
@@ -29,13 +29,11 @@ span[id*=error] {
 		</div>
 	</div>
 </div>
-<div>
-	<ul class="pager">
-		<li><a href="/admin/sanpham/index/0">First</a></li>
-		<li><a href="/admin/sanpham/index/${pageNo-1}">Previous</a></li>
-		<li><a href="/admin/sanpham/index/${pageNo+1}">Next</a></li>
-		<li><a href="/admin/sanpham/index/${lastPageNo}">Last</a></li>
-	</ul>
+<div class="text-center">
+		<a href="/admin/sanpham/index/0" class="btn btn-outline-success">First</a>
+		<a href="/admin/sanpham/index/${pageNo-1}" class="btn btn-outline-success">Previous</a>
+		<a href="/admin/sanpham/index/${pageNo+1}" class="btn btn-outline-success">Next</a>
+		<a href="/admin/sanpham/index/${lastPageNo}" class="btn btn-outline-success">Last</a>
 </div>
 <!-- End Form -->
 

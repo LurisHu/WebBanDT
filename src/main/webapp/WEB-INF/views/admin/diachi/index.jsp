@@ -15,6 +15,9 @@ span[id*=error] {
 	padding-bottom: 5px;
 }
 </style>
+<div class="text-center">
+	<h1>QUẢN LÝ ĐỊA CHỈ</h1>
+</div>
 <jsp:include page="_form.jsp"></jsp:include>
 <hr>
 <jsp:include page="_table.jsp"></jsp:include>

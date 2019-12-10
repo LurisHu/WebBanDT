@@ -3,14 +3,9 @@
 <div class="re-container">
 	<div class="re-login">
 		<div class="re-title-left">
-			<p>Tạo tài khoản</p>
+			<p>Thông tin tài khoản</p>
 		</div>
-		<div class="re-title-right">
-			<p>
-				Bạn đã là thành viên?&nbsp;<a href="/account/login">Đăng nhập tại
-					đây</a>
-			</p>
-		</div>
+		<hr/>
 		<jsp:include page='_form.jsp' />
 	</div>
 </div>

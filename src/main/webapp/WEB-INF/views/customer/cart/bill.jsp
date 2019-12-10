@@ -21,12 +21,8 @@
 					<p>THÔNG TIN ĐẶT HÀNG</p>
 				</div>
 				<div class="panel-body body-mini">
-					<p>* Địa chỉ đặt hàng: 173/8-ấp 8-Vĩnh Công- Châu Thành-Long
-						An.</p>
+					<p>* Địa chỉ đặt hàng: ${diachi}</p>
 					<p>*Thanh toán khi nhận được hàng.</p>
-					<p>
-						*Tiền đã giảm:&ensp;<span>600.000<sup>đ</sup></span>
-					</p>
 					<p>
 						*Tổng tiền:&ensp;<span><fmt:formatNumber
 								value="${sessionScope['scopedTarget.cartService'].amount}" /><sup>đ</sup></span>
@@ -68,7 +64,7 @@
 							</div>
 							<div class="bill-price-2">
 								<p id="bill-price-2">
-									30.000<sup>đ</sup>
+									<fmt:formatNumber value="${p.giamGia}" /><sup>đ</sup>
 								</p>
 							</div>
 						</div>

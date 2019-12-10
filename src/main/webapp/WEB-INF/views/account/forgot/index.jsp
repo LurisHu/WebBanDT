@@ -3,7 +3,7 @@
 <div class="Fg-container">
 	<div class="Fg-login">
 		<div class="Fg-title">
-			<p>Quên mật khẩu tại đây?</p>
+			<p>Quên mật khẩu</p>
 		</div>
 		<div class="form-Fg">
 			<jsp:include page='_form.jsp' />

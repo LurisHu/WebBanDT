@@ -18,7 +18,7 @@ span[id*=error] {
 <div class="form-admin">
 	<div class="row">
 		<div class="col-sm-12">
-			<div class="h1">
+			<div class="text-center">
 				<h1>QUẢN LÝ HÓA ĐƠN</h1>
 			</div>
 			<jsp:include page="_form.jsp"></jsp:include>
@@ -27,11 +27,9 @@ span[id*=error] {
 		</div>
 	</div>
 </div>
-<div>
-	<ul class="pager">
-		<li><a href="/admin/hoadon/index/0">First</a></li>
-		<li><a href="/admin/hoadon/index/${pageNo-1}">Previous</a></li>
-		<li><a href="/admin/hoadon/index/${pageNo+1}">Next</a></li>
-		<li><a href="/admin/hoadon/index/${lastPageNo}">Last</a></li>
-	</ul>
+<div class="text-center">
+	<a href="/admin/hoadon/index/0" class="btn btn-outline-success">First</a> 
+	<a href="/admin/hoadon/index/${pageNo-1}" class="btn btn-outline-success">Previous</a>
+	<a href="/admin/hoadon/index/${pageNo+1}" class="btn btn-outline-success">Next</a>
+	<a href="/admin/hoadon/index/${lastPageNo}" class="btn btn-outline-success">Last</a>
 </div>

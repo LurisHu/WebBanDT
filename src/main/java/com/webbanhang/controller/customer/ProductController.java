@@ -35,8 +35,8 @@ public class ProductController {
 			@PathVariable("id")Integer id ) {
 		SanPham p = dao.findById(id);
 		model.addAttribute("item", p);
-		int PageNo = 0;
-		model.addAttribute("BestSellerPhone", dao.BestSellerPhone(PageNo));
+//		int PageNo = 0;
+//		model.addAttribute("BestSellerPhone", dao.BestSellerPhone(PageNo));
 		return "customer/sanpham/detail";
 	}
 	
@@ -64,5 +64,18 @@ public class ProductController {
 		model.addAttribute("lastPageNo", dao.getPageCountLaptop()-1);
 		model.addAttribute("Laptop", dao.findPageLaptop(pageNo));
 		return "customer/danhmuc/laptop";
+	}
+	
+	@RequestMapping("/customer/danhmuc/phukien/{pageNo}")
+	public String phukien(Model model, @PathVariable("pageNo") int pageNo) {
+		if(pageNo >= dao.getPageCountLaptop()) {
+			pageNo = 0;
+		}else if(pageNo < 0) {
+			pageNo = dao.getPageCountLaptop()-1;
+		}
+		model.addAttribute("pageNo", pageNo);
+		model.addAttribute("lastPageNo", dao.getPageCountPhuKien()-1);
+		model.addAttribute("PhuKien", dao.findPagePhuKien(pageNo));
+		return "customer/danhmuc/phukien";
 	}
 }

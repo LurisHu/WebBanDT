@@ -3,6 +3,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <div class="container-fluid body">
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=460287461293455&autoLogAppEvents=1"></script>
 	<div class="col-sm-12">
 		<div class="path">
 			<a href="/customer/sanpham/index">Trang chủ</a>&nbsp;/&nbsp;<a
@@ -29,10 +32,12 @@
 							<p>
 								<b>Giá: </b>
 								<fmt:formatNumber value="${item.giaSP-item.giamGia}" />
+								đ
 							</p>
 							<p>
 								<b>Giá gốc: </b>
 								<fmt:formatNumber value="${item.giaSP}" />
+								đ
 							</p>
 							<p>
 								<b>Tình trạng: </b> ${item.soLuong==0?"Hết hàng":"Còn hàng"}
@@ -50,8 +55,8 @@
 							</div> -->
 						</div>
 						<div>
-							<button class="btn btn-lg" id="now" formaction="/cart/buynow/${item.maSP}">Mua
-								ngay</button>
+							<button class="btn btn-lg" id="now"
+								formaction="/cart/buynow/${item.maSP}">Mua ngay</button>
 							<button class="btn btn-lg" id="addcart"
 								formaction="/cart/add/${item.maSP}">Thêm vào giỏ</button>
 						</div>
@@ -88,7 +93,8 @@
 			<div class="panel ">
 				<div class="panel-body">
 					<div class="showproduct">
-						<c:forEach var="p" items="${BestSellerPhone}">
+						<c:forEach var="p" items="${item.danhMuc.sanPham}" begin="0"
+							end="5">
 							<div class="col-sm-2 detail-prt">
 								<a href="/customer/sanpham/detail/${p.maSP}"><img
 									src="/static/images/${p.image}" id="similar-product"></a> <br>
@@ -96,7 +102,8 @@
 									<p>${p.tenSP}</p>
 									<b>
 										<p id="color-price">
-											<fmt:formatNumber value="${p.giaSP}"/>
+											<fmt:formatNumber value="${p.giaSP}" />
+											đ
 										</p>
 									</b>
 								</div>
@@ -245,34 +252,10 @@
 	<div class="col-sm-12">
 		<h2>#Nhận xét</h2>
 		<div class="media">
-			<div class="media-body">
-				<h4 id="media-heading">Media Top</h4>
-				<p id="media-footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p id="media-footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p id="media-footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
-		</div>
-		<hr>
-		<div class="media">
-			<div class="media-body">
-				<h4 id="media-heading">Media Middle</h4>
-				<p id="media-footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p id="media-footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p id="media-footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
+			<div class="fb-comments"
+				data-href="http://localhost:8080/${requestScope['javax.servlet.forward.request_uri']}"
+				data-width="" data-numposts="5"></div>
 		</div>
 		<hr>
 	</div>
 </div>
-
-<%-- <h1>Product Detail</h1>
-	<ul>
-		<li>${item.maSP}</li>
-	</ul>
-	<img src="/static/images/${item.image}" height="200px" width="200px" /> --%>

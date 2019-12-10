@@ -48,6 +48,7 @@ public class QuanLyHoaDonController {
 	public String update(Model model) {
 		model.addAttribute("hoadon", new HoaDon());
 		model.addAttribute("hoadons", dao.findPageHoaDon(0));
+		model.addAttribute("lastPageNo", dao.getPageCountHoaDon()-1);
 		model.addAttribute("trangThai", ttdao.findAll());
 		return "admin/hoadon/index";
 	}
@@ -68,6 +69,7 @@ public class QuanLyHoaDonController {
 			}
 		}
 		model.addAttribute("hoadons", dao.findPageHoaDon(0));
+		model.addAttribute("lastPageNo", dao.getPageCountHoaDon()-1);
 		model.addAttribute("trangThai", ttdao.findAll());
 		return "admin/hoadon/index";
 	}
@@ -76,6 +78,7 @@ public class QuanLyHoaDonController {
 	public String delete(Model model) {
 		model.addAttribute("hoadon", new HoaDon());
 		model.addAttribute("hoadons", dao.findPageHoaDon(0));
+		model.addAttribute("lastPageNo", dao.getPageCountHoaDon()-1);
 		model.addAttribute("trangThai", ttdao.findAll());
 		return "admin/hoadon/index";
 	}
@@ -93,6 +96,7 @@ public class QuanLyHoaDonController {
 			}
 		}
 		model.addAttribute("hoadons", dao.findPageHoaDon(0));
+		model.addAttribute("lastPageNo", dao.getPageCountHoaDon()-1);
 		model.addAttribute("trangThai", ttdao.findAll());
 		return "admin/hoadon/index";
 	}
@@ -101,6 +105,7 @@ public class QuanLyHoaDonController {
 	public String edit(Model model, @PathVariable("id") Integer id) {
 		HoaDon entity = dao.findById(id);
 		model.addAttribute("hoadons", dao.findPageHoaDon(0));
+		model.addAttribute("lastPageNo", dao.getPageCountHoaDon()-1);
 		model.addAttribute("trangThai", ttdao.findAll());
 		model.addAttribute("hoadon", entity);
 		return "admin/hoadon/index";
@@ -111,6 +116,7 @@ public class QuanLyHoaDonController {
 		Integer maHD = Integer.parseInt(id);
 		model.addAttribute("hoadon", new HoaDon());
 		model.addAttribute("hoadons", dao.SearchHoaDon(maHD));
+		model.addAttribute("lastPageNo", dao.getPageCountHoaDon()-1);
 		model.addAttribute("trangThai", ttdao.findAll());
 		return "admin/sanpham/index";
 	}

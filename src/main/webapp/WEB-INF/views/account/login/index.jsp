@@ -3,7 +3,7 @@
 <div class="login-container">
 	<div class="login-header">
 		<div class="login-left">
-			<p>&nbsp;Chào mừng đến với Optimists. Đăng nhập ngay!</p>
+			<p>&nbsp;Đăng nhập ngay!</p>
 			<label style="color: red; float: left; margin-bottom: -25px; margin-left: 15px; margin-top: 4px;">${message}</label>
 		</div>
 		<br>
