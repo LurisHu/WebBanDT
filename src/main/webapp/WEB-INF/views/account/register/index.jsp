@@ -7,7 +7,7 @@
 		</div>
 		<div class="re-title-right">
 			<p>
-				Bạn đã là thành viên?&nbsp;<a href="login.html">Đăng nhập tại
+				Bạn đã là thành viên?&nbsp;<a href="/account/login">Đăng nhập tại
 					đây</a>
 			</p>
 		</div>

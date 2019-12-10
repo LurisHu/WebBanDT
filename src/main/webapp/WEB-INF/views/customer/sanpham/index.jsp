@@ -1,7 +1,6 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <body class="container">
 	<div class="container1">
 		<div class="row">
@@ -40,16 +39,13 @@
 			<!-- Showproduct -->
 			<div class="product">
 				<div class="col-sm-12">
-					<strong>Điện thoại bán chạy nhất</strong> <a id="link" href="#"
-						type="button" class="btn btn-link">Iphone</a> <a id="link"
-						href="#" type="button" class="btn btn-link">Samsung</a> <a
-						id="link" href="#" type="button" class="btn btn-link">Oppo</a> <a
-						id="link" href="#" type="button" class="btn btn-link">Vivo</a>
+					<strong>Điện thoại bán chạy nhất</strong>
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerPhone}">
 						<a href="/customer/sanpham/detail/${p.maSP}">
-							<div class="col-sm-4 panel-group" style="cursor: pointer;">
+							<div class="col-sm-4 col-xs-4 panel-group"
+								style="cursor: pointer;">
 								<div class="panel">
 									<div class="panel-heading">
 										<h4>
@@ -58,11 +54,11 @@
 										<h4 id="price">
 											<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
 										</h4>
-										</p>
+										<p></p>
 									</div>
 									<div class="panel-body">
 										<div class="col-sm-7">
-											<p>
+											<p class="index-mota">
 												<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
 											</p>
 											<p>
@@ -90,16 +86,13 @@
 					</c:forEach>
 				</div>
 				<div class="col-sm-12">
-					<strong>Laptop bán chạy nhất</strong> <a id="link" href="#"
-						type="button" class="btn btn-link">HP</a> <a id="link" href="#"
-						type="button" class="btn btn-link">Dell</a> <a id="link" href="#"
-						type="button" class="btn btn-link">Asus</a> <a id="link" href="#"
-						type="button" class="btn btn-link">MacBook</a>
+					<strong>Laptop bán chạy nhất</strong>
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerLaptop}">
 						<a href="/customer/sanpham/detail/${p.maSP}">
-							<div class="col-sm-4 panel-group" style="cursor: pointer;">
+							<div class="col-sm-4 col-xs-4 panel-group"
+								style="cursor: pointer;">
 								<div class="panel">
 									<div class="panel-heading">
 										<h4>
@@ -108,12 +101,12 @@
 										<h4 id="price">
 											<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
 										</h4>
-										</p>
+										<p></p>
 									</div>
 									<div class="panel-body">
 										<div class="col-sm-7">
-											<p>
-												<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
+											<p class="index-mota">
+												<span class="glyphicon glyphicon-ok-sign "></span> ${p.moTa}
 											</p>
 											<p>
 												<span class="label label-danger">Khuyến mãi</span>
@@ -131,9 +124,8 @@
 											</p>
 										</div>
 										<div class="col-sm-5">
-											<a href="/customer/sanpham/detail/${p.maSP}"> <img
-												id="img3" src="/static/images/${p.image}" />
-											</a>
+											<img id="img4" src="/static/images/${p.image}" />
+
 										</div>
 									</div>
 								</div>
@@ -142,16 +134,13 @@
 					</c:forEach>
 				</div>
 				<div class="col-sm-12">
-					<strong>Phụ kiện bán chạy nhất</strong> <a id="link" href="#"
-						type="button" class="btn btn-link">Samsung</a> <a id="link"
-						href="#" type="button" class="btn btn-link">JBL</a> <a id="link"
-						href="#" type="button" class="btn btn-link">Sony</a> <a id="link"
-						href="#" type="button" class="btn btn-link">Iphone</a>
+					<strong>Phụ kiện bán chạy nhất</strong>
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerPhuKien}">
 						<a href="/customer/sanpham/detail/${p.maSP}">
-							<div class="col-sm-4 panel-group" style="cursor: pointer;">
+							<div class="col-sm-4 col-xs-4 panel-group"
+								style="cursor: pointer;">
 								<div class="panel">
 									<div class="panel-heading">
 										<h4>
@@ -160,11 +149,11 @@
 										<h4 id="price">
 											<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
 										</h4>
-										</p>
+
 									</div>
 									<div class="panel-body">
-										<div class="col-sm-7">
-											<p>
+										<div class="col-sm-7 ">
+											<p class="index-mota">
 												<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
 											</p>
 											<p>
@@ -183,9 +172,7 @@
 											</p>
 										</div>
 										<div class="col-sm-5">
-											<a href="/customer/sanpham/detail/${p.maSP}"> <img
-												id="img3" src="/static/images/${p.image}" />
-											</a>
+											<img id="img4" src="/static/images/${p.image}" />
 										</div>
 									</div>
 								</div>

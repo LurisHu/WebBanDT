@@ -16,7 +16,7 @@
 				<c:forEach var="array" items="${data}">
 					<tr>
 						<td>${array[0]}</td>
-						<td>${array[1]}Sảnphẩm</td>
+						<td>${array[1]} Sản phẩm</td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -38,6 +38,11 @@ label.error {
 										<sup>đ</sup>
 									</h4>
 								</div>
+								<div class="name-item-2">
+									<p>
+										Giảm giá:&nbsp;<span id="name-item-2"><fmt:formatNumber value="${p.giamGia}" /><sup>đ</sup></span>
+									</p>
+								</div>
 								<div class="quantity buttons_added number-item">
 									<c:if test="${p.soLuong > 1}">
 										<input type="submit" value="-" class="minus"
@@ -96,7 +101,7 @@ label.error {
 									placeholder="Số điện thoại của bạn" name="SDT"
 									required="required">
 							</div>
-						</div> 
+						</div>
 						<div class="form-group">
 							<label class=" col-sm-2 label-information">Tỉnh/Thành phố</label>
 							<div class="col-md-10">

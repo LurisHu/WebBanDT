@@ -6,154 +6,13 @@ ul {
     }
 .Categories{
     padding: 0px 64px;
+    min-height:70.5%;
+    position:relative;
 }
-.filter-bar{
-    display: block;
-    margin-bottom: 5px;
-    background: #f5f5f5;
-}
-.filter-title{
-    display: inline-block;
-    padding: 5px 15px;
-    color: #4a4a4a !important;
-    font-family: Roboto,sans-serif;
-    font-size: 18px;
-    margin: 15px 5px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    font-weight: bold;
-    padding-left: 10px;
-}
-.filter-element{
-    display: inline-block;
-    padding: 5px 15px;
-    color: #898b8d !important;
-    font-family: Roboto,sans-serif;
-    font-size: 15px;
-    margin: 15px 5px;
-    margin-bottom: 10px;
-    background-color: white;
-    border-radius: 20px;
-    overflow: hidden;
-}
-/* Giao diện bên trái */
-.left-categories{
-    float: left;
-    width: 230px;
-    background: #fff;
-    margin-bottom: 15px;
-}
-.left-title{
-    font-size: 18px;
-    font-weight: bold;
-    color: #4a4a4a;
-    padding: 7px 17px;
-    margin-top: 11px ;
-    border-bottom: 1px solid #e3e3e3;
-}
-.left-ri{
-    padding: 2px 15px;
-    border-bottom: 1px solid #e3e3e3;
-}
-.left-rititle{
-    font-size: 14px;
-    font-weight: bold;
-    color: #4a4a4a;
-    position: relative;
-    cursor: pointer;
-}
-.left-scroll{
-    max-height: 298px;
-    overflow: auto;
-}
-
-.container-inside{
-    overflow: hidden;
-    width: auto;
-    height: auto;
-}
-.list-fillter{
-    margin-top: 10px;
-}
-.left-collapse >ul>li>a{
-    display: inline-block;
-    padding: 5px 5px 5px 30px;
-    position: relative;
-    color: #4a4a4a;
-}
-.li-fillter{
-    margin-left: -15px;
-}
-.label-li {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 14px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .label-li input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: rgb(235, 229, 229);
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .label-li:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .label-li input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .label-li input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .label-li .checkmark:after {
-    left: 7px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
   /* Giao diện bên phải */
   .right-categories{
     float: right;
-    width: 960px;
+    width: 100%;
     background: #fff;
     margin-bottom: 15px;
   }
@@ -166,58 +25,13 @@ ul {
     border-bottom: solid 1px #e7e7e7;
   }
 
-  .dropbtn {
-    height: 36px;
-    font-size: 14px;
-    position: relative;
-    padding-right: 30px;
-    background: #fff;
-    color: #9b9b9b;
-    border: solid 1px #d6d6d6;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-  }
-  .dropbtn:hover{
-    border-color: #2196F3 ;
-  }
-  .dropdown1 {
-    position: relative;
-    display: inline-block;
-  }
-  .dropdown1{
-    margin-top: -49px;
-    margin-left: 686px;
-    padding-right: 18px;
-}
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    width: 230px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 30px ;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1}
-  
-  .dropdown1:hover .dropdown-content {
-    display: block;
-  }
 .right-prt{
   padding-top: 15px;
 }
 .right-prt-li{
   width: 25%;
   margin-bottom: 6px;
-  height: 480px;
+  height: 580px;
   padding: 0;
   display: block;
   float: left;
@@ -267,6 +81,7 @@ ul {
   font-size: 13px;
   margin-left: -41px;
 }
+
 .prt-if-content ul li label{
   width: 90%;
   height: 17px;
@@ -280,3 +95,1702 @@ ul {
   font-weight: bold;
   color: #7e7e7e;
 }
+
+@media only screen and (min-width:1400px) and (max-width:1440px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 64px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      font-size: 32px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 580px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:1325px) and (max-width:1399px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 40px;
+      min-height:70.5%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 32px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 480px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:1235px) and (max-width:1324px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 40px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 32px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 480px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:1125px) and (max-width:1234px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 34px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 30px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 480px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+@media only screen and (min-width:1085px) and (max-width:1124px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 35px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 30px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 480px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:1025px) and (max-width:1084px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 15px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 30px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 480px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+@media only screen and (min-width:980px) and (max-width:1024px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 15px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 30px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 480px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+@media only screen and (min-width:920px) and (max-width:979px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 15px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 30px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 380px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:890px) and (max-width:919px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 10px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 30px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 380px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+@media only screen and (min-width:858px) and (max-width:889px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 10px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 20px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 380px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+@media only screen and (min-width:820px) and (max-width:857px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 10px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 20px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 380px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:768px) and (max-width:819px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 10px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 20px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 380px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:720px) and (max-width:767px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 10px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 20px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 380px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 70px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:668px) and (max-width:719px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 10px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 20px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 6px;
+    height: 380px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 70px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 13px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    font-size: 12px;
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+   
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+@media only screen and (min-width:600px) and (max-width:667px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 10px;
+      min-height:100%;
+      position:relative;
+  }
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      padding-left: 40px;
+      font-size: 18px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+   
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 3px;
+    height: 200px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 70px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 10px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    font-size: 9px;
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    display: none;
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    display: none;
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+@media only screen and (min-width:550px) and (max-width:599px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+  .Categories{
+      padding: 0px 10px;
+      min-height:100%;
+      position:relative;
+  }
+ 
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+   
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 3px;
+    height: 198px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 70px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 10px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    font-size: 6px;
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    display: none;
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+@media only screen and (min-width:500px) and (max-width:549px){
+  .path{
+    padding-bottom:10px;
+  }
+  ul {
+      list-style: none;
+      }
+ 
+    /* Giao diện bên phải */
+    .right-categories{
+      float: right;
+      width: 100%;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .right-h1>h1{
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .header-right{
+      padding-left:15px;
+      position: relative;
+      border-bottom: solid 1px #e7e7e7;
+    }
+  
+   
+  .right-prt{
+    padding-top: 15px;
+  }
+  .right-prt-li{
+    width: 25%;
+    margin-bottom: 3px;
+    height: 198px;
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: none;
+    transition: all .3s ease 0s;
+  }
+  .right-prt-li:hover{
+    box-shadow:1px 1px 10px 1px #888888;
+  }
+  .img-phone{
+    padding-left: 23px;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .sort-text{
+    color: #4a4a4a;
+  }
+  .prt-if-name{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+  }
+  .prt-if-name>h4{
+    font-size: 7px;
+    font-weight: normal;
+    line-height: 1.36;
+    color: #383838;
+    max-height: 70px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .prt-if-price{
+    font-size: 7px;
+    font-weight: bold;
+    color: #383838;
+    display: inline;
+  }
+  .rating-categorie{
+    font-size: 6px;
+    margin-top: -7px;
+  }
+  .categorie{
+    color: #ccc;
+  }
+  .prt-if-content{
+    display: none;
+    font-size: 13px;
+    margin-left: -41px;
+  }
+  .prt-if-content ul li label{
+    width: 90%;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 9px;
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+}
+
+
+

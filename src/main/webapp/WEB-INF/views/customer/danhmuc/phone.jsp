@@ -10,94 +10,12 @@
 	<div class="banner">
 		<img src="/static/images/Y11-C3.png" style="width: 100%; height: 160px;">
 	</div>
-	<div class="filter-bar">
-		<p class="filter-title">Bộ lọc vừa áp dụng</p>
-		<a class="filter-element" href="#">Dưới 1 triệu</a>
-	</div>
 	<div class="clear-fix">
-		<!-- Giao diện bên trái -->
-		<div class="left-categories">
-			<h2 class="left-title">Bộ lọc</h2>
-			<div class="left-main">
-				<div class="left-ri">
-					<h4 class="left-rititle" data-toggle="collapse"
-						data-target="#hang-san-xuat">Hãng sản xuất</h4>
-					<div class="left-collapse" id="hang-san-xuat">
-						<div class="left-scroll">
-							<div class="scroll-inside">
-								<div class="container-inside">
-									<ul class="list-fillter">
-										<li class="li-fillter"><label class="label-li">Tất
-												cả <input type="checkbox" checked="checked"> <span
-												class="checkmark"></span>
-										</label> <label class="label-li">Apple <input type="checkbox">
-												<span class="checkmark"></span>
-										</label> <label class="label-li">Oppo <input type="checkbox">
-												<span class="checkmark"></span>
-										</label> <label class="label-li">Samsung <input
-												type="checkbox"> <span class="checkmark"></span>
-										</label> <label class="label-li">Vivo <input type="checkbox">
-												<span class="checkmark"></span>
-										</label> <label class="label-li">Nokia <input type="checkbox">
-												<span class="checkmark"></span>
-										</label></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="left-main">
-				<div class="left-ri">
-					<h4 class="left-rititle" data-toggle="collapse"
-						data-target="#muc-gia">Mức giá</h4>
-					<div class="left-collapse" id="muc-gia">
-						<div class="left-scroll">
-							<div class="scroll-inside">
-								<div class="container-inside">
-									<ul class="list-fillter">
-										<li class="li-fillter"><label class="label-li">Tất
-												cả <input type="checkbox" checked="checked"> <span
-												class="checkmark"></span>
-										</label> <label class="label-li">Dưới 1 triệu <input
-												type="checkbox"> <span class="checkmark"></span>
-										</label> <label class="label-li">Từ 1 - 3 triệu <input
-												type="checkbox"> <span class="checkmark"></span>
-										</label> <label class="label-li">Từ 3 - 6 triệu <input
-												type="checkbox"> <span class="checkmark"></span>
-										</label> <label class="label-li">Từ 6 - 10 triệu <input
-												type="checkbox"> <span class="checkmark"></span>
-										</label> <label class="label-li">Từ 10 - 15 triệu <input
-												type="checkbox"> <span class="checkmark"></span>
-										</label> <label class="label-li">Từ 15 - 10 triệu <input
-												type="checkbox"> <span class="checkmark"></span>
-										</label> <label class="label-li">Trên 15 triệu <input
-												type="checkbox"> <span class="checkmark"></span>
-										</label></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Left -->
 		<!-- Giao diện bên phải -->
 		<div class="right-categories">
 			<div class="header-right">
 				<div class="right-h1">
 					<h1>ĐIỆN THOẠI</h1>
-				</div>
-				<div class="dropdown1">
-					<button class="dropbtn">
-						Sắp xếp theo giá:&nbsp;<span class="sort-text">Giá tăng dần</span>
-					</button>
-					<div class="dropdown-content">
-						<a href="#">Giá tăng dần</a> <a href="#">Giá giảm dần</a>
-					</div>
 				</div>
 			</div>
 			<div class="right-prt">

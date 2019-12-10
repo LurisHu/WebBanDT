@@ -8,14 +8,14 @@
 		</div>
 		<div class="p-body">
 			<p>Nhập email tại đây!</p>
-			<div class="form-group col-md-7">
+			<div class="form-group col-md-7 col-xs-10">
 				<input id="email" type="email" class="form-control  control-Fg"
 					name="email" placeholder="Nhập địa chỉ mail để phục hồi mật khẩu"
 					required="required">
 			</div>
-		</div>
+		</div><br><br><br>
 		<div class="p-footer">
-			<div class="form-group col-md-3">
+			<div class="form-group col-md-4 col-xs-5">
 				<button type="submit" class="btn btn-block btn-Fg">Lấy lại
 					mật khẩu</button>
 			</div>

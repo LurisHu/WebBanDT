@@ -62,6 +62,11 @@
 									Số lượng:&nbsp;<span>${p.soLuong}</span>
 								</p>
 							</div>
+							<div class="bill-price-2">
+								<p id="bill-price-2">
+									<fmt:formatNumber value="${p.giamGia}" /><sup>đ</sup>
+								</p>
+							</div>
 						</div>
 					</c:forEach>
 					<div class="panel-footer footer-mini">
