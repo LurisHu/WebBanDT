@@ -74,7 +74,7 @@
 		<button class="btn btn-warning"
 			formaction="/admin/nguoidung/admin/update">Update</button>
 		<button class="btn btn-danger"
-			formaction="/admin/nguoidung/admin/delete">Delete</button>
+			formaction="/admin/nguoidung/admin/delete" onclick="return confirm(' Bạn có muốn xóa admin này không?');">Delete</button>
 		<button class="btn btn-info" formaction="/admin/nguoidung/admin/index/0">Reset</button>
 	</div>
 </form:form>

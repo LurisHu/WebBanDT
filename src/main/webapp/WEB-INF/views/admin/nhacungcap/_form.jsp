@@ -14,7 +14,7 @@
 	</div>
 	<div class="form-group">
 		<button class="btn btn-primary" formaction="/admin/nhacungcap/create">Create</button>
-		<button class="btn btn-warning" formaction="/admin/nhacungcap/update">Update</button>
+		<button class="btn btn-warning" formaction="/admin/nhacungcap/update" onclick="return confirm(' Bạn có muốn xóa nhà cung cấp này không?');">Update</button>
 		<button class="btn btn-danger" formaction="/admin/nhacungcap/delete">Delete</button>
 		<button class="btn btn-info" formaction="/admin/nhacungcap/index">Reset</button>
 	</div>

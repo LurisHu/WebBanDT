@@ -1,7 +1,6 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <body class="container">
 	<div class="container1">
 		<div class="row">
@@ -87,7 +86,7 @@
 					</c:forEach>
 				</div>
 				<div class="col-sm-12">
-					<strong>Laptop bán chạy nhất</strong> 
+					<strong>Laptop bán chạy nhất</strong>
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerLaptop}">

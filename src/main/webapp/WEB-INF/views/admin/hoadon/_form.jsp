@@ -53,7 +53,7 @@
 	</div>
 	<div class="form-group">
 		<button class="btn btn-warning" formaction="/admin/hoadon/update">Update</button>
-		<button class="btn btn-danger" formaction="/admin/hoadon/delete">Delete</button>
+		<button class="btn btn-danger" formaction="/admin/hoadon/delete" onclick="return confirm(' Bạn có muốn xóa hóa đơn này không?');">Delete</button>
 		<button class="btn btn-info" formaction="/admin/hoadon/index/0">Reset</button>
 	</div>
 </form:form>

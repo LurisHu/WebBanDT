@@ -67,7 +67,7 @@
 		<button class="btn btn-warning"
 			formaction="/admin/nguoidung/customer/update">Update</button>
 		<button class="btn btn-danger"
-			formaction="/admin/nguoidung/customer/delete">Delete</button>
+			formaction="/admin/nguoidung/customer/delete" onclick="return confirm(' Bạn có muốn xóa khách hàng này không?');">Delete</button>
 		<button class="btn btn-info"
 			formaction="/admin/nguoidung/customer/index/0">Reset</button>
 	</div>
