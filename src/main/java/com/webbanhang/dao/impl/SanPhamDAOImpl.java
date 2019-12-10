@@ -113,7 +113,7 @@ public class SanPhamDAOImpl implements SanPhamDAO {
 
 	@Override
 	public List<SanPham> findPageLaptop(int pageNo) {
-		int pageSize = 6;
+		int pageSize = 8;
 		String hql = "FROM SanPham WHERE MaDM= '2'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql, SanPham.class);
@@ -135,7 +135,7 @@ public class SanPhamDAOImpl implements SanPhamDAO {
 
 	@Override
 	public int getPageCountLaptop() {
-		int pageSize = 6;
+		int pageSize = 8;
 		String hql = "SELECT count(p) FROM SanPham p WHERE MaDM= '2'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<Long> query = session.createQuery(hql, Long.class);
@@ -184,7 +184,7 @@ public class SanPhamDAOImpl implements SanPhamDAO {
 
 	@Override
 	public List<SanPham> findPagePhuKien(int pageNo) {
-		int pageSize = 6;
+		int pageSize = 8;
 		String hql = "FROM SanPham WHERE MaDM= '3'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<SanPham> query = session.createQuery(hql, SanPham.class);
@@ -195,7 +195,7 @@ public class SanPhamDAOImpl implements SanPhamDAO {
 
 	@Override
 	public int getPageCountPhuKien() {
-		int pageSize = 6;
+		int pageSize = 8;
 		String hql = "SELECT count(p) FROM SanPham p WHERE MaDM= '3'";
 		Session session = factory.getCurrentSession();
 		TypedQuery<Long> query = session.createQuery(hql, Long.class);

@@ -55,7 +55,9 @@
 					</div>
 				</c:forEach>
 			</div>
-			<div>
+		</div>
+		<!-- End Right -->
+		<div>
 				<ul class="pager">
 					<li><a href="/customer/danhmuc/phone/0">First</a></li>
 					<li><a href="/customer/danhmuc/phone/${pageNo-1}">Previous</a></li>
@@ -63,7 +65,5 @@
 					<li><a href="/customer/danhmuc/phone/${lastPageNo}">Last</a></li>
 				</ul>
 			</div>
-		</div>
-		<!-- End Right -->
 	</div>
 </div>
