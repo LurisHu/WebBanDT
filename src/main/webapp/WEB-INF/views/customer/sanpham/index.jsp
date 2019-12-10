@@ -48,7 +48,7 @@
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerPhone}">
-						<div class="col-sm-4 panel-group" style="cursor: pointer;">
+						<div class="col-sm-4 col-xs-4 panel-group" style="cursor: pointer;">
 							<div class="panel">
 								<div class="panel-heading">
 									<h4>
@@ -60,9 +60,9 @@
 									</p>
 								</div>
 								<div class="panel-body">
-									<div class="col-sm-7">
-										<p>
-											<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
+									<div class="col-sm-7 ">
+										<p class="index-mota">
+											<span class="glyphicon glyphicon-ok-sign"></span>${p.moTa}
 										</p>
 										<p>
 											<span class="label label-danger">Khuyến mãi</span>
@@ -95,7 +95,7 @@
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerLaptop}">
-						<div class="col-sm-4 panel-group" style="cursor: pointer;">
+						<div class="col-sm-4 col-xs-4 panel-group" style="cursor: pointer;">
 							<div class="panel">
 								<div class="panel-heading">
 									<h4>
@@ -108,8 +108,8 @@
 								</div>
 								<div class="panel-body">
 									<div class="col-sm-7">
-										<p>
-											<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
+										<p class="index-mota">
+											<span class="glyphicon glyphicon-ok-sign "></span> ${p.moTa}
 										</p>
 										<p>
 											<span class="label label-danger">Khuyến mãi</span>
@@ -125,7 +125,7 @@
 									</div>
 									<div class="col-sm-5">
 										<a href="/customer/sanpham/detail/${p.maSP}"> <img
-											id="img3" src="/static/images/${p.image}" />
+											id="img4" src="/static/images/${p.image}" />
 										</a>
 									</div>
 								</div>
@@ -142,7 +142,7 @@
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerPhuKien}">
-						<div class="col-sm-4 panel-group" style="cursor: pointer;">
+						<div class="col-sm-4 col-xs-4 panel-group" style="cursor: pointer;">
 							<div class="panel">
 								<div class="panel-heading">
 									<h4>
@@ -151,11 +151,11 @@
 									<h4 id="price">
 										<b><fmt:formatNumber value="${p.giaSP}" /></b>
 									</h4>
-									</p>
+								
 								</div>
 								<div class="panel-body">
-									<div class="col-sm-7">
-										<p>
+									<div class="col-sm-7 ">
+										<p class="index-mota">
 											<span class="glyphicon glyphicon-ok-sign"></span> ${p.moTa}
 										</p>
 										<p>
@@ -172,7 +172,7 @@
 									</div>
 									<div class="col-sm-5">
 										<a href="/customer/sanpham/detail/${p.maSP}"> <img
-											id="img3" src="/static/images/${p.image}" />
+											id="img4" src="/static/images/${p.image}" />
 										</a>
 									</div>
 								</div>

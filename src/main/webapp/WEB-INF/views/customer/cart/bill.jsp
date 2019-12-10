@@ -25,6 +25,9 @@
 						An.</p>
 					<p>*Thanh toán khi nhận được hàng.</p>
 					<p>
+						*Tiền đã giảm:&ensp;<span>600.000<sup>đ</sup></span>
+					</p>
+					<p>
 						*Tổng tiền:&ensp;<span><fmt:formatNumber
 								value="${sessionScope['scopedTarget.cartService'].amount}" /><sup>đ</sup></span>
 					</p>
@@ -61,6 +64,11 @@
 							<div class="bill-number">
 								<p>
 									Số lượng:&nbsp;<span>${p.soLuong}</span>
+								</p>
+							</div>
+							<div class="bill-price-2">
+								<p id="bill-price-2">
+									30.000<sup>đ</sup>
 								</p>
 							</div>
 						</div>

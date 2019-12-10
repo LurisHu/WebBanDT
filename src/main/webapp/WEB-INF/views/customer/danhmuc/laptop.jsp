@@ -8,95 +8,12 @@
 	<div class="banner">
 		<img src="/static/images/AcerT11-C3.png" style="width: 100%; height: 160px;">
 	</div>
-	<div class="filter-bar-latop">
-		<p class="filter-title-latop">Bộ lọc vừa áp dụng</p>
-		<a class="filter-element-latop" href="#">Dưới 1 triệu</a>
-	</div>
 	<div class="clear-fix-laptop">
-		<!-- Giao diện bên trái -->
-		<div class="left-categories-laptop">
-			<h2 class="left-title-laptop">Bộ lọc</h2>
-			<div class="left-main-laptop">
-				<div class="left-ri-laptop">
-					<h4 class="left-rititle-laptop" data-toggle="collapse"
-						data-target="#hang-san-xuat-laptop">Hãng sản xuất</h4>
-					<div class="left-collapse-laptop" id="hang-san-xuat-laptop">
-						<div class="left-scroll-laptop">
-							<div class="scroll-inside-laptop">
-								<div class="container-inside-laptop">
-									<ul class="list-fillter-laptop">
-										<li class="li-fillter-laptop"><label
-											class="label-li-laptop">Tất cả <input type="checkbox"
-												checked="checked"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Apple (Macbook) <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Asus <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Acer <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Dell <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Hp <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="left-main-laptop">
-				<div class="left-ri-laptop">
-					<h4 class="left-rititle-laptop" data-toggle="collapse"
-						data-target="#muc-gia-laptop">Mức giá</h4>
-					<div class="left-collapse-laptop" id="muc-gia-laptop">
-						<div class="left-scroll-laptop">
-							<div class="scroll-inside-laptop">
-								<div class="container-inside-laptop">
-									<ul class="list-fillter-laptop">
-										<li class="li-fillter-laptop"><label
-											class="label-li-laptop">Tất cả <input type="checkbox"
-												checked="checked"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Dưới 10 triệu <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Từ 10 - 15 triệu <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Từ 15 - 20 triệu <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Từ 25 - 30 triệu <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Từ 30 - 35 triệu <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Từ 35 - 40 triệu <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label> <label class="label-li-laptop">Trên 40 triệu <input
-												type="checkbox"> <span class="checkmark-laptop"></span>
-										</label></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Left -->
 		<!-- Giao diện bên phải -->
 		<div class="right-categories-laptop">
 			<div class="header-right-laptop">
 				<div class="right-h1-laptop">
 					<h1>LAPTOP</h1>
-				</div>
-				<div class="dropdown1-laptop">
-					<button class="dropbtn-laptop">
-						Sắp xếp theo giá:&nbsp;<span class="sort-text-laptop">Giá
-							tăng dần</span>
-					</button>
-					<div class="dropdown-content-laptop">
-						<a href="#">Giá tăng dần</a> <a href="#">Giá giảm dần</a>
-					</div>
 				</div>
 			</div>
 			<div class="right-prt-laptop">
