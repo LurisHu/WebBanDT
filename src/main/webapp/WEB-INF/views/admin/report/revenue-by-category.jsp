@@ -23,6 +23,7 @@
 		</tbody>
 	</table>
 	<h4>Biểu đồ</h4>
+	<div class="col-12" id="piechart_3d"></div>
 </div>
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
@@ -50,4 +51,3 @@
 				chart.draw(data, options);
 	}
 </script>
-<div id="piechart_3d" style="width: 1225px; height: 500px;"></div>
