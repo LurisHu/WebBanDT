@@ -15,68 +15,12 @@
 			<b>${item.tenSP}</b>
 		</h3>
 		<div class="col-sm-5">
-			<div id="carousel" class="carousel slide carousel-fade"
-				data-ride="carousel" data-interval="false">
-				<ol class="carousel-indicators">
-					<li data-target="#carousel" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel" data-slide-to="1"></li>
-					<li data-target="#carousel" data-slide-to="2"></li>
-					<li data-target="#carousel" data-slide-to="3"></li>
-				</ol>
-
-				<!-- Carousel items -->
-				<div class="carousel-inner">
-					<div class="item active">
-						<div class="slide-content">
-							<div class="slide-overlay door">
-								<div class='title'>
-									<img class="slide1" src="/static/images/${item.image}">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="slide-content">
-							<div class="slide-overlay door">
-								<div class='title'>
-									<img class="slide1" src="/static/images/${item.image}">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="slide-content">
-							<div class="slide-overlay door">
-								<div class='title'>
-									<img class="slide1" src="/static/images/${item.image}">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="slide-content">
-							<div class="slide-overlay door">
-								<div class='title'>
-									<img class="slide1" src="/static/images/${item.image}">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<a class="carousel-control left" href="#carousel" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a> <a class="carousel-control right" href="#carousel"
-					data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right"></span>
-				</a>
-
-			</div>
+			<img class="slide1 img-thumbnail" src="/static/images/${item.image}">
 		</div>
-		<div class="col-sm-4">
-			<div class="panel panel-default">
+		<div class="col-sm-4 detail-ct">
+			<div class="panel panel-default ">
 				<div class="panel-body">
-					<form class="form-horizontal form-detail">
+					<form class="form-horizontal form-detail ">
 						<div class="rating">
 							<span class="glyphicon glyphicon-star star1"></span> <span
 								class="glyphicon glyphicon-star star1"></span> <span
@@ -87,11 +31,13 @@
 						<div class="a">
 							<p>
 								<b>Giá: </b>
-								<fmt:formatNumber value="${item.giaSP-item.giamGia}" />đ
+								<fmt:formatNumber value="${item.giaSP-item.giamGia}" />
+								đ
 							</p>
 							<p>
 								<b>Giá gốc: </b>
-								<fmt:formatNumber value="${item.giaSP}" />đ
+								<fmt:formatNumber value="${item.giaSP}" />
+								đ
 							</p>
 							<p>
 								<b>Tình trạng: </b> ${item.soLuong==0?"Hết hàng":"Còn hàng"}
@@ -140,10 +86,10 @@
 		</div>
 	</div>
 	<div class="product">
-		<div class="col-sm-12">
+		<div class="col-sm-12 text-detail">
 			<h3>Sản phẩm tương tự</h3>
 		</div>
-		<div class="col-sm-12">
+		<div class="col-sm-12 pr-detail">
 			<div class="panel ">
 				<div class="panel-body">
 					<div class="showproduct">
@@ -156,7 +102,8 @@
 									<p>${p.tenSP}</p>
 									<b>
 										<p id="color-price">
-											<fmt:formatNumber value="${p.giaSP}" />đ
+											<fmt:formatNumber value="${p.giaSP}" />
+											đ
 										</p>
 									</b>
 								</div>
@@ -167,43 +114,17 @@
 			</div>
 		</div>
 		<div class="col-sm-12 evaluate">
-			<h2>Đặc điểm nổi bật</h2>
+			<h2>Đặc điểm nổi bật của&nbsp;${item.tenSP}</h2>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-6 DB">
+			<img class=" img-DB" src="/static/images/${item.image}">
+		</div>
+		<div class="col-sm-6">
 			<div class="panel product-detail">
 				<div class="panel-body">
-					<div class="col-sm-12 TSKT">
+					<div class="TKTL">
 						<h4>
-							<b>Thông số kỹ thuật</b>
-						</h4>
-					</div>
-					<table class="table">
-						<tr>
-							<th>Màng hình:</th>
-							<td>LTPS LCD, 6.5", Full HD+</td>
-						</tr>
-						<tr>
-							<th>Hệ điều hành:</th>
-							<td>Android 9.0 (Pie)</td>
-						</tr>
-						<tr>
-							<th>RAM:</th>
-							<td>6 GB</td>
-						</tr>
-						<tr>
-							<th>Bộ nhớ trong:</th>
-							<td>12 GB</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-4">
-			<div class="panel product-detail">
-				<div class="panel-body">
-					<div class="TK&TL">
-						<h4>
-							<b>Thiết kế & Trọng lượng</b>
+							<b>Thông tin kỹ thuật</b>
 						</h4>
 					</div>
 					<table class="table">
@@ -222,35 +143,6 @@
 						<tr>
 							<th>Trọng lượng:</th>
 							<td>190 g</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-4">
-			<div class="panel product-detail">
-				<div class="panel-body">
-					<div class="TTP&S">
-						<h4>
-							<b>Thông tin Pin & Sạc</b>
-						</h4>
-					</div>
-					<table class="table">
-						<tr>
-							<th>Dung lượng:</th>
-							<td>4000 mAh</td>
-						</tr>
-						<tr>
-							<th>Loại pin:</th>
-							<td>Pin chuẩn Li-Ion</td>
-						</tr>
-						<tr>
-							<th>RAM:</th>
-							<td>6 GB</td>
-						</tr>
-						<tr>
-							<th>Công nghệ Pin:</th>
-							<td>Tiết kiệm pin, Sạc nhanh VOOC</td>
 						</tr>
 					</table>
 				</div>
@@ -358,7 +250,7 @@
 		</div>
 	</div>
 	<div class="col-sm-12">
-		<h2>Nhận xét</h2>
+		<h2>#Nhận xét</h2>
 		<div class="media">
 			<div class="fb-comments"
 				data-href="http://localhost:8080/${requestScope['javax.servlet.forward.request_uri']}"
@@ -367,8 +259,3 @@
 		<hr>
 	</div>
 </div>
-<%-- <h1>Product Detail</h1>
-	<ul>
-		<li>${item.maSP}</li>
-	</ul>
-	<img src="/static/images/${item.image}" height="200px" width="200px" /> --%>

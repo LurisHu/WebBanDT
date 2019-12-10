@@ -1,10 +1,10 @@
-/* chỉnh kích thước panel */
+/* chá»‰nh kÃ­ch thÆ°á»›c panel */
 .bill-container{
     padding-top: 20px;
-    padding-left: 370px;
-    padding-right: 370px;
+    padding-left:290px;
+    padding-right: 290px;
 }
-/* Tùy chỉnh thẻ P */
+/* TÃ¹y chá»‰nh tháº» P */
 .p-top p{
     color: green;
     font-size: 1.15vw;
@@ -26,19 +26,19 @@
 .panel-body{
     margin-top: 20px;
 }
-/* Tạo bóng panel */
+/* Táº¡o bÃ³ng panel */
 .bill-panel{
   padding: 10px;
   box-shadow:1px 1px 10px 1px #888888;
 }
-/* Tùy chỉnh heading trong body-mini */
+/* TÃ¹y chá»‰nh heading trong body-mini */
 .panel-heading{
     font-size: 1.2vw;
     font-weight: bold;
     padding-bottom: 1px;
     border-style: none;
 }
-/* Tùy chỉnh trong body-mini */
+/* TÃ¹y chá»‰nh trong body-mini */
 .body-mini span{
     font-weight: bold;
     color: red;
@@ -46,7 +46,7 @@
 .body-mini{
     margin: -10px 0px;
 }
-/* Tùy chỉnh footer-mini */
+/* TÃ¹y chá»‰nh footer-mini */
 .footer-mini span{
     font-weight: bold;
     color:rgb(13, 121, 184);
@@ -56,18 +56,30 @@
     padding-bottom: 1px;
     background-color: white ;
 }
-/* Điều chỉnh panel-img */
+/* Ä�iá»�u chá»‰nh panel-img */
 .bill-img{
     padding: 7px;
     border: 1px solid #e2e2e2;
 }
-/* Điều chỉnh bill-item */
+/* Ä�iá»�u chá»‰nh bill-item */
 .bill-item{
     display: block;
     position: relative;
     margin-top: -128px;
     margin-left: 144px;
     margin-bottom: 100px;
+}
+.bill-price-2{
+	font-size:16px;
+	display: block;
+    position: relative;
+    margin-top: -100px;
+    margin-left: 144px;
+    margin-bottom: 100px;
+    color: rgb(148, 148, 135);
+}
+#bill-price-2{
+	text-decoration: line-through;
 }
 .bill-price{
     font-weight: bold;
@@ -100,7 +112,8 @@
     border-style: none;
 }
 .bill-back{
-    padding: 0px 165px;
+	display:block;
+    padding: 0px 190px;
 }
 .btn-info{
     font-size: 1.5vw;
