@@ -40,11 +40,7 @@
 			<!-- Showproduct -->
 			<div class="product">
 				<div class="col-sm-12">
-					<strong>Điện thoại bán chạy nhất</strong> <a id="link" href="#"
-						type="button" class="btn btn-link">Iphone</a> <a id="link"
-						href="#" type="button" class="btn btn-link">Samsung</a> <a
-						id="link" href="#" type="button" class="btn btn-link">Oppo</a> <a
-						id="link" href="#" type="button" class="btn btn-link">Vivo</a>
+					<strong>Điện thoại bán chạy nhất</strong>
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerPhone}">
@@ -90,11 +86,7 @@
 					</c:forEach>
 				</div>
 				<div class="col-sm-12">
-					<strong>Laptop bán chạy nhất</strong> <a id="link" href="#"
-						type="button" class="btn btn-link">HP</a> <a id="link" href="#"
-						type="button" class="btn btn-link">Dell</a> <a id="link" href="#"
-						type="button" class="btn btn-link">Asus</a> <a id="link" href="#"
-						type="button" class="btn btn-link">MacBook</a>
+					<strong>Laptop bán chạy nhất</strong>
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerLaptop}">
@@ -142,11 +134,7 @@
 					</c:forEach>
 				</div>
 				<div class="col-sm-12">
-					<strong>Phụ kiện bán chạy nhất</strong> <a id="link" href="#"
-						type="button" class="btn btn-link">Samsung</a> <a id="link"
-						href="#" type="button" class="btn btn-link">JBL</a> <a id="link"
-						href="#" type="button" class="btn btn-link">Sony</a> <a id="link"
-						href="#" type="button" class="btn btn-link">Iphone</a>
+					<strong>Phụ kiện bán chạy nhất</strong>
 				</div>
 				<div class="showproduct">
 					<c:forEach var="p" items="${BestSellerPhuKien}">
