@@ -87,11 +87,11 @@
 						<div class="a">
 							<p>
 								<b>Giá: </b>
-								<fmt:formatNumber value="${item.giaSP-item.giamGia}" />
+								<fmt:formatNumber value="${item.giaSP-item.giamGia}" />đ
 							</p>
 							<p>
 								<b>Giá gốc: </b>
-								<fmt:formatNumber value="${item.giaSP}" />
+								<fmt:formatNumber value="${item.giaSP}" />đ
 							</p>
 							<p>
 								<b>Tình trạng: </b> ${item.soLuong==0?"Hết hàng":"Còn hàng"}
@@ -156,7 +156,7 @@
 									<p>${p.tenSP}</p>
 									<b>
 										<p id="color-price">
-											<fmt:formatNumber value="${p.giaSP}" />
+											<fmt:formatNumber value="${p.giaSP}" />đ
 										</p>
 									</b>
 								</div>

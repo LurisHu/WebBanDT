@@ -55,7 +55,7 @@
 										<b>${p.tenSP}</b>
 									</h4>
 									<h4 id="price">
-										<b><fmt:formatNumber value="${p.giaSP}" /></b>
+										<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
 									</h4>
 									</p>
 								</div>
@@ -69,7 +69,7 @@
 										</p>
 										<p>
 											<b>
-												<h4>${p.giamGia}</h4>
+												<h4><fmt:formatNumber value="${p.giamGia}" />đ</h4>
 											</b>
 										</p>
 										<p>
@@ -102,7 +102,7 @@
 										<b>${p.tenSP}</b>
 									</h4>
 									<h4 id="price">
-										<b><fmt:formatNumber value="${p.giaSP}" /></b>
+										<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
 									</h4>
 									</p>
 								</div>
@@ -116,7 +116,7 @@
 										</p>
 										<p>
 											<b>
-												<h4>${p.giamGia}</h4>
+												<h4><fmt:formatNumber value="${p.giamGia}" />đ</h4>
 											</b>
 										</p>
 										<p>
@@ -149,7 +149,7 @@
 										<b>${p.tenSP}</b>
 									</h4>
 									<h4 id="price">
-										<b><fmt:formatNumber value="${p.giaSP}" /></b>
+										<b><fmt:formatNumber value="${p.giaSP}" />đ</b>
 									</h4>
 									</p>
 								</div>
@@ -163,7 +163,7 @@
 										</p>
 										<p>
 											<b>
-												<h4>${p.giamGia}</h4>
+												<h4><fmt:formatNumber value="${p.giamGia}" />đ</h4>
 											</b>
 										</p>
 										<p>
